@@ -170,7 +170,7 @@
 
 	<div class="hidden lg:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="flex h-17.5 items-center justify-between bg-[#f3f4f6] px-4">
+		<div class="flex h-17.5 items-center justify-between px-4">
 			<div>
 				<a href="/">
 					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
@@ -212,13 +212,13 @@
 		</div>
 
 		<!-- Utility nav consisting word of the day, lotto and horoscope -->
-		<div class="flex h-8 items-start justify-end gap-4 px-4">
-			<ul class="grid grid-cols-3 gap-2">
+		<div class="flex h-8 items-start justify-end">
+			<ul class="grid grid-cols-3">
 				{#each utilityLinks as { name, href, Icon } (name)}
 					<li>
 						<a
 							{href}
-							class="flex min-h-6 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
+							class="flex min-h-8 items-start justify-center gap-1.5 text-xs hover:underline sm:text-sm"
 						>
 							<Icon height="1.25em" class="shrink-0" />
 							<span class="truncate">{name}</span>
