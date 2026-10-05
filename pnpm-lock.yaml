@@ -7,6 +7,19 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@iconify-svelte/dashicons':
+        specifier: gitlab:iconify-icons/svelte#dashicons
+        version: https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+      '@iconify-svelte/fluent':
+        specifier: gitlab:iconify-icons/svelte#fluent
+        version: https://gitlab.com/iconify-icons/svelte/-/archive/ad670ca711507ded489f80ef8bd204718dec9259/svelte-ad670ca711507ded489f80ef8bd204718dec9259.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+      '@iconify-svelte/simple-icons':
+        specifier: gitlab:iconify-icons/svelte#simple-icons
+        version: https://gitlab.com/iconify-icons/svelte/-/archive/3f2745b4c5c77d7b7fa3da1fe940da97c438cb36/svelte-3f2745b4c5c77d7b7fa3da1fe940da97c438cb36.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+      '@iconify-svelte/twemoji':
+        specifier: gitlab:iconify-icons/svelte#twemoji
+        version: https://gitlab.com/iconify-icons/svelte/-/archive/4e7fc23fd76f55b2bf21a38814f9e0fe1c388724/svelte-4e7fc23fd76f55b2bf21a38814f9e0fe1c388724.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -138,6 +151,30 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-svelte/dashicons@https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz':
+    resolution: {gitHosted: true, integrity: sha512-9F+FpyzsenMS7x0WoWOxjZsAOqLUbYs75FRS7JjFh/TTyW3p2PGxSq7lLRXX56NYYoMuUE43Gs8CwwvZK4N6Lg==, tarball: https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz}
+    version: 1.0.0
+
+  '@iconify-svelte/fluent@https://gitlab.com/iconify-icons/svelte/-/archive/ad670ca711507ded489f80ef8bd204718dec9259/svelte-ad670ca711507ded489f80ef8bd204718dec9259.tar.gz':
+    resolution: {gitHosted: true, integrity: sha512-0f1VBShlfnlKE/2T/Wvy05t6Yaji9vlkApQIm7kjSmjkd/NIhfnNiUjlmemDGRj5pnUEn2B55LW1o5RQ2OX4tA==, tarball: https://gitlab.com/iconify-icons/svelte/-/archive/ad670ca711507ded489f80ef8bd204718dec9259/svelte-ad670ca711507ded489f80ef8bd204718dec9259.tar.gz}
+    version: 1.0.4
+
+  '@iconify-svelte/simple-icons@https://gitlab.com/iconify-icons/svelte/-/archive/3f2745b4c5c77d7b7fa3da1fe940da97c438cb36/svelte-3f2745b4c5c77d7b7fa3da1fe940da97c438cb36.tar.gz':
+    resolution: {gitHosted: true, integrity: sha512-7F9yvQCrF7dq4TFYKeXvecb/ry3F13PpuwGoFqCNEkKan0vi1JRJYN/gOoZjrxtb1Y//XfaKRJTrTmnjO/2dOg==, tarball: https://gitlab.com/iconify-icons/svelte/-/archive/3f2745b4c5c77d7b7fa3da1fe940da97c438cb36/svelte-3f2745b4c5c77d7b7fa3da1fe940da97c438cb36.tar.gz}
+    version: 1.0.1
+
+  '@iconify-svelte/twemoji@https://gitlab.com/iconify-icons/svelte/-/archive/4e7fc23fd76f55b2bf21a38814f9e0fe1c388724/svelte-4e7fc23fd76f55b2bf21a38814f9e0fe1c388724.tar.gz':
+    resolution: {gitHosted: true, integrity: sha512-/WrMTYWpw514I8JPGcXlej5rvnYwOiQ0Xq1fZAUokXIyOx1MbHgBucjMWS5/lUrNP/sezNDz4FVMMl6lqnS4uA==, tarball: https://gitlab.com/iconify-icons/svelte/-/archive/4e7fc23fd76f55b2bf21a38814f9e0fe1c388724/svelte-4e7fc23fd76f55b2bf21a38814f9e0fe1c388724.tar.gz}
+    version: 1.0.0
+
+  '@iconify/css-svelte@1.0.1':
+    resolution: {integrity: sha512-f9w1anXXBm48VjDEWDrGTybdiwnDTIChcUpBK/UtXR/AhNp/Co/VPp00t7dO93j+4Je0OwMKyc/HvI7Lpv3PKg==}
+    peerDependencies:
+      svelte: '>4.0.0'
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1329,6 +1366,37 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-svelte/dashicons@https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
+    dependencies:
+      '@iconify/css-svelte': 1.0.1(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+    transitivePeerDependencies:
+      - svelte
+
+  '@iconify-svelte/fluent@https://gitlab.com/iconify-icons/svelte/-/archive/ad670ca711507ded489f80ef8bd204718dec9259/svelte-ad670ca711507ded489f80ef8bd204718dec9259.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
+    dependencies:
+      '@iconify/css-svelte': 1.0.1(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+    transitivePeerDependencies:
+      - svelte
+
+  '@iconify-svelte/simple-icons@https://gitlab.com/iconify-icons/svelte/-/archive/3f2745b4c5c77d7b7fa3da1fe940da97c438cb36/svelte-3f2745b4c5c77d7b7fa3da1fe940da97c438cb36.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
+    dependencies:
+      '@iconify/css-svelte': 1.0.1(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+    transitivePeerDependencies:
+      - svelte
+
+  '@iconify-svelte/twemoji@https://gitlab.com/iconify-icons/svelte/-/archive/4e7fc23fd76f55b2bf21a38814f9e0fe1c388724/svelte-4e7fc23fd76f55b2bf21a38814f9e0fe1c388724.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
+    dependencies:
+      '@iconify/css-svelte': 1.0.1(svelte@5.57.1(@typescript-eslint/types@8.71.0))
+    transitivePeerDependencies:
+      - svelte
+
+  '@iconify/css-svelte@1.0.1(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 5.57.1(@typescript-eslint/types@8.71.0)
+
+  '@iconify/types@2.0.0': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

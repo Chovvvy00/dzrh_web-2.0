@@ -39,5 +39,11 @@
 	"imports": {
 		"#lib": "./src/lib/index.js",
 		"#lib/*": "./src/lib/*"
+	},
+	"dependencies": {
+		"@iconify-svelte/dashicons": "gitlab:iconify-icons/svelte#dashicons",
+		"@iconify-svelte/fluent": "gitlab:iconify-icons/svelte#fluent",
+		"@iconify-svelte/simple-icons": "gitlab:iconify-icons/svelte#simple-icons",
+		"@iconify-svelte/twemoji": "gitlab:iconify-icons/svelte#twemoji"
 	}
 }

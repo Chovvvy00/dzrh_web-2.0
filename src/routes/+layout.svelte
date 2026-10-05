@@ -1,7 +1,9 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '#lib/assets/favicon.svg';
+	import favicon from '#lib/assets/favicon/favicon.ico';
 	import type { LayoutProps } from './$types';
+	import TopBanner from '#lib/components/TopBanner.svelte';
+	import Header from '#lib/components/Header.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -10,4 +12,15 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children()}
+<div class="min-h-screen w-full">
+	<div class="mx-auto w-full max-w-360 px-4 sm:px-6 lg:px-8">
+		<!-- This is the top banner componnet that displays the banner image for both mobile and desktop views. -->
+		<TopBanner />
+
+		<Header />
+
+		<!-- <div class="border-t border-gray-300"></div> -->
+
+		{@render children()}
+	</div>
+</div>
