@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import mostReadImage from '#lib/assets/test-images/MostRead.jpeg';
 
 	const articles = [
@@ -30,7 +31,7 @@
 	<h2 class="mb-3 text-xl font-bold uppercase">Most Read</h2>
 
 	{#if articles[0]}
-		<a href={`/post/${articles[0].slug}`} class="group block">
+		<a href={resolve(`/post/${articles[0].slug}`)} class="group block">
 			{#if articles[0].image}
 				<div class="aspect-video overflow-hidden">
 					<img
@@ -49,7 +50,7 @@
 
 	<div class="mt-4 space-y-3">
 		{#each articles.slice(1) as article (article.id)}
-			<a href={`/post/${article.slug}`} class="block text-sm leading-snug hover:text-red-600">
+			<a href={resolve(`/post/${article.slug}`)} class="block text-sm leading-snug hover:text-red-600">
 				{article.title}
 			</a>
 		{/each}

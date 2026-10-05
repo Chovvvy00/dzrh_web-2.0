@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import featuredImage from '#lib/assets/test-images/Featured.jpg';
 
 	const article = {
@@ -18,7 +19,7 @@
 	</div>
 
 	<!-- Featured Article -->
-	<a href={`/post/${article.slug}`} class="group block">
+	<a href={resolve(`/post/${article.slug}`)} class="group block">
 		<div class="overflow-hidden">
 			<img
 				src={article.image}

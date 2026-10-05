@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -15,7 +16,7 @@
 		</div>
 	</div>
 
-	<a href={`/post/${article.slug}`} class="group block">
+	<a href={resolve(`/post/${article.slug}`)} class="group block">
 		<div class="aspect-video overflow-hidden bg-neutral-200">
 			<img
 				src={article.image}
