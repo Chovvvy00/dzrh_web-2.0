@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { sitePath } from '#lib/paths.ts';
 	type Article = {
 		id: string;
 		title: string;
@@ -27,7 +27,7 @@
 	<!-- Articles -->
 	<div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
 		{#each articles.slice(0, 3) as article (article.id)}
-			<a href={resolve(`/post/${article.slug}`)} class="group block">
+			<a href={sitePath(`/post/${article.slug}`)} class="group block">
 				<div class="aspect-video overflow-hidden bg-neutral-200">
 					<img
 						src={article.image}
@@ -48,6 +48,6 @@
 
 	<!-- More -->
 	<div class="mt-2 flex justify-end">
-		<a href={resolve(href)} class="text-xs font-medium uppercase hover:text-red-600"> More </a>
+		<a href={sitePath(href)} class="text-xs font-medium uppercase hover:text-red-600"> More </a>
 	</div>
 </section>

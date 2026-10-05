@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { sitePath } from '#lib/paths.ts';
 	import logo from '#lib/assets/logo/dzrh-logo.svg';
 	import LotteryIcon from '@iconify-svelte/fluent/lottery-24-filled';
 	import FacebookIcon from '@iconify-svelte/simple-icons/facebook';
@@ -72,7 +72,7 @@
 <header>
 	<div class="lg:hidden">
 		<div class="flex h-17.5 items-center justify-between gap-4">
-			<a href={resolve('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
+			<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
 				<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
 			</a>
 			<button
@@ -113,7 +113,7 @@
 							{#each navLinks as link (link.href)}
 								<li>
 									<a
-										href={resolve(link.href)}
+										href={sitePath(link.href)}
 										onclick={closeMobileMenu}
 										class="flex min-h-11 items-center px-3 text-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-black"
 									>
@@ -123,7 +123,7 @@
 							{/each}
 							<li>
 								<a
-									href={resolve('/special-coverage')}
+									href={sitePath('/special-coverage')}
 									onclick={closeMobileMenu}
 									class="flex min-h-11 items-center justify-center bg-red-600 px-3 text-sm text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 								>
@@ -157,7 +157,7 @@
 				{#each utilityLinks as { name, href: path, Icon } (name)}
 					<li>
 						<a
-							href={resolve(path)}
+							href={sitePath(path)}
 							class="flex min-h-6 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
 						>
 							<Icon height="1.25em" class="shrink-0" />
@@ -173,7 +173,7 @@
 		<!-- Header content logo, main nav and social links -->
 		<div class="flex h-17.5 items-center justify-between px-4">
 			<div>
-				<a href={resolve('/')}>
+				<a href={sitePath('/')}>
 					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
 				</a>
 			</div>
@@ -182,13 +182,16 @@
 				<ul class="flex items-center gap-4">
 					{#each navLinks as link (link.href)}
 						<li>
-							<a href={resolve(link.href)}>
+							<a href={sitePath(link.href)}>
 								{link.name}
 							</a>
 						</li>
 					{/each}
 					<li>
-						<a href={resolve('/special-coverage')} class="bg-red-600 px-3 py-1 text-white hover:bg-red-500">
+						<a
+							href={sitePath('/special-coverage')}
+							class="bg-red-600 px-3 py-1 text-white hover:bg-red-500"
+						>
 							SPECIAL COVERAGE
 						</a>
 					</li>
@@ -218,7 +221,7 @@
 				{#each utilityLinks as { name, href: path, Icon } (name)}
 					<li>
 						<a
-							href={resolve(path)}
+							href={sitePath(path)}
 							class="flex min-h-8 items-start justify-center gap-1.5 text-xs hover:underline sm:text-sm"
 						>
 							<Icon height="1.25em" class="shrink-0" />

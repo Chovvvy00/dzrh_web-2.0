@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { sitePath } from '#lib/paths.ts';
 	import featuredImage from '#lib/assets/test-images/Featured.jpg';
 
 	const article = {
@@ -19,7 +19,7 @@
 	</div>
 
 	<!-- Featured Article -->
-	<a href={resolve(`/post/${article.slug}`)} class="group block">
+	<a href={sitePath(`/post/${article.slug}`)} class="group block">
 		<div class="overflow-hidden">
 			<img
 				src={article.image}

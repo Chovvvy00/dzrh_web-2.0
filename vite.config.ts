@@ -3,7 +3,7 @@ import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, isPreview }) => ({
 	plugins: [
 		tailwindcss(),
 		sveltekit({
@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => ({
 
 			adapter: adapter(),
 			paths: {
-				base: command === 'serve' ? '' : '/dzrh_web-2.0'
+				base: command === 'serve' && !isPreview ? '' : '/dzrh_web-2.0'
 			},
 			prerender: {
 				// Article and category links are placeholders; prerender existing routes only.

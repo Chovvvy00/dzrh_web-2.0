@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	<a href={resolve(`/post/${article.slug}`)} class="group block">
+	<a href={sitePath(`/post/${article.slug}`)} class="group block">
 		<div class="aspect-video overflow-hidden bg-neutral-200">
 			<img
 				src={article.image}

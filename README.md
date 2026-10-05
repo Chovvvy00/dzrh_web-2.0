@@ -1,56 +1,39 @@
-# sv
+# DZRH Web 2.0
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+DZRH news homepage built with SvelteKit and Tailwind CSS.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Development
 
 ```sh
-# create a new project
-npx sv create my-app
+pnpm install
+pnpm dev
 ```
 
-To recreate this project with the same configuration:
+## GitHub Pages deployment
+
+The workflow in `.github/workflows/deploy-pages.yml` builds the SvelteKit app
+and deploys the generated `build/` directory on every push to `main`.
+
+1. In the repository, open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Commit and push these deployment changes to `main`.
+4. Wait for **Deploy to GitHub Pages** in the **Actions** tab to finish.
+
+The site will be available at <https://chovvvy00.github.io/dzrh_web-2.0/>.
+Publishing directly from the source branch with Jekyll displays this README
+instead of building the Svelte app.
+
+## Production build
 
 ```sh
-# recreate this project
-pnpm dlx sv@1.1.0 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" --install pnpm web-2.0
+pnpm check
+pnpm build
+pnpm preview
 ```
 
-## Adding features
+Open the preview at `http://localhost:4173/dzrh_web-2.0/`.
+Development uses `/`; production uses the repository path `/dzrh_web-2.0`.
 
-Add features to your project with `sv add`:
-
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The static adapter prerenders existing routes. Article, category, and utility
+links currently point to placeholder routes that still need pages. Link crawling
+is disabled during prerendering so these placeholders do not prevent deployment.

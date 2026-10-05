@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -18,7 +18,7 @@
 
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
 		{#each articles.slice(0, 3) as article (article.id)}
-			<a href={resolve(`/post/${article.slug}`)} class="group block">
+			<a href={sitePath(`/post/${article.slug}`)} class="group block">
 				<div class="aspect-16/10 overflow-hidden bg-neutral-200">
 					<img
 						src={article.image}
