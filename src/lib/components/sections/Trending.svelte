@@ -5,13 +5,13 @@
 	const articles = [
 		{
 			id: '1',
-			title: 'Sample trending headline',
+			title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 			slug: 'trending-1',
 			image: trendingImage
 		},
 		{
 			id: '2',
-			title: 'Another trending story',
+			title: 'ALorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate lorem eu cursus. Duis sit amet ',
 			slug: 'trending-2'
 		},
 		{

@@ -13,9 +13,9 @@
 </svelte:head>
 
 <div class="min-h-screen w-full">
+	<!-- This is the top banner componnet that displays the banner image for both mobile and desktop views. -->
+	<TopBanner />
 	<div class="mx-auto w-full max-w-360 px-4 sm:px-6 lg:px-8">
-		<!-- This is the top banner componnet that displays the banner image for both mobile and desktop views. -->
-		<TopBanner />
 
 		<Header />
 

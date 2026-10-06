@@ -84,6 +84,139 @@
 			image: entertainmentImage
 		}
 	];
+
+	import worldImage from '#lib/assets/test-images/World.jpeg';
+	const worldArticles = [
+		{
+			id: '4',
+			title: 'World Article number one',
+			slug: 'world-article-1',
+			image: worldImage
+		},
+		{
+			id: '5',
+			title: 'World Article number two',
+			slug: 'world-article-2',
+			image: worldImage
+		},
+		{
+			id: '6',
+			title: 'World Article number three',
+			slug: 'world-article-3',
+			image: worldImage
+		}
+	];
+
+	import metroManilaImage from '#lib/assets/test-images/Metro-Manila.jpeg';
+	const metroManilaArticles = [
+		{
+			id: '4',
+			title: 'Metro Manila Article number one',
+			slug: 'metro-manila-article-1',
+			image: metroManilaImage
+		},
+		{
+			id: '5',
+			title: 'Metro Manila Article number two',
+			slug: 'metro-manila-article-2',
+			image: metroManilaImage
+		},
+		{
+			id: '6',
+			title: 'Metro Manila Article number three',
+			slug: 'metro-manila-article-3',
+			image: metroManilaImage
+		}
+	];
+
+	import provinceImage from '#lib/assets/test-images/Province.jpg';
+	const provinceArticles = [
+		{
+			id: '4',
+			title: 'Province Article number one',
+			slug: 'Province article-1',
+			image: provinceImage
+		},
+		{
+			id: '5',
+			title: 'Province Article number two',
+			slug: 'Province article-2',
+			image: provinceImage
+		},
+		{
+			id: '6',
+			title: 'Province Article number three',
+			slug: 'Province article-3',
+			image: provinceImage
+		}
+	];
+
+	import AsiaImage from '#lib/assets/test-images/Asia.webp';
+	const asiaArticles = [
+		{
+			id: '4',
+			title: 'Province Article number one',
+			slug: 'Province article-1',
+			image: AsiaImage
+		},
+		{
+			id: '5',
+			title: 'Province Article number two',
+			slug: 'Province article-2',
+			image: AsiaImage
+		},
+		{
+			id: '6',
+			title: 'Province Article number three',
+			slug: 'Province article-3',
+			image: AsiaImage
+		}
+	];
+
+	import businessImage from '#lib/assets/test-images/Business.jpg';
+	const businessArticles = [
+		{
+			id: '4',
+			title: 'Province Article number one',
+			slug: 'Province article-1',
+			image: businessImage
+		},
+		{
+			id: '5',
+			title: 'Province Article number two',
+			slug: 'Province article-2',
+			image: businessImage
+		},
+		{
+			id: '6',
+			title: 'Province Article number three',
+			slug: 'Province article-3',
+			image: businessImage
+		}
+	];
+
+	import lifestyleImage from '#lib/assets/test-images/Lifestyle.jpg';
+	import Footer from '#lib/components/Footer.svelte';
+	const lifestyleArticles = [
+		{
+			id: '4',
+			title: 'Province Article number one',
+			slug: 'Province article-1',
+			image: lifestyleImage
+		},
+		{
+			id: '5',
+			title: 'Province Article number two',
+			slug: 'Province article-2',
+			image: lifestyleImage
+		},
+		{
+			id: '6',
+			title: 'Province Article number three',
+			slug: 'Province article-3',
+			image: lifestyleImage
+		}
+	];
 </script>
 
 <main class="w-full">
@@ -109,8 +242,8 @@
 						href="/entertainment"
 					/>
 
-					<!-- <NewsCategory title="World" />
-					<NewsCategory title="Metro Manila" /> -->
+					<NewsCategory title="World" articles={worldArticles} href="/world" />
+					<NewsCategory title="Metro Manila" articles={metroManilaArticles} href="/metro-manila" />
 				</div>
 
 				<section
@@ -119,21 +252,33 @@
 					<AdComponent isTestMode={true} showPlaceholder={true} />
 				</section>
 
-				<!-- <div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2">
-					<NewsCategory title="Province" />
-					<NewsCategory title="Asia" />
+				<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2">
+					<NewsCategory title="Province" articles={provinceArticles} href="/province"/>
+					<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
 
-					<NewsCategory title="Business" />
-					<NewsCategory title="Lifestyle" />
-				</div>
+					<NewsCategory title="Business" articles={businessArticles} href="/business" />
+					<NewsCategory title="Lifestyle" articles={lifestyleArticles} href="/lifestyle" />
+				</div> 
 
-				<AdComponent isTestMode={true} showPlaceholder={true} /> -->
+				<section
+					class="relative mx-auto my-4 h-62.5 w-62.5 max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+				>
+					<AdComponent isTestMode={true} showPlaceholder={true} />
+				</section>
 			</section>
 
 			<aside class="min-w-0 space-y-4">
 				<Trending />
 				<MostRead />
+
+				<section
+					class="relative mx-auto my-4 h-62.5 w-62.5 max-w-full overflow-hidden"
+				>
+					<AdComponent isTestMode={true} showPlaceholder={true} />
+				</section>
 			</aside>
 		</div>
 	</div>
 </main>
+
+<Footer />
