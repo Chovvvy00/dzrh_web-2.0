@@ -37,3 +37,25 @@ Development uses `/`; production uses the repository path `/dzrh_web-2.0`.
 The static adapter prerenders existing routes. Article, category, and utility
 links currently point to placeholder routes that still need pages. Link crawling
 is disabled during prerendering so these placeholders do not prevent deployment.
+
+## Icons
+
+Use the shared component with a typed application icon name:
+
+```svelte
+<script lang="ts">
+	import Icon from '#lib/components/Icon.svelte';
+</script>
+
+<Icon name="play" class="text-2xl" />
+<Icon name="facebook" class="h-4 w-4" />
+```
+
+Add aliases in `src/lib/icons.ts`. Collection prefixes belong only in that map;
+components do not need collection-specific imports or packages. Unknown aliases
+are reported by TypeScript. Put accessible labels on icon-only buttons or links.
+
+The component uses `@iconify/svelte` and fetches icon data from the Iconify API
+in the browser. Icons require API access on first load and are not included in
+prerendered HTML. For offline or server-rendered icons, use bundled icon data
+instead of API names. See the [Iconify Svelte documentation](https://iconify.design/docs/icon-components/svelte/).

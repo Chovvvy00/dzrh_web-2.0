@@ -24,6 +24,9 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.12.0(jiti@2.7.0))
+      '@iconify-icons/mdi':
+        specifier: ^2.0.0
+        version: 2.0.0
       '@iconify/svelte':
         specifier: ^5.2.2
         version: 5.2.2(svelte@5.57.1(@typescript-eslint/types@8.71.0))
@@ -157,6 +160,9 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-icons/mdi@2.0.0':
+    resolution: {integrity: sha512-ppVItcrp6uRn9XYA4e8XkJC6VnFfBGSLJVrTrHrc7ft9iwLVat3u4ol/UldokaSZ2EyWYukdYYT2AhZP0uNOjg==}
 
   '@iconify-svelte/dashicons@https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz':
     resolution: {gitHosted: true, integrity: sha512-9F+FpyzsenMS7x0WoWOxjZsAOqLUbYs75FRS7JjFh/TTyW3p2PGxSq7lLRXX56NYYoMuUE43Gs8CwwvZK4N6Lg==, tarball: https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz}
@@ -1380,6 +1386,10 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-icons/mdi@2.0.0':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-svelte/dashicons@https://gitlab.com/iconify-icons/svelte/-/archive/64729769bf18b0ac77cdd7211c3bece594134792/svelte-64729769bf18b0ac77cdd7211c3bece594134792.tar.gz(svelte@5.57.1(@typescript-eslint/types@8.71.0))':
     dependencies:

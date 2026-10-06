@@ -1,15 +1,8 @@
 <script lang="ts">
+	import Icon from '#lib/components/Icon.svelte';
+	import type { IconName } from '#lib/icons.ts';
 	import { sitePath } from '#lib/paths.ts';
 	import logo from '#lib/assets/logo/dzrh-logo.svg';
-	import LotteryIcon from '@iconify-svelte/fluent/lottery-24-filled';
-	import FacebookIcon from '@iconify-svelte/simple-icons/facebook';
-	import ThreadsIcon from '@iconify-svelte/simple-icons/threads';
-	import TiktokIcon from '@iconify-svelte/simple-icons/tiktok';
-	import XIcon from '@iconify-svelte/simple-icons/x';
-	import YoutubeIcon from '@iconify-svelte/simple-icons/youtube';
-	import CrystalBallIcon from '@iconify-svelte/twemoji/crystal-ball';
-	import OpenBookIcon from '@iconify-svelte/twemoji/open-book';
-	import MessengerIcon from '@iconify-svelte/simple-icons/messenger';
 
 	type NavLink = {
 		name: string;
@@ -27,29 +20,28 @@
 	type SocialLink = {
 		name: string;
 		href: string;
-		Icon: typeof FacebookIcon;
+		icon: IconName;
 	};
 
 	const socialLinks: SocialLink[] = [
-		{ name: 'YouTube', href: '#', Icon: YoutubeIcon },
-		{ name: 'TikTok', href: '#', Icon: TiktokIcon },
-		{ name: 'Messenger', href: '#', Icon: MessengerIcon },
-		{ name: 'Threads', href: '#', Icon: ThreadsIcon },
-		{ name: 'X', href: '#', Icon: XIcon },
-		{ name: 'Facebook', href: '#', Icon: FacebookIcon }
-		// { name: 'Instagram', href: '#', Icon: InstagramIcon },
+		{ name: 'YouTube', href: '#', icon: 'youtube' },
+		{ name: 'TikTok', href: '#', icon: 'tiktok' },
+		{ name: 'Messenger', href: '#', icon: 'messenger' },
+		{ name: 'Threads', href: '#', icon: 'threads' },
+		{ name: 'X', href: '#', icon: 'x' },
+		{ name: 'Facebook', href: '#', icon: 'facebook' }
 	];
 
 	type UtilityLink = {
 		name: string;
 		href: string;
-		Icon: typeof OpenBookIcon | typeof LotteryIcon | typeof CrystalBallIcon;
+		icon: IconName;
 	};
 
 	const utilityLinks: UtilityLink[] = [
-		{ name: 'Word of the Day', href: '/word-of-the-day', Icon: OpenBookIcon },
-		{ name: 'Lottery', href: '/lottery', Icon: LotteryIcon },
-		{ name: 'Horoscope', href: '/horoscope', Icon: CrystalBallIcon }
+		{ name: 'Word of the Day', href: '/word-of-the-day', icon: 'open-book' },
+		{ name: 'Lottery', href: '/lottery', icon: 'lottery' },
+		{ name: 'Horoscope', href: '/horoscope', icon: 'crystal-ball' }
 	];
 
 	let mobileMenuOpen = $state(false);
@@ -136,7 +128,7 @@
 					<div
 						class="mt-3 flex flex-wrap items-center justify-center gap-2 border-t border-gray-200 pt-3"
 					>
-						{#each socialLinks as { name, href, Icon } (name)}
+						{#each socialLinks as { name, href, icon } (name)}
 							<a
 								{href}
 								aria-label={name}
@@ -144,7 +136,7 @@
 								rel="noopener noreferrer"
 								class="flex size-11 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 							>
-								<Icon class="h-3.5 w-3.5" />
+								<Icon name={icon} class="h-3.5 w-3.5" />
 							</a>
 						{/each}
 					</div>
@@ -154,13 +146,13 @@
 
 		<nav aria-label="Mobile utility navigation" class="border-y border-gray-200 py-1">
 			<ul class="grid grid-cols-3 gap-2">
-				{#each utilityLinks as { name, href: path, Icon } (name)}
+				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li>
 						<a
 							href={sitePath(path)}
-							class="flex min-h-6 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
+							class="flex min-h-11 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
 						>
-							<Icon height="1.25em" class="shrink-0" />
+							<Icon name={icon} height="1.25em" class="shrink-0" />
 							<span class="truncate">{name}</span>
 						</a>
 					</li>
@@ -200,15 +192,15 @@
 
 			<div class="flex items-center gap-2">
 				<div class="flex items-center gap-1.5">
-					{#each socialLinks as { name, href, Icon } (name)}
+					{#each socialLinks as { name, href, icon } (name)}
 						<a
 							{href}
 							aria-label={name}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex h-7 w-7 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white"
+							class="flex size-7 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white xl:size-9"
 						>
-							<Icon class="h-3.5 w-3.5" />
+							<Icon name={icon} class="h-3.5 w-3.5" />
 						</a>
 					{/each}
 				</div>
@@ -216,15 +208,15 @@
 		</div>
 
 		<!-- Utility nav consisting word of the day, lotto and horoscope -->
-		<div class="flex h-8 items-start justify-end">
+		<div class="flex h-11 items-start justify-end">
 			<ul class="grid grid-cols-3">
-				{#each utilityLinks as { name, href: path, Icon } (name)}
+				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li>
 						<a
 							href={sitePath(path)}
-							class="flex min-h-8 items-start justify-center gap-1.5 text-xs hover:underline sm:text-sm"
+							class="flex min-h-11 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
 						>
-							<Icon height="1.25em" class="shrink-0" />
+							<Icon name={icon} height="1.25em" class="shrink-0" />
 							<span class="truncate">{name}</span>
 						</a>
 					</li>

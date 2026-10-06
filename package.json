@@ -13,8 +13,12 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
+	"engines": {
+		"node": ">=26.0.0"
+	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@iconify-icons/mdi": "^2.0.0",
 		"@iconify/svelte": "^5.2.2",
 		"@sveltejs/adapter-static": "^4.0.0",
 		"@sveltejs/kit": "^3.0.0",
