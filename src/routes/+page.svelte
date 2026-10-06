@@ -196,7 +196,6 @@
 	];
 
 	import lifestyleImage from '#lib/assets/test-images/Lifestyle.jpg';
-	import Footer from '#lib/components/Footer.svelte';
 	const lifestyleArticles = [
 		{
 			id: '4',
@@ -253,12 +252,12 @@
 				</section>
 
 				<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2">
-					<NewsCategory title="Province" articles={provinceArticles} href="/province"/>
+					<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 					<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
 
 					<NewsCategory title="Business" articles={businessArticles} href="/business" />
 					<NewsCategory title="Lifestyle" articles={lifestyleArticles} href="/lifestyle" />
-				</div> 
+				</div>
 
 				<section
 					class="relative mx-auto my-4 h-62.5 w-62.5 max-w-full overflow-hidden sm:h-22.5 sm:w-182"
@@ -271,14 +270,10 @@
 				<Trending />
 				<MostRead />
 
-				<section
-					class="relative mx-auto my-4 h-62.5 w-62.5 max-w-full overflow-hidden"
-				>
+				<section class="relative mx-auto h-62.5 w-62.5 max-w-full overflow-hidden">
 					<AdComponent isTestMode={true} showPlaceholder={true} />
 				</section>
 			</aside>
 		</div>
 	</div>
 </main>
-
-<Footer />

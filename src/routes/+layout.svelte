@@ -4,6 +4,9 @@
 	import type { LayoutProps } from './$types';
 	import TopBanner from '#lib/components/TopBanner.svelte';
 	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import RadioPlayerComponent from '#lib/components/RadioPlayerComponent.svelte';
+	import YoutubeEmbed from '#lib/components/YoutubeEmbed.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -12,15 +15,18 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="min-h-screen w-full">
+<div class="flex min-h-screen w-full flex-col">
 	<!-- This is the top banner componnet that displays the banner image for both mobile and desktop views. -->
 	<TopBanner />
 	<div class="mx-auto w-full max-w-360 px-4 sm:px-6 lg:px-8">
-
 		<Header />
-
-		<!-- <div class="border-t border-gray-300"></div> -->
 
 		{@render children()}
 	</div>
+
+	<YoutubeEmbed />
+
+	<RadioPlayerComponent />
+
+	<Footer />
 </div>
