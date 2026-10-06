@@ -4,15 +4,12 @@
 
 	let dateNow = Temporal.Now.plainDateISO();
 	let year = Temporal.PlainYearMonth.from(dateNow).year;
-
 </script>
 
 <footer class="w-full pb-16">
 	<!-- Top Tier -->
 	<div class="bg-gray-100 px-6 py-12">
-		<div
-			class="mx-auto grid max-w-360 grid-cols-1 gap-8 md:grid-cols-[1.5fr_1fr_1fr] md:gap-12"
-		>
+		<div class="mx-auto grid max-w-360 grid-cols-1 gap-8 md:grid-cols-[1.5fr_1fr_1fr] md:gap-12">
 			<!-- Brand -->
 			<div>
 				<a href={sitePath('/')}>
@@ -31,25 +28,37 @@
 
 				<ul class="space-y-3">
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Web Templates
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Code Snippets
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							UI Kits
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Design Assets
 						</a>
 					</li>
@@ -62,25 +71,37 @@
 
 				<ul class="space-y-3">
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							About Us
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Blog
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Careers
 						</a>
 					</li>
 
 					<li>
-						<a href="/" class="transition-colors duration-200 hover:text-blue-700 hover:underline">
+						<a
+							href={sitePath('/')}
+							class="transition-colors duration-200 hover:text-blue-700 hover:underline"
+						>
 							Contact
 						</a>
 					</li>
@@ -102,7 +123,7 @@
 				<ul class="flex gap-6">
 					<li>
 						<a
-							href="/"
+							href={sitePath('/')}
 							aria-label="Our Twitter Profile"
 							class="transition-colors duration-200 hover:text-white"
 						>
@@ -125,7 +146,7 @@
 
 					<li>
 						<a
-							href="/"
+							href={sitePath('/')}
 							aria-label="Our GitHub Profile"
 							class="transition-colors duration-200 hover:text-white"
 						>
