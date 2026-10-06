@@ -4,7 +4,7 @@
 
 	let dateNow = Temporal.Now.plainDateISO();
 	let year = Temporal.PlainYearMonth.from(dateNow).year;
-	console.log(year);
+
 </script>
 
 <footer class="w-full pb-16">

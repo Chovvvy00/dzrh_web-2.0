@@ -42,7 +42,7 @@
 				</div>
 			{/if}
 
-			<h3 class="mt-2 leading-snug font-medium group-hover:text-red-600">
+			<h3 class="mt-2 text-lg leading-snug font-medium group-hover:text-red-600">
 				{articles[0].title}
 			</h3>
 		</a>

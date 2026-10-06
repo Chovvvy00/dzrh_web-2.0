@@ -25,7 +25,7 @@
 			/>
 		</div>
 
-		<h3 class="mt-3 text-base leading-snug font-medium group-hover:text-red-600">
+		<h3 class="mt-3 text-lg leading-snug font-medium group-hover:text-red-600">
 			{article.title}
 		</h3>
 

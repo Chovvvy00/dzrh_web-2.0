@@ -38,7 +38,7 @@
 				</div>
 
 				<h3
-					class="mt-2 line-clamp-2 text-sm leading-tight transition-colors group-hover:text-red-600"
+					class="mt-2 line-clamp-2 text-base leading-snug transition-colors group-hover:text-red-600"
 				>
 					{article.title}
 				</h3>

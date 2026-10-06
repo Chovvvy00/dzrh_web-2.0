@@ -29,7 +29,7 @@
 		</div>
 
 		<div class="bg-neutral-600 px-4 py-2">
-			<h3 class="line-clamp-3 text-base leading-snug font-medium text-white">
+			<h3 class="line-clamp-3 text-lg leading-snug font-medium text-white">
 				{article.title}
 			</h3>
 		</div>

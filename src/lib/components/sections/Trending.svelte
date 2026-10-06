@@ -11,7 +11,8 @@
 		},
 		{
 			id: '2',
-			title: 'ALorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate lorem eu cursus. Duis sit amet ',
+			title:
+				'ALorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate lorem eu cursus. Duis sit amet ',
 			slug: 'trending-2'
 		},
 		{
@@ -42,7 +43,7 @@
 				</div>
 			{/if}
 
-			<h3 class="mt-2 leading-snug font-medium group-hover:text-red-600">
+			<h3 class="mt-2 text-lg leading-snug font-medium group-hover:text-red-600">
 				{articles[0].title}
 			</h3>
 		</a>
