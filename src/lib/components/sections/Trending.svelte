@@ -38,7 +38,7 @@
 <section class="w-full min-w-0">
 	<!-- Section Header -->
 	<div class="mb-4 flex items-center gap-2 border-b border-neutral-300 pb-2">
-		<span class="h-2 w-2 rounded-full bg-red-600"></span>
+		<span class="h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
 
 		<h2 class="text-xl font-bold uppercase">Trending</h2>
 	</div>
