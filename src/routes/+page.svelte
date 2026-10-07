@@ -233,7 +233,7 @@
 			<Featured />
 
 			<section class="min-w-0">
-				<div class="grid gap-x-4 gap-y-8 md:grid-cols-2">
+				<div class="grid gap-x-4 gap-y-10 md:grid-cols-2">
 					<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 					<NewsCategory
 						title="Entertainment"
