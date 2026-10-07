@@ -19,22 +19,43 @@
 	import headlineImage from '#lib/assets/test-images/Headlines.jpeg';
 	const headlines = [
 		{
-			id: '2',
+			id: '1',
 			title: 'First headline article',
 			slug: 'headline-1',
 			image: headlineImage,
 			excerpt: 'Short description for the first headline.'
 		},
 		{
-			id: '3',
+			id: '2',
 			title: 'Second headline article',
 			slug: 'headline-2',
 			image: headlineImage,
 			excerpt: 'Short description for the second headline.'
 		},
 		{
-			id: '4',
+			id: '3',
 			title: 'Third headline article',
+			slug: 'headline-3',
+			image: headlineImage,
+			excerpt: 'Short description for the third headline.'
+		},
+		{
+			id: '4',
+			title: 'Fourth headline article',
+			slug: 'headline-1',
+			image: headlineImage,
+			excerpt: 'Short description for the first headline.'
+		},
+		{
+			id: '5',
+			title: 'Fifth headline article',
+			slug: 'headline-2',
+			image: headlineImage,
+			excerpt: 'Short description for the second headline.'
+		},
+		{
+			id: '6',
+			title: 'Sixth headline article',
 			slug: 'headline-3',
 			image: headlineImage,
 			excerpt: 'Short description for the third headline.'

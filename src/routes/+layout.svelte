@@ -14,14 +14,13 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
-<div class="w-full pb-16">
-	<div class="flex min-h-screen flex-col ">
-
+<div class="w-full bg-white pb-16">
+	<div class="flex min-h-screen flex-col bg-white">
 		<!-- Main content -->
 		<div class="mx-auto w-full max-w-360 flex-1 px-4 sm:px-6 lg:px-8">
-			<!-- Top Banner -->
 			<TopBanner />
 
 			<Header />
@@ -31,14 +30,17 @@
 			</main>
 		</div>
 
-		<!-- YouTube -->
 		<YoutubeEmbed />
-		
-		<!-- Footer -->
+
 		<Footer />
 	</div>
 
+	<div
+		class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
+		flex h-16 items-center bg-yellow-400 text-blue-950"
+	>
+		<!-- player content -->
+		<RadioPlayerComponent />
+	</div>
 
-	<!-- Fixed Radio Player -->
-	<RadioPlayerComponent />
 </div>
