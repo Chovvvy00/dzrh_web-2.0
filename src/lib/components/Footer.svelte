@@ -2,8 +2,7 @@
 	import { sitePath } from '#lib/paths.ts';
 	import logo from '#lib/assets/logo/dzrh-logo.svg';
 
-	let dateNow = Temporal.Now.plainDateISO();
-	let year = Temporal.PlainYearMonth.from(dateNow).year;
+	const year = new Date().getFullYear();
 </script>
 
 <footer class="w-full pb-16">
