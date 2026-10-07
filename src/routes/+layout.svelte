@@ -16,26 +16,29 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="flex min-h-screen w-full flex-col pb-16">
-	<!-- Top Banner -->
-	
-	<!-- Main content -->
-	<div class="mx-auto w-full max-w-360 flex-1 px-4 sm:px-6 lg:px-8">
-		<TopBanner />
-		<Header />
+<div class="w-full pb-16">
+	<div class="flex min-h-screen flex-col ">
 
-		<main>
-			{@render children()}
-		</main>
+		<!-- Main content -->
+		<div class="mx-auto w-full max-w-360 flex-1 px-4 sm:px-6 lg:px-8">
+			<!-- Top Banner -->
+			<TopBanner />
+
+			<Header />
+
+			<main>
+				{@render children()}
+			</main>
+		</div>
+
+		<!-- YouTube -->
+		<YoutubeEmbed />
+		
+		<!-- Footer -->
+		<Footer />
 	</div>
 
-	<!-- YouTube -->
-	<YoutubeEmbed />
-	
-	<!-- Footer -->
-	<Footer />
 
+	<!-- Fixed Radio Player -->
+	<RadioPlayerComponent />
 </div>
-
-<!-- Fixed Radio Player -->
-<RadioPlayerComponent />
