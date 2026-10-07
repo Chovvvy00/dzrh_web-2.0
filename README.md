@@ -4,8 +4,8 @@ DZRH news homepage built with SvelteKit and Tailwind CSS.
 
 ## Development
 
-Use Node.js 26 or newer. The GitHub Pages workflow uses Node.js 26 to match
-the project's engine requirement.
+Use Node.js 24 or newer. The GitHub Pages workflow reads `.node-version`
+to keep its Node.js version aligned with local development.
 
 ```sh
 pnpm install
