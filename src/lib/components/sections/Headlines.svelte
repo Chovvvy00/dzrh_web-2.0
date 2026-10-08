@@ -9,7 +9,7 @@
 
 	let { articles, href = '/headlines' }: Props = $props();
 
-	let secondaryArticles = $derived(articles.slice(1, 3));
+	let secondaryArticles = $derived(articles.slice(0, 4));
 </script>
 
 <section
@@ -99,11 +99,11 @@
 	<div
 		class={[
 			'hidden min-h-0 flex-1 md:grid',
-			secondaryArticles.length > 0 && 'md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]'
+			
 		]}
 	>
-		{#if articles[0]}
-			<a
+		<!-- {#if articles[0]} -->
+			<!-- <a
 				href={sitePath(`/post/${articles[0].slug}`)}
 				class="group relative flex min-h-90 min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
 			>
@@ -130,12 +130,12 @@
 						</p>
 					{/if}
 				</div>
-			</a>
-		{/if}
+			</a> -->
+		<!-- {/if} -->
 
 		<!-- Secondary stories -->
-		{#if secondaryArticles.length > 0}
-			<div class="grid min-w-0 auto-rows-fr divide-y divide-white/20 border-l border-neutral-200">
+		<!-- {#if secondaryArticles.length > 0} -->
+			<div class="grid min-w-0 grid-cols-2 grid-rows-2 divide-y gap-1 divide-white/20 border-l border-neutral-200">
 				{#each secondaryArticles as article (article.id)}
 					<a
 						href={sitePath(`/post/${article.slug}`)}
@@ -162,6 +162,6 @@
 					</a>
 				{/each}
 			</div>
-		{/if}
+		<!-- {/if} -->
 	</div>
 </section>
