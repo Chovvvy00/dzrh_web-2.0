@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import LeaderBoardImage from '#lib/assets/test-images/AdLeaderBoard.png'
-	import rhmrec from '#lib/assets/test-images/ad 300x250.png'
+	import LeaderBoardImage from '#lib/assets/test-images/AdLeaderBoard.png';
+	import rhmrec from '#lib/assets/test-images/ad 300x250.png';
 
 	let {
 		isTestMode = true,
@@ -198,7 +198,7 @@
 						style:width={`${selectedAd.width}px`}
 						style:height={`${selectedAd.height}px`}
 					>
-						<img src={selectedAd.width == 250 ? rhmrec : LeaderBoardImage} alt="ad">
+						<img src={selectedAd.width == 250 ? rhmrec : LeaderBoardImage} alt="ad" />
 					</div>
 				{:else}
 					<!-- <div

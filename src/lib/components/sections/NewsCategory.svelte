@@ -50,23 +50,21 @@
 				<!-- Headline -->
 				<h3
 					class="mt-2 line-clamp-2 leading-snug transition-colors group-hover:text-red-600
-						{index === 0
-						? 'text-lg font-semibold'
-						: 'text-sm font-medium'}
+						{index === 0 ? 'text-lg font-semibold' : 'text-sm font-medium'}
 						xl:text-base xl:font-medium"
 				>
 					{article.title}
 				</h3>
 
-				<span class="text-slate-500/70 text-xs">{article.datePosted}</span>
+				<span class="text-xs text-slate-500/70">{article.datePosted}</span>
 			</a>
 		{/each}
 	</div>
 
-	<div class="flex justify-end items-center py-4">
+	<div class="flex items-center justify-end py-4">
 		<a
 			href={sitePath(href)}
-			class="text-xs font-semibold uppercase text-slate-700/70 transition-colors hover:text-red-600 hover:underline"
+			class="text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
 		>
 			read more
 		</a>

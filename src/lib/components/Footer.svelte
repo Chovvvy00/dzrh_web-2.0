@@ -27,23 +27,13 @@
 		>
 			<!-- Brand -->
 			<div>
-				<a
-					href={sitePath('/')}
-					aria-label="DZRH Home"
-					class="inline-block"
-				>
-					<img
-						src={logo}
-						alt="DZRH"
-						class="h-14 w-auto sm:h-16"
-					/>
+				<a href={sitePath('/')} aria-label="DZRH Home" class="inline-block">
+					<img src={logo} alt="DZRH" class="h-14 w-auto sm:h-16" />
 				</a>
 
-				<p
-					class="mt-4 max-w-md text-sm leading-relaxed text-neutral-600"
-				>
-					DZRH delivers the latest news, public affairs, entertainment,
-					and information from the Philippines and around the world.
+				<p class="mt-4 max-w-md text-sm leading-relaxed text-neutral-600">
+					DZRH delivers the latest news, public affairs, entertainment, and information from the
+					Philippines and around the world.
 				</p>
 
 				<!-- Socials -->
@@ -76,11 +66,7 @@
 
 			<!-- News -->
 			<div>
-				<h2
-					class="mb-4 text-sm font-bold tracking-wide text-neutral-900 uppercase"
-				>
-					News
-				</h2>
+				<h2 class="mb-4 text-sm font-bold tracking-wide text-neutral-900 uppercase">News</h2>
 
 				<ul class="space-y-2.5">
 					{#each newsLinks as link (link.href)}
@@ -98,11 +84,7 @@
 
 			<!-- DZRH -->
 			<div>
-				<h2
-					class="mb-4 text-sm font-bold tracking-wide text-neutral-900 uppercase"
-				>
-					DZRH
-				</h2>
+				<h2 class="mb-4 text-sm font-bold tracking-wide text-neutral-900 uppercase">DZRH</h2>
 
 				<ul class="space-y-2.5">
 					{#each dzrhLinks as link (link.href)}
@@ -129,9 +111,7 @@
 				© {year} DZRH. All rights reserved.
 			</p>
 
-			<p>
-				Manila Broadcasting Company
-			</p>
+			<p>Manila Broadcasting Company</p>
 		</div>
 	</div>
 </footer>

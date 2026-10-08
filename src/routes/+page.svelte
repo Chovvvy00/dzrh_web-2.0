@@ -10,10 +10,12 @@
 	import breakingImage from '#lib/assets/test-images/BreakingNews.jpeg';
 	const breakingNews = {
 		id: '1',
-		title: 'Sample breaking news headline',
+		title:
+			'Sample breaking news headline breaking news headline breaking news headline breaking news headline',
 		slug: 'sample-breaking-news',
 		image: breakingImage,
-		excerpt: 'Short description of the breaking news article.'
+		excerpt:
+			'Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article.'
 	};
 
 	import headlineImage from '#lib/assets/test-images/Headlines.jpeg';
@@ -357,11 +359,7 @@
 
 					<NewsCategory title="World" articles={worldArticles} href="/world" />
 
-					<NewsCategory
-						title="Metro Manila"
-						articles={metroManilaArticles}
-						href="/metro-manila"
-					/>
+					<NewsCategory title="Metro Manila" articles={metroManilaArticles} href="/metro-manila" />
 				</div>
 
 				<!-- Advertisement -->

@@ -102,13 +102,13 @@
 			>
 				<span class="relative block size-6" aria-hidden="true">
 					<span
-						class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
+						class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
 					></span>
 					<span
-						class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-200 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
+						class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-700 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
 					></span>
 					<span
-						class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
+						class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
 					></span>
 				</span>
 			</button>
@@ -119,7 +119,7 @@
 			data-open={mobileMenuOpen}
 			inert={!mobileMenuOpen}
 			aria-hidden={!mobileMenuOpen}
-			class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-300 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
+			class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-700 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
 				<div class="border-t border-gray-200 py-3">

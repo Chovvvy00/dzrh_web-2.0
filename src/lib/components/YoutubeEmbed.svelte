@@ -20,7 +20,9 @@
 	>
 		<div class="flex min-w-0 items-center gap-3">
 			<!-- YouTube icon -->
-			<div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-red-600 text-white">
+			<div
+				class="flex size-8 shrink-0 items-center justify-center rounded-full bg-red-600 text-white"
+			>
 				<Icon icon="mdi:youtube" class="text-xl" />
 			</div>
 
@@ -38,9 +40,7 @@
 					</span>
 				</div>
 
-				<p class="truncate text-xs text-neutral-500">
-					Watch the latest DZRH broadcast
-				</p>
+				<p class="truncate text-xs text-neutral-500">Watch the latest DZRH broadcast</p>
 			</div>
 		</div>
 
@@ -54,10 +54,7 @@
 		>
 			<Icon
 				icon="mdi:chevron-down"
-				class={[
-					'text-xl transition-transform duration-300',
-					isOpen ? 'rotate-0' : 'rotate-180'
-				]}
+				class={['text-xl transition-transform duration-300', isOpen ? 'rotate-0' : 'rotate-180']}
 			/>
 		</button>
 	</header>
