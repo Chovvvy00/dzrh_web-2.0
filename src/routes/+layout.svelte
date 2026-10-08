@@ -19,8 +19,12 @@
 
 <div class="w-full bg-white pb-16">
 	<div class="flex min-h-screen flex-col bg-white">
-		<!-- Main content -->
-		<TopBanner />
+		
+		<div class="mx-auto lg:max-w-360">
+			<TopBanner />
+		</div>
+		
+		<!-- Main content --> 
 		<div class="mx-auto w-full max-w-360 flex-1 px-4 sm:px-6 lg:px-8">
 
 			<!-- Header content -->
