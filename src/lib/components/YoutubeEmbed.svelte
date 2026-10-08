@@ -9,7 +9,7 @@
 
 <article
 	class={[
-		'fixed right-2 bottom-18 left-2 z-20 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-2xl',
+		'fixed right-2 bottom-1 lg:bottom-18 left-2 z-20 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-2xl',
 		'sm:right-4 sm:left-auto sm:w-md',
 		'transition-all duration-300 ease-out'
 	]}
