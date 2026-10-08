@@ -68,12 +68,12 @@
 			</a>
 		{/if}
 
-		{#each secondaryArticles as article (article.id)}
+		{#each secondaryArticles.slice(1) as article (article.id)}
 			<a
 				href={sitePath(`/post/${article.slug}`)}
 				class="group grid grid-cols-[120px_minmax(0,1fr)] gap-3 p-3"
 			>
-				<div class="aspect-4/3 overflow-hidden bg-neutral-200">
+				<div class="aspect-video overflow-hidden bg-neutral-200">
 					<img
 						src={article.image}
 						alt={article.title}
