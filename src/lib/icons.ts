@@ -17,7 +17,8 @@ export const icons = {
 	youtube: 'simple-icons:youtube',
 	'crystal-ball': 'twemoji:crystal-ball',
 	'open-book': 'twemoji:open-book',
-	messenger: 'simple-icons:messenger'
+	messenger: 'simple-icons:messenger',
+	cloud: 'emojione:sun-behind-cloud'
 } as const;
 
 export type IconName = keyof typeof icons;

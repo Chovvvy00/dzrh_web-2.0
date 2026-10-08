@@ -23,13 +23,6 @@
 		<h2 class="text-xl font-bold uppercase">
 			{title}
 		</h2>
-
-		<a
-			href={sitePath(href)}
-			class="text-xs font-semibold uppercase text-neutral-500 transition-colors hover:text-red-600"
-		>
-			More
-		</a>
 	</div>
 
 	<!--
@@ -72,5 +65,14 @@
 				</h3>
 			</a>
 		{/each}
+	</div>
+
+	<div class="flex justify-end items-center py-4">
+		<a
+			href={sitePath(href)}
+			class="text-xs font-semibold uppercase text-slate-700/70 transition-colors hover:text-red-600 hover:underline"
+		>
+			read more
+		</a>
 	</div>
 </section>

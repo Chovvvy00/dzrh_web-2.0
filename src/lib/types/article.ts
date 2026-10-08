@@ -6,4 +6,5 @@ export type Article = {
 	slug: string;
 	image: string;
 	excerpt?: string;
+	datePosted?: string;
 };

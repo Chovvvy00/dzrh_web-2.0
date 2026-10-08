@@ -36,16 +36,39 @@
 		name: string;
 		href: string;
 		icon: IconName;
+		mobileName?: string;
 	};
 
 	const utilityLinks: UtilityLink[] = [
-		{ name: 'Word of the Day', href: '/word-of-the-day', icon: 'open-book' },
-		{ name: 'Lottery', href: '/lottery', icon: 'lottery' },
-		{ name: 'Horoscope', href: '/horoscope', icon: 'crystal-ball' }
+		{ name: 'Weather', href: '/weather', icon: 'cloud' },
+		{
+			name: 'Word of the Day',
+			href: '/word-of-the-day',
+			icon: 'open-book'
+		},
+		{
+			name: 'Lottery',
+			href: '/lottery',
+			icon: 'lottery',
+			mobileName: 'Lotto'
+		},
+		{
+			name: 'Horoscope',
+			href: '/horoscope',
+			icon: 'crystal-ball'
+		}
 	];
 
 	let mobileMenuOpen = $state(false);
 	let mobileMenuButton: HTMLButtonElement;
+	let scrollY = $state(0);
+	let mobileUtilityHidden = $state(false);
+
+	$effect(() => {
+		// Separate thresholds prevent flicker as collapsing the bar changes the scroll position.
+		if (scrollY > 96) mobileUtilityHidden = true;
+		else if (scrollY <= 16) mobileUtilityHidden = false;
+	});
 
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
@@ -59,7 +82,7 @@
 	}
 </script>
 
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window bind:scrollY onkeydown={handleKeydown} />
 
 <header>
 	<div class="lg:hidden">
@@ -144,21 +167,30 @@
 			</div>
 		</div>
 
-		<nav aria-label="Mobile utility navigation" class="border-y border-gray-200 py-1">
-			<ul class="grid grid-cols-3 gap-2">
-				{#each utilityLinks as { name, href: path, icon } (name)}
-					<li>
-						<a
-							href={sitePath(path)}
-							class="flex min-h-11 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
-						>
-							<Icon name={icon} height="1.25em" class="shrink-0" />
-							<span class="truncate">{name}</span>
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
+		<div
+			data-hidden={mobileUtilityHidden}
+			inert={mobileUtilityHidden}
+			aria-hidden={mobileUtilityHidden}
+			class="grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,opacity] duration-200 ease-in-out data-[hidden=true]:grid-rows-[0fr] data-[hidden=true]:opacity-0 motion-reduce:transition-none"
+		>
+			<div class="min-h-0 overflow-hidden">
+				<nav aria-label="Mobile utility navigation" class="border-y border-gray-200 py-1">
+					<ul class="grid grid-cols-4 gap-1">
+						{#each utilityLinks as { name, href: path, icon, mobileName } (name)}
+							<li class="min-w-0">
+								<a
+									href={sitePath(path)}
+									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-center text-[11px] leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black sm:text-xs"
+								>
+									<Icon name={icon} width="20" height="20" class="shrink-0" aria-hidden="true" />
+									<span>{mobileName ?? name}</span>
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</div>
 
 	<div class="hidden lg:block">
@@ -207,21 +239,30 @@
 			</div>
 		</div>
 
-		<!-- Utility nav consisting word of the day, lotto and horoscope -->
-		<div class="flex h-11 items-start justify-end">
-			<ul class="grid grid-cols-3">
+		<!-- Utility Navigation -->
+		<nav aria-label="Utility navigation" class="w-full border-b border-neutral-200">
+			<ul class="flex flex-nowrap items-center justify-end gap-2">
 				{#each utilityLinks as { name, href: path, icon } (name)}
-					<li>
+					<li class="shrink-0">
 						<a
 							href={sitePath(path)}
-							class="flex min-h-11 items-center justify-center gap-1.5 text-xs hover:underline sm:text-sm"
+							class="group flex min-h-11 items-center justify-center
+								gap-2 rounded-lg px-3 py-2
+								text-sm font-medium whitespace-nowrap
+								text-neutral-600 transition-colors duration-200
+								hover:bg-neutral-100 hover:text-blue-900"
 						>
-							<Icon name={icon} height="1.25em" class="shrink-0" />
-							<span class="truncate">{name}</span>
+							<Icon
+								name={icon}
+								height="1.25em"
+								class="shrink-0 transition-colors group-hover:text-blue-900"
+							/>
+
+							<span>{name}</span>
 						</a>
 					</li>
 				{/each}
 			</ul>
-		</div>
+		</nav>
 	</div>
 </header>

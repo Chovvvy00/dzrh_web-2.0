@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
-	import featuredImage from '#lib/assets/test-images/Featured.jpg';
+	import featuredImage from '#lib/assets/test-images/Featured.jpeg';
 
 	const article = {
 		title:
 			'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
-		description: 'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
+		excerpt: 'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
 		slug: 'featured-article',
 		image: featuredImage
 	};
@@ -25,7 +25,7 @@
 
 	 <div class="divide-y divide-neutral-200">
 		<a href={sitePath('/')} class="group block">
-			<div class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-4/3">
+			<div class="relative aspect-video overflow-hidden bg-neutral-200">
 				<img
 					src={featuredImage}
 					alt={article.title}
@@ -43,7 +43,7 @@
 					{article.title}
 				</h3>
 
-				<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700/70 overflow-clip">{article.description}</p>
+				<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700/70 overflow-clip">{article.excerpt}</p>
 
 				<div class="mt-4">
 					<span

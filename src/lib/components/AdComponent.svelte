@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import LeaderBoardImage from '#lib/assets/test-images/AdLeaderBoard.png'
+	import rhmrec from '#lib/assets/test-images/ad 300x250.png'
 
 	let {
 		isTestMode = true,
@@ -178,7 +180,7 @@
 		{#key selectedAd}
 			<div class="grid h-full w-full place-items-center">
 				{#if showPlaceholder}
-					<div
+					<!-- <div
 						class="ad-placeholder"
 						role="img"
 						aria-label={`Advertisement placeholder, ${selectedAd.width} by ${selectedAd.height} pixels`}
@@ -187,14 +189,24 @@
 					>
 						<span class="placeholder-label">Advertisement</span>
 						<span class="placeholder-size">{selectedAd.width} × {selectedAd.height}</span>
+					</div> -->
+
+					<div
+						class="flex items-center justify-center"
+						role="img"
+						aria-label={`Advertisement placeholder, ${selectedAd.width} by ${selectedAd.height} pixels`}
+						style:width={`${selectedAd.width}px`}
+						style:height={`${selectedAd.height}px`}
+					>
+						<img src={selectedAd.width == 250 ? rhmrec : LeaderBoardImage} alt="ad">
 					</div>
 				{:else}
-					<div
+					<!-- <div
 						id={elementId}
 						class="flex items-center justify-center"
 						style:width={`${selectedAd.width}px`}
 						style:height={`${selectedAd.height}px`}
-					></div>
+					></div> -->
 				{/if}
 			</div>
 		{/key}

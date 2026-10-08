@@ -42,7 +42,8 @@
 	>
 
 		<div
-			class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-4/3"
+			// class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-4/3"
+			class="relative aspect-video overflow-hidden bg-neutral-200"
 		>
 			<img
 				src={article.image}

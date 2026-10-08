@@ -29,7 +29,7 @@
 
 <section class="w-full min-w-0">
 	<!-- Heading -->
-	<div class="mb-3 border-b border-neutral-300 pb-2">
+	<div class="mb-3">
 		<h2 class="text-xl font-bold uppercase">
 			Most Read
 		</h2>

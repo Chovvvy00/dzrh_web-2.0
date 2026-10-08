@@ -102,39 +102,7 @@
 			
 		]}
 	>
-		<!-- {#if articles[0]} -->
-			<!-- <a
-				href={sitePath(`/post/${articles[0].slug}`)}
-				class="group relative flex min-h-90 min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
-			>
-				<img
-					src={articles[0].image}
-					alt={articles[0].title}
-					class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-				/>
 
-				<div
-					class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent"
-				></div>
-
-				<div class="relative w-full min-w-0 p-4 xl:p-5">
-					<div class="mb-3 h-0.5 w-10 bg-blue-300"></div>
-
-					<h3 class="line-clamp-3 text-xl leading-tight font-black text-white xl:text-2xl">
-						{articles[0].title}
-					</h3>
-
-					{#if articles[0].excerpt}
-						<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-white/70">
-							{articles[0].excerpt}
-						</p>
-					{/if}
-				</div>
-			</a> -->
-		<!-- {/if} -->
-
-		<!-- Secondary stories -->
-		<!-- {#if secondaryArticles.length > 0} -->
 			<div class="grid min-w-0 grid-cols-2 grid-rows-2 divide-y gap-1 divide-white/20 border-l border-neutral-200">
 				{#each secondaryArticles as article (article.id)}
 					<a
@@ -158,10 +126,11 @@
 							<h3 class="line-clamp-3 text-sm leading-snug font-bold text-white xl:text-base">
 								{article.title}
 							</h3>
+							<span class="text-slate-300/70 text-xs">{article.datePosted}</span>
 						</div>
 					</a>
 				{/each}
 			</div>
-		<!-- {/if} -->
+
 	</div>
 </section>
