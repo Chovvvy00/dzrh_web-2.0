@@ -42,7 +42,7 @@
 
 	<div
 		class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
-		flex h-16 items-center bg-yellow-400 text-blue-950"
+		lg:flex h-16 items-center bg-yellow-400 text-blue-950 hidden"
 	>
 		<!-- player content -->
 		<RadioPlayerComponent />
