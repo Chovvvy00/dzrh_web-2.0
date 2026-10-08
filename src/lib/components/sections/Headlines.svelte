@@ -57,13 +57,15 @@
 						<h3 class="line-clamp-3 text-xl leading-tight font-bold text-white">
 							{articles[0].title}
 						</h3>
+						<span class="text-slate-300 text-xs">{articles[0].datePosted}</span>
+
 					</div>
 				</div>
 
 				{#if articles[0].excerpt}
 					<p class="my-4 line-clamp-2 px-4 text-sm leading-relaxed text-neutral-600">
 						{articles[0].excerpt}
-					</p>
+					</p>					
 				{/if}
 			</a>
 		{/if}
@@ -90,6 +92,7 @@
 					>
 						{article.title}
 					</h3>
+					<span class="text-slate-500/70 text-xs">{article.datePosted}</span>
 				</div>
 			</a>
 		{/each}
@@ -103,7 +106,7 @@
 		]}
 	>
 
-			<div class="grid min-w-0 grid-cols-2 grid-rows-2 divide-y gap-1 divide-white/20 border-l border-neutral-200">
+			<div class="grid min-w-0 grid-cols-2 grid-rows-2 divide-y gap-0.5 divide-white/20 border-l border-neutral-200">
 				{#each secondaryArticles as article (article.id)}
 					<a
 						href={sitePath(`/post/${article.slug}`)}
@@ -120,10 +123,10 @@
 							class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent"
 						></div>
 
-						<div class="relative w-full min-w-0 p-3 xl:p-4">
+						<div class="relative w-full min-w-0 px-3 xl:p-4">
 							<div class="mb-2 h-0.5 w-6 bg-blue-300"></div>
 
-							<h3 class="line-clamp-3 text-sm leading-snug font-bold text-white xl:text-base">
+							<h3 class="line-clamp-3 -mb-1 text-sm leading-snug font-bold text-white xl:text-base">
 								{article.title}
 							</h3>
 							<span class="text-slate-300/70 text-xs">{article.datePosted}</span>

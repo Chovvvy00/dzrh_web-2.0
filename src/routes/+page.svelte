@@ -73,19 +73,22 @@
 			id: '1',
 			title: 'Maecenas ut dolor pellentesque facilisis arcu eu',
 			slug: 'sample-article-1',
-			image: nationImage
+			image: nationImage,
+			datePosted: '50 seconds ago'
 		},
 		{
 			id: '2',
 			title: 'Vestibulum urna pellentesque lorem dolor',
 			slug: 'sample-article-2',
-			image: nationImage
+			image: nationImage,
+			datePosted: '5 hours ago'
 		},
 		{
 			id: '3',
 			title: 'Pellentesque facilisis arcu vestibulum urna',
 			slug: 'sample-article-3',
-			image: nationImage
+			image: nationImage,
+			datePosted: '2 days ago'
 		}
 	];
 
@@ -95,19 +98,22 @@
 			id: '4',
 			title: 'Entertainment article number one',
 			slug: 'entertainment-article-1',
-			image: entertainmentImage
+			image: entertainmentImage,
+			datePosted: '16 seconds ago'
 		},
 		{
 			id: '5',
 			title: 'Entertainment article number two',
 			slug: 'entertainment-article-2',
-			image: entertainmentImage
+			image: entertainmentImage,
+			datePosted: '18 hours ago'
 		},
 		{
 			id: '6',
 			title: 'Entertainment article number three',
 			slug: 'entertainment-article-3',
-			image: entertainmentImage
+			image: entertainmentImage,
+			datePosted: '2 days ago'
 		}
 	];
 
@@ -117,19 +123,22 @@
 			id: '4',
 			title: 'World Article number one',
 			slug: 'world-article-1',
-			image: worldImage
+			image: worldImage,
+			datePosted: 'yesterday'
 		},
 		{
 			id: '5',
 			title: 'World Article number two',
 			slug: 'world-article-2',
-			image: worldImage
+			image: worldImage,
+			datePosted: '2 days ago'
 		},
 		{
 			id: '6',
 			title: 'World Article number three',
 			slug: 'world-article-3',
-			image: worldImage
+			image: worldImage,
+			datePosted: '4 days ago'
 		}
 	];
 
@@ -139,19 +148,22 @@
 			id: '4',
 			title: 'Metro Manila Article number one',
 			slug: 'metro-manila-article-1',
-			image: metroManilaImage
+			image: metroManilaImage,
+			datePosted: '24 seconds ago'
 		},
 		{
 			id: '5',
 			title: 'Metro Manila Article number two',
 			slug: 'metro-manila-article-2',
-			image: metroManilaImage
+			image: metroManilaImage,
+			datePosted: '56 seconds ago'
 		},
 		{
 			id: '6',
 			title: 'Metro Manila Article number three',
 			slug: 'metro-manila-article-3',
-			image: metroManilaImage
+			image: metroManilaImage,
+			datePosted: '23 hours ago'
 		}
 	];
 
@@ -161,19 +173,22 @@
 			id: '4',
 			title: 'Province Article number one',
 			slug: 'Province article-1',
-			image: provinceImage
+			image: provinceImage,
+			datePosted: '13 seconds ago'
 		},
 		{
 			id: '5',
 			title: 'Province Article number two',
 			slug: 'Province article-2',
-			image: provinceImage
+			image: provinceImage,
+			datePosted: '16 seconds ago'
 		},
 		{
 			id: '6',
 			title: 'Province Article number three',
 			slug: 'Province article-3',
-			image: provinceImage
+			image: provinceImage,
+			datePosted: '2 days ago'
 		}
 	];
 
@@ -183,19 +198,22 @@
 			id: '4',
 			title: 'Province Article number one',
 			slug: 'Province article-1',
-			image: AsiaImage
+			image: AsiaImage,
+			datePosted: '1 hour ago'
 		},
 		{
 			id: '5',
 			title: 'Province Article number two',
 			slug: 'Province article-2',
-			image: AsiaImage
+			image: AsiaImage,
+			datePosted: '5 hours ago'
 		},
 		{
 			id: '6',
 			title: 'Province Article number three',
 			slug: 'Province article-3',
-			image: AsiaImage
+			image: AsiaImage,
+			datePosted: '13 hours ago'
 		}
 	];
 
@@ -205,19 +223,22 @@
 			id: '4',
 			title: 'Province Article number one',
 			slug: 'Province article-1',
-			image: businessImage
+			image: businessImage,
+			datePosted: '14 seconds ago'
 		},
 		{
 			id: '5',
 			title: 'Province Article number two',
 			slug: 'Province article-2',
-			image: businessImage
+			image: businessImage,
+			datePosted: '55 seconds ago'
 		},
 		{
 			id: '6',
 			title: 'Province Article number three',
 			slug: 'Province article-3',
-			image: businessImage
+			image: businessImage,
+			datePosted: '7 hours ago'
 		}
 	];
 
@@ -227,19 +248,22 @@
 			id: '4',
 			title: 'Province Article number one',
 			slug: 'Province article-1',
-			image: lifestyleImage
+			image: lifestyleImage,
+			datePosted: '16 hours ago'
 		},
 		{
 			id: '5',
 			title: 'Province Article number two',
 			slug: 'Province article-2',
-			image: lifestyleImage
+			image: lifestyleImage,
+			datePosted: '3 days ago'
 		},
 		{
 			id: '6',
 			title: 'Province Article number three',
 			slug: 'Province article-3',
-			image: lifestyleImage
+			image: lifestyleImage,
+			datePosted: '1 week ago'
 		}
 	];
 </script>

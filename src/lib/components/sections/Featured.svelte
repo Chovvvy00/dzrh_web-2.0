@@ -7,7 +7,8 @@
 			'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
 		excerpt: 'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
 		slug: 'featured-article',
-		image: featuredImage
+		image: featuredImage,
+		datePosted: '2 hours ago'
 	};
 </script>
 
@@ -43,7 +44,10 @@
 					{article.title}
 				</h3>
 
-				<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700/70 overflow-clip">{article.excerpt}</p>
+				<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700/80 overflow-clip">{article.excerpt}</p>
+
+				<p class="mt-2 line-clamp-2 text-xs text-slate-600/70">{article.datePosted}</p>
+
 
 				<div class="mt-4">
 					<span

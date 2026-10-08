@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
-
-	type Article = {
-		id: string;
-		title: string;
-		slug: string;
-		image: string;
-	};
+	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
 		title: string;
@@ -63,6 +57,8 @@
 				>
 					{article.title}
 				</h3>
+
+				<span class="text-slate-500/70 text-xs">{article.datePosted}</span>
 			</a>
 		{/each}
 	</div>
