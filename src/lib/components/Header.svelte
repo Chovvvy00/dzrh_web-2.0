@@ -128,8 +128,8 @@
 				<div class="flex items-center">
 					<div
 						class="flex h-10 items-center overflow-hidden rounded-full border
-        bg-white transition-all duration-300 ease-in-out
-        {isOpen ? 'w-48 border-gray-300 shadow-sm' : 'w-10 border-transparent hover:bg-gray-100'}"
+						bg-white transition-all duration-300 ease-in-out 
+						{isOpen ? 'w-56 border-gray-300 px-2 gap-1 shadow-sm' : 'w-10 border-transparent hover:bg-gray-100'}"
 					>
 						<!-- Search Button -->
 						<button
@@ -137,9 +137,9 @@
 							type="button"
 							aria-label={isOpen ? 'Close search' : 'Open search'}
 							aria-expanded={isOpen}
-							class="flex size-10 shrink-0 items-center justify-center
-            text-gray-500 transition-colors
-            hover:text-gray-900"
+							class="flex size-8 shrink-0 items-center justify-center rounded-full
+							text-gray-500 transition-colors
+							hover:text-gray-900"
 						>
 							<Icon name="search" height="1.2em" />
 						</button>
@@ -152,13 +152,14 @@
 							placeholder="Search..."
 							aria-label="Search"
 							tabindex={isOpen ? 0 : -1}
-							class="min-w-0 flex-1 bg-transparent pr-3 text-sm
-            text-gray-900 placeholder-gray-400 transition-opacity
-            duration-200 outline-none
-            {isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}"
+							class="min-w-0 flex-1 bg-transparent text-sm
+							text-gray-900 placeholder-gray-400 rounded-2xl transition-opacity 
+							duration-200 outline-none focus:outline-none focus:ring-0
+							{isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}"
 						/>
 					</div>
 				</div>
+
 
 				<button
 					bind:this={mobileMenuButton}
