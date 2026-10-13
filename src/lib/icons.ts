@@ -18,7 +18,8 @@ export const icons = {
 	'crystal-ball': 'twemoji:crystal-ball',
 	'open-book': 'twemoji:open-book',
 	messenger: 'simple-icons:messenger',
-	cloud: 'emojione:sun-behind-cloud'
+	cloud: 'emojione:sun-behind-cloud',
+	search: 'akar-icons:search'
 } as const;
 
 export type IconName = keyof typeof icons;

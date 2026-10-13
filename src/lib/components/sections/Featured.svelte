@@ -1,16 +1,6 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
-	import featuredImage from '#lib/assets/test-images/Featured.jpeg';
-
-	const article = {
-		title:
-			'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
-		excerpt:
-			'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
-		slug: 'featured-article',
-		image: featuredImage,
-		datePosted: '2 hours ago'
-	};
+	import { featuredArticle as article } from '#lib/data/sample-articles.ts';
 </script>
 
 <section
@@ -33,7 +23,7 @@
 		<a href={sitePath('/')} class="group block">
 			<div class="relative aspect-video overflow-hidden bg-neutral-200">
 				<img
-					src={featuredImage}
+					src={article.image}
 					alt={article.title}
 					class="transistion-transform h-full w-full object-cover duration-500 group-hover:scale-105"
 				/>

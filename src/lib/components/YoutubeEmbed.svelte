@@ -1,15 +1,22 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 
-	let isOpen = $state(true);
+	let isOpen = $state(false);
 
 	const title = 'DZRH Live';
 	const youtubeId = 'VzS75VuvLxs';
+
+	onMount(() => {
+		if (window.innerWidth >= 1024) {
+			isOpen = true;
+		}
+	});
 </script>
 
 <article
 	class={[
-		'fixed right-2 bottom-1 lg:bottom-18 left-2 z-20 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-2xl',
+		'fixed right-2 bottom-17 left-2                                                                                                                                                                                                               z-20 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-2xl lg:bottom-18',
 		'sm:right-4 sm:left-auto sm:w-md',
 		'transition-all duration-300 ease-out'
 	]}

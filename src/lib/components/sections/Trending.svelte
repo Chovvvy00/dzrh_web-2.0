@@ -1,38 +1,6 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
-	import trendingImage from '#lib/assets/test-images/Trending.jpeg';
-
-	type Article = {
-		id: string;
-		title: string;
-		slug: string;
-		image?: string;
-	};
-
-	const articles: Article[] = [
-		{
-			id: '1',
-			title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-			slug: 'trending-1',
-			image: trendingImage
-		},
-		{
-			id: '2',
-			title:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate lorem eu cursus.',
-			slug: 'trending-2'
-		},
-		{
-			id: '3',
-			title: 'Third trending story',
-			slug: 'trending-3'
-		},
-		{
-			id: '4',
-			title: 'Fourth trending story',
-			slug: 'trending-4'
-		}
-	];
+	import { trendingArticles as articles } from '#lib/data/sample-articles.ts';
 </script>
 
 <section

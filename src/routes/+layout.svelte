@@ -24,7 +24,7 @@
 		</div>
 
 		<!-- Main content -->
-		<div class="mx-auto w-full max-w-360 flex-1 px-4 sm:px-6 lg:px-8">
+		<div class="mx-auto w-full max-w-360 px-2 lg:px-0">
 			<!-- Header content -->
 			<div class="sticky top-0 z-50 bg-white">
 				<Header />
@@ -34,17 +34,16 @@
 				{@render children()}
 			</main>
 		</div>
+		<!-- 
+		<div
+			class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
+			lg:flex h-16 items-center bg-yellow-400 text-blue-950 hidden"
+		>
+		</div> -->
 
 		<YoutubeEmbed />
-
 		<Footer />
-	</div>
 
-	<div
-		class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
-		lg:flex h-16 items-center bg-yellow-400 text-blue-950 hidden"
-	>
-		<!-- player content -->
 		<RadioPlayerComponent />
 	</div>
 </div>

@@ -1,30 +1,6 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
-	import mostReadImage from '#lib/assets/test-images/MostRead.jpeg';
-
-	const articles = [
-		{
-			id: '1',
-			title: 'Sample Most Read headline',
-			slug: 'mostread-1',
-			image: mostReadImage
-		},
-		{
-			id: '2',
-			title: 'Another Most Read story',
-			slug: 'mostread-2'
-		},
-		{
-			id: '3',
-			title: 'Third Most Read story',
-			slug: 'mostread-3'
-		},
-		{
-			id: '4',
-			title: 'Fourth Most Read story',
-			slug: 'mostread-4'
-		}
-	];
+	import { mostReadArticles as articles } from '#lib/data/sample-articles.ts';
 </script>
 
 <section
@@ -82,7 +58,7 @@
 
 	<!-- Other most-read articles -->
 	<div class="mx-3 divide-y divide-neutral-100 border-t border-neutral-200">
-		{#each articles.slice(1) as article, index (article.id)}
+		{#each articles.slice(1) as article (article.id)}
 			<a
 				href={sitePath(`/post/${article.slug}`)}
 				class="group flex items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-50"

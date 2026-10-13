@@ -1,4 +1,6 @@
 <script lang="ts">
+	// import { goto } from '$app/navigation';
+	import { tick } from 'svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import type { IconName } from '#lib/icons.ts';
 	import { sitePath } from '#lib/paths.ts';
@@ -80,38 +82,107 @@
 			if (mobileMenuButton?.getClientRects().length) mobileMenuButton.focus();
 		}
 	}
+
+	let isOpen = $state(false);
+	let inputRef = $state();
+
+	async function toggleSearch() {
+		isOpen = !isOpen;
+
+		// If opening, wait for the DOM to update, then focus the input
+		if (isOpen) {
+			await tick();
+			inputRef?.focus();
+		}
+	}
+
+	function handleBlur() {
+		// Optional: Closes the search bar automatically if the user clicks away while it's empty
+		if (inputRef && inputRef.value === '') {
+			isOpen = false;
+		}
+	}
+
+	// let searchQuery = $state('');
+
+	// function submitHeaderSearch(event: SubmitEvent) {
+	// 	event.preventDefault();
+	// 	const query = searchQuery.trim();
+	// 	void goto(`${sitePath('/search/')}${query ? `?q=${encodeURIComponent(query)}` : ''}`);
+	// }
 </script>
 
 <svelte:window bind:scrollY onkeydown={handleKeydown} />
 
 <header>
+	<!-- Mobile view -->
 	<div class="lg:hidden">
 		<div class="flex h-17.5 items-center justify-between gap-4">
-			<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
-				<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
-			</a>
-			<button
-				bind:this={mobileMenuButton}
-				type="button"
-				aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-				aria-expanded={mobileMenuOpen}
-				aria-controls="mobile-navigation"
-				onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
-				data-open={mobileMenuOpen}
-				class="group flex size-11 items-center justify-center text-black transition-[background-color,transform] duration-200 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100"
-			>
-				<span class="relative block size-6" aria-hidden="true">
-					<span
-						class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
-					></span>
-					<span
-						class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-700 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
-					></span>
-					<span
-						class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
-					></span>
-				</span>
-			</button>
+			<div>
+				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
+					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
+				</a>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<div class="flex items-center">
+					<div
+						class="flex h-10 items-center overflow-hidden rounded-full border
+        bg-white transition-all duration-300 ease-in-out
+        {isOpen ? 'w-48 border-gray-300 shadow-sm' : 'w-10 border-transparent hover:bg-gray-100'}"
+					>
+						<!-- Search Button -->
+						<button
+							onclick={toggleSearch}
+							type="button"
+							aria-label={isOpen ? 'Close search' : 'Open search'}
+							aria-expanded={isOpen}
+							class="flex size-10 shrink-0 items-center justify-center
+            text-gray-500 transition-colors
+            hover:text-gray-900"
+						>
+							<Icon name="search" height="1.2em" />
+						</button>
+
+						<!-- Search Input -->
+						<input
+							bind:this={inputRef}
+							onblur={handleBlur}
+							type="search"
+							placeholder="Search..."
+							aria-label="Search"
+							tabindex={isOpen ? 0 : -1}
+							class="min-w-0 flex-1 bg-transparent pr-3 text-sm
+            text-gray-900 placeholder-gray-400 transition-opacity
+            duration-200 outline-none
+            {isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}"
+						/>
+					</div>
+				</div>
+
+				<button
+					bind:this={mobileMenuButton}
+					type="button"
+					aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+					aria-expanded={mobileMenuOpen}
+					aria-controls="mobile-navigation"
+					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+					data-open={mobileMenuOpen}
+					class="group flex size-11 items-center justify-center text-black transition-[background-color,transform] duration-200 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100"
+				>
+					<span class="relative block size-6" aria-hidden="true">
+						<span
+							class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
+						></span>
+						<span
+							class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-700 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
+						></span>
+						<span
+							class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
+						></span>
+					</span>
+				</button>
+			</div>
 		</div>
 
 		<div
@@ -119,7 +190,7 @@
 			data-open={mobileMenuOpen}
 			inert={!mobileMenuOpen}
 			aria-hidden={!mobileMenuOpen}
-			class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-700 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
+			class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-500 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
 				<div class="border-t border-gray-200 py-3">
@@ -193,10 +264,11 @@
 		</div>
 	</div>
 
+	<!-- Desktop view -->
 	<div class="hidden lg:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="flex h-17.5 items-center justify-between px-4">
-			<div>
+		<div class="grid h-17.5 grid-cols-[1fr_3fr_1fr] items-center justify-between">
+			<div class="-m-1.5">
 				<a href={sitePath('/')}>
 					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
 				</a>
@@ -222,26 +294,28 @@
 				</ul>
 			</nav>
 
-			<div class="flex items-center gap-2">
-				<div class="flex items-center gap-1.5">
-					{#each socialLinks as { name, href, icon } (name)}
-						<a
-							{href}
-							aria-label={name}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex size-7 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white xl:size-9"
-						>
-							<Icon name={icon} class="h-3.5 w-3.5" />
-						</a>
-					{/each}
-				</div>
+			<div class="relative">
+				<Icon
+					name="search"
+					height="1.1em"
+					class="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-neutral-400"
+				/>
+				<input
+					type="search"
+					name="search"
+					id="search"
+					placeholder="Search news..."
+					class="w-full rounded-full border border-neutral-200 bg-neutral-50 py-2.5 pr-4 pl-10 text-sm text-neutral-800 placeholder-neutral-400 transition-all duration-200 outline-none focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-50"
+				/>
 			</div>
 		</div>
 
 		<!-- Utility Navigation -->
-		<nav aria-label="Utility navigation" class="w-full border-b border-neutral-200">
-			<ul class="flex flex-nowrap items-center justify-end gap-2">
+		<nav
+			aria-label="Utility navigation"
+			class="flex w-full justify-between border-b border-neutral-200"
+		>
+			<ul class="flex flex-nowrap items-center justify-end">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a
@@ -263,6 +337,22 @@
 					</li>
 				{/each}
 			</ul>
+
+			<div class="flex items-center">
+				<div class="flex items-center gap-1.5">
+					{#each socialLinks as { name, href, icon } (name)}
+						<a
+							{href}
+							aria-label={name}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex size-3 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white xl:size-6.5"
+						>
+							<Icon name={icon} height="1em" />
+						</a>
+					{/each}
+				</div>
+			</div>
 		</nav>
 	</div>
 </header>
