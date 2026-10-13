@@ -243,7 +243,7 @@
 			data-hidden={mobileUtilityHidden}
 			inert={mobileUtilityHidden}
 			aria-hidden={mobileUtilityHidden}
-			class="grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,opacity] duration-200 ease-in-out data-[hidden=true]:grid-rows-[0fr] data-[hidden=true]:opacity-0 motion-reduce:transition-none"
+			class="grid grid-rows-[1fr] opacity-100 transition-[grid-template-rows,opacity] duration-400 ease-in-out data-[hidden=true]:grid-rows-[0fr] data-[hidden=true]:opacity-0 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
 				<nav aria-label="Mobile utility navigation" class="border-y border-gray-200 py-1">
