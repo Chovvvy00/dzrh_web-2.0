@@ -84,7 +84,7 @@
 	}
 
 	let isOpen = $state(false);
-	let inputRef = $state();
+	let inputRef = $state<HTMLInputElement | null>(null);
 
 	async function toggleSearch() {
 		isOpen = !isOpen;
