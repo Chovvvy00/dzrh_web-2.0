@@ -63,8 +63,12 @@
 
 	let mobileMenuOpen = $state(false);
 	let mobileMenuButton: HTMLButtonElement;
+	let mobileNav = $state<HTMLDivElement | null>(null);
+	let searchPill = $state<HTMLDivElement | null>(null);
 	let scrollY = $state(0);
 	let mobileUtilityHidden = $state(false);
+	let isOpen = $state(false);
+	let inputRef = $state<HTMLInputElement | null>(null);
 
 	$effect(() => {
 		// Separate thresholds prevent flicker as collapsing the bar changes the scroll position.
@@ -76,30 +80,63 @@
 		mobileMenuOpen = false;
 	}
 
+	function closeSearch() {
+		isOpen = false;
+		inputRef?.blur();
+	}
+
+	async function toggleSearch() {
+		if (isOpen) {
+			closeSearch();
+			return;
+		}
+
+		isOpen = true;
+		// Only one panel open at a time keeps the header stable.
+		mobileMenuOpen = false;
+
+		// If opening, wait for the DOM to update, then focus the input.
+		await tick();
+		// preventScroll stops focusing the field from moving the page.
+		inputRef?.focus({ preventScroll: true });
+	}
+
+	function toggleMobileMenu() {
+		if (mobileMenuOpen) {
+			closeMobileMenu();
+			return;
+		}
+
+		mobileMenuOpen = true;
+		// Close the search so its pill cannot resize underneath the open menu.
+		closeSearch();
+	}
+
+	// Clicking away closes the panels. The listener replaces the old input blur handler and
+	// only exists while something is open. It never fires inside the toggles, otherwise the
+	// hamburger would close the menu on pointerdown and reopen it again on click.
+	$effect(() => {
+		if (!mobileMenuOpen && !isOpen) return;
+
+		function handleOutsidePointerDown(event: PointerEvent) {
+			if (!(event.target instanceof Node)) return;
+			if (searchPill?.contains(event.target)) return;
+			if (mobileMenuButton?.contains(event.target)) return;
+			if (mobileNav?.contains(event.target)) return;
+
+			mobileMenuOpen = false;
+			// Same rule as before: an empty search field collapses when you click away.
+			if (inputRef && inputRef.value === '') closeSearch();
+		}
+
+		document.addEventListener('pointerdown', handleOutsidePointerDown);
+		return () => document.removeEventListener('pointerdown', handleOutsidePointerDown);
+	});
+
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape' && mobileMenuOpen) {
 			closeMobileMenu();
 			if (mobileMenuButton?.getClientRects().length) mobileMenuButton.focus();
-		}
-	}
-
-	let isOpen = $state(false);
-	let inputRef = $state<HTMLInputElement | null>(null);
-
-	async function toggleSearch() {
-		isOpen = !isOpen;
-
-		// If opening, wait for the DOM to update, then focus the input
-		if (isOpen) {
-			await tick();
-			inputRef?.focus();
-		}
-	}
-
-	function handleBlur() {
-		// Optional: Closes the search bar automatically if the user clicks away while it's empty
-		if (inputRef && inputRef.value === '') {
-			isOpen = false;
 		}
 	}
 
@@ -116,7 +153,7 @@
 
 <header>
 	<!-- Mobile view -->
-	<div class="lg:hidden">
+	<div class="relative lg:hidden">
 		<div class="flex h-17.5 items-center justify-between gap-4">
 			<div>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
@@ -128,8 +165,11 @@
 				<div class="flex items-center">
 					<div
 						class="flex h-10 items-center overflow-hidden rounded-full border
-						bg-white transition-all duration-300 ease-in-out 
-						{isOpen ? 'w-56 border-gray-300 px-2 gap-1 shadow-sm' : 'w-10 border-transparent hover:bg-gray-100'}"
+						bg-white transition-all duration-300 ease-in-out
+						{isOpen
+							? 'w-56 gap-1 border-gray-300 px-2 shadow-sm'
+							: 'w-10 border-transparent hover:bg-gray-100'}"
+						bind:this={searchPill}
 					>
 						<!-- Search Button -->
 						<button
@@ -147,19 +187,17 @@
 						<!-- Search Input -->
 						<input
 							bind:this={inputRef}
-							onblur={handleBlur}
 							type="search"
 							placeholder="Search..."
 							aria-label="Search"
 							tabindex={isOpen ? 0 : -1}
-							class="min-w-0 flex-1 bg-transparent text-sm
-							text-gray-900 placeholder-gray-400 rounded-2xl transition-opacity 
-							duration-200 outline-none focus:outline-none focus:ring-0
+							class="min-w-0 flex-1 rounded-2xl bg-transparent
+							text-sm text-gray-900 placeholder-gray-400 transition-opacity
+							duration-200 outline-none focus:ring-0 focus:outline-none
 							{isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}"
 						/>
 					</div>
 				</div>
-
 
 				<button
 					bind:this={mobileMenuButton}
@@ -167,7 +205,7 @@
 					aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
 					aria-expanded={mobileMenuOpen}
 					aria-controls="mobile-navigation"
-					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+					onclick={toggleMobileMenu}
 					data-open={mobileMenuOpen}
 					class="group flex size-11 items-center justify-center text-black transition-[background-color,transform] duration-200 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100"
 				>
@@ -186,15 +224,20 @@
 			</div>
 		</div>
 
+		<!--
+			Overlays the page instead of pushing it down: expanding this in-flow made the
+			document taller and scroll anchoring scrolled the whole page downward.
+		-->
 		<div
 			id="mobile-navigation"
+			bind:this={mobileNav}
 			data-open={mobileMenuOpen}
 			inert={!mobileMenuOpen}
 			aria-hidden={!mobileMenuOpen}
-			class="grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-500 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
+			class="absolute inset-x-0 top-17.5 z-10 grid max-h-[calc(100dvh-4.375rem)] grid-rows-[0fr] overflow-y-auto overscroll-contain bg-white opacity-0 shadow-sm transition-[grid-template-rows,opacity] duration-500 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
-				<div class="border-t border-gray-200 py-3">
+				<div class="border-y border-gray-200 py-3">
 					<nav aria-label="Mobile primary navigation">
 						<ul class="grid gap-1 sm:grid-cols-2">
 							{#each navLinks as link (link.href)}
@@ -255,7 +298,8 @@
 									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-center text-[11px] leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black sm:text-xs"
 								>
 									<Icon name={icon} width="20" height="20" class="shrink-0" aria-hidden="true" />
-									<span class="block w-full min-w-0 truncate text-center">{mobileName ?? name}</span>
+									<span class="block w-full min-w-0 truncate text-center">{mobileName ?? name}</span
+									>
 								</a>
 							</li>
 						{/each}
@@ -276,7 +320,7 @@
 			</div>
 
 			<nav aria-label="Primary navigation">
-				<ul class="flex items-center gap-4">
+				<ul class="flex items-center justify-center gap-4">
 					{#each navLinks as link (link.href)}
 						<li>
 							<a href={sitePath(link.href)}>

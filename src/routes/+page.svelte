@@ -97,6 +97,10 @@
 			<!-- Most Read -->
 			<MostRead />
 
+			<section class="relative mx-auto mb-4 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
+				<AdComponent isTestMode={true} showPlaceholder={true} />
+			</section>
+
 			<!-- News Categories -->
 			<section class="min-w-0">
 				<div class="grid grid-cols-1 gap-8">
@@ -114,7 +118,7 @@
 				</div>
 
 				<!-- Advertisement -->
-				<section class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden">
+				<section class="relative mx-auto my-6 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
 					<AdComponent isTestMode={true} showPlaceholder={true} />
 				</section>
 
@@ -129,7 +133,7 @@
 				</div>
 
 				<!-- Advertisement -->
-				<section class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden">
+				<section class="relative mx-auto my-6 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
 					<AdComponent isTestMode={true} showPlaceholder={true} />
 				</section>
 			</section>
