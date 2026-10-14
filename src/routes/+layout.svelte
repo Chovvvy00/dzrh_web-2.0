@@ -24,13 +24,13 @@
 		</div>
 
 		<!-- Main content -->
-		<div class="mx-auto w-full max-w-360 px-2 lg:px-0">
+		<div class="flex-1 mx-auto w-full max-w-360 px-4">
 			<!-- Header content -->
 			<div class="sticky top-0 z-50 bg-white">
 				<Header />
 			</div>
 
-			<main>
+			<main class="w-full">
 				{@render children()}
 			</main>
 		</div>

@@ -19,7 +19,8 @@ export const icons = {
 	'open-book': 'twemoji:open-book',
 	messenger: 'simple-icons:messenger',
 	cloud: 'emojione:sun-behind-cloud',
-	search: 'akar-icons:search'
+	search: 'akar-icons:search',
+	instagram: 'bi:instagram'
 } as const;
 
 export type IconName = keyof typeof icons;

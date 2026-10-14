@@ -19,17 +19,6 @@
 				Trending
 			</h2>
 		</div>
-
-		<div class="flex items-center gap-1.5 rounded-full bg-red-50 px-2.5 py-1">
-			<span class="relative flex h-2 w-2">
-				<span
-					class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-60 motion-reduce:animate-none"
-				></span>
-				<span class="relative inline-flex h-2 w-2 rounded-full bg-red-600"></span>
-			</span>
-
-			<span class="text-[10px] font-bold tracking-wide text-red-700 uppercase"> Trending </span>
-		</div>
 	</div>
 
 	<!-- Featured trending article -->

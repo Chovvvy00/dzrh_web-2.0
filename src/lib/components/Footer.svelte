@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { sitePath } from '#lib/paths.ts';
 	import logo from '#lib/assets/logo/dzrh-logo.svg';
+	import type { IconName } from '#lib/icons.ts';
+	import Icon from '#lib/components/Icon.svelte';
 
 	const year = new Date().getFullYear();
 
@@ -17,6 +19,22 @@
 		{ label: 'Privacy Policy', href: '/privacy-policy' },
 		{ label: 'Terms of Use', href: '/terms' }
 	];
+
+	type SocialLink = {
+		name: string;
+		href: string;
+		icon: IconName;
+	};
+
+	const socialLinks: SocialLink[] = [
+		{ name: 'YouTube', href: 'https://youtube.com/@dzrhdigital', icon: 'youtube' },
+		{ name: 'Facebook', href: 'https://facebook.com/dzrhnews', icon: 'facebook' },
+		{ name: 'Instagram', href: 'https://instagram.com/dzrhdigital', icon: 'instagram' },
+		{ name: 'X', href: 'https://x.com/dzrhnews', icon: 'x' },
+		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' },
+	];
+
+
 </script>
 
 <footer class="w-full">
@@ -38,29 +56,12 @@
 
 				<!-- Socials -->
 				<div class="mt-5 flex items-center gap-3">
-					<a
-						href="/"
-						aria-label="DZRH on Facebook"
-						class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
-					>
-						FB
-					</a>
-
-					<a
-						href="/"
-						aria-label="DZRH on X"
-						class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
-					>
-						X
-					</a>
-
-					<a
-						href="/"
-						aria-label="DZRH on YouTube"
-						class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
-					>
-						YT
-					</a>
+					{#each socialLinks as socialLink (socialLink.name)}
+						<a href={socialLink.href} aria-label={socialLink.name} target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-500 transistion-colors hover:text-black">
+							<Icon name={socialLink.icon} />
+						</a>
+						
+					{/each}
 				</div>
 			</div>
 

@@ -26,12 +26,11 @@
 	};
 
 	const socialLinks: SocialLink[] = [
-		{ name: 'YouTube', href: '#', icon: 'youtube' },
-		{ name: 'TikTok', href: '#', icon: 'tiktok' },
-		{ name: 'Messenger', href: '#', icon: 'messenger' },
-		{ name: 'Threads', href: '#', icon: 'threads' },
-		{ name: 'X', href: '#', icon: 'x' },
-		{ name: 'Facebook', href: '#', icon: 'facebook' }
+		{ name: 'YouTube', href: 'https://youtube.com/@dzrhdigital', icon: 'youtube' },
+		{ name: 'Facebook', href: 'https://facebook.com/dzrhnews', icon: 'facebook' },
+		{ name: 'Instagram', href: 'https://instagram.com/dzrhdigital', icon: 'instagram' },
+		{ name: 'X', href: 'https://x.com/dzrhnews', icon: 'x' },
+		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' },
 	];
 
 	type UtilityLink = {
@@ -139,14 +138,6 @@
 			if (mobileMenuButton?.getClientRects().length) mobileMenuButton.focus();
 		}
 	}
-
-	// let searchQuery = $state('');
-
-	// function submitHeaderSearch(event: SubmitEvent) {
-	// 	event.preventDefault();
-	// 	const query = searchQuery.trim();
-	// 	void goto(`${sitePath('/search/')}${query ? `?q=${encodeURIComponent(query)}` : ''}`);
-	// }
 </script>
 
 <svelte:window bind:scrollY onkeydown={handleKeydown} />
@@ -274,7 +265,7 @@
 								rel="noopener noreferrer"
 								class="flex size-11 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 							>
-								<Icon name={icon} class="h-3.5 w-3.5" />
+								<Icon name={icon} class="h-5 w-5" />
 							</a>
 						{/each}
 					</div>
@@ -312,7 +303,7 @@
 	<!-- Desktop view -->
 	<div class="hidden lg:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="grid h-17.5 grid-cols-[1fr_3fr_1fr] items-center justify-between">
+		<div class="grid h-10 pt-3.5 grid-cols-[1fr_3fr_1fr] items-center justify-between">
 			<div class="-m-1.5">
 				<a href={sitePath('/')}>
 					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
@@ -358,9 +349,9 @@
 		<!-- Utility Navigation -->
 		<nav
 			aria-label="Utility navigation"
-			class="flex w-full justify-between border-b border-neutral-200"
+			class="flex w-full justify-between pt-4 border-b border-neutral-200"
 		>
-			<ul class="flex flex-nowrap items-center justify-end">
+			<ul class="flex flex-nowrap items-center justify-end -ml-3">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a
@@ -391,9 +382,9 @@
 							aria-label={name}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex size-3 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white xl:size-6.5"
+							class="flex size-5 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white"
 						>
-							<Icon name={icon} height="1em" />
+							<Icon name={icon} height=".75em" />
 						</a>
 					{/each}
 				</div>

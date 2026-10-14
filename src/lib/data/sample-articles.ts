@@ -267,7 +267,7 @@ export const featuredArticle = {
 		'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
 	excerpt:
 		'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
-	slug: 'featured-article',
+	slug: 'sample-featured-article-facilisis-arcu-eu',
 	image: featuredImage,
 	datePosted: '2 hours ago'
 };
