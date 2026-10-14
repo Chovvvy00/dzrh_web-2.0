@@ -30,7 +30,7 @@
 		{ name: 'Facebook', href: 'https://facebook.com/dzrhnews', icon: 'facebook' },
 		{ name: 'Instagram', href: 'https://instagram.com/dzrhdigital', icon: 'instagram' },
 		{ name: 'X', href: 'https://x.com/dzrhnews', icon: 'x' },
-		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' },
+		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' }
 	];
 
 	type UtilityLink = {
@@ -303,7 +303,7 @@
 	<!-- Desktop view -->
 	<div class="hidden lg:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="grid h-10 pt-3.5 grid-cols-[1fr_3fr_1fr] items-center justify-between">
+		<div class="grid h-10 grid-cols-[1fr_3fr_1fr] items-center justify-between pt-3.5">
 			<div class="-m-1.5">
 				<a href={sitePath('/')}>
 					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
@@ -349,9 +349,9 @@
 		<!-- Utility Navigation -->
 		<nav
 			aria-label="Utility navigation"
-			class="flex w-full justify-between pt-4 border-b border-neutral-200"
+			class="flex w-full justify-between border-b border-neutral-200 pt-4"
 		>
-			<ul class="flex flex-nowrap items-center justify-end -ml-3">
+			<ul class="-ml-3 flex flex-nowrap items-center justify-end">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a

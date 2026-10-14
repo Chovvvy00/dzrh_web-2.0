@@ -31,10 +31,8 @@
 		{ name: 'Facebook', href: 'https://facebook.com/dzrhnews', icon: 'facebook' },
 		{ name: 'Instagram', href: 'https://instagram.com/dzrhdigital', icon: 'instagram' },
 		{ name: 'X', href: 'https://x.com/dzrhnews', icon: 'x' },
-		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' },
+		{ name: 'TikTok', href: 'https://tiktok.com/@dzrhnews', icon: 'tiktok' }
 	];
-
-
 </script>
 
 <footer class="w-full">
@@ -57,10 +55,14 @@
 				<!-- Socials -->
 				<div class="mt-5 flex items-center gap-3">
 					{#each socialLinks as socialLink (socialLink.name)}
-						<a href={socialLink.href} aria-label={socialLink.name} target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-500 transistion-colors hover:text-black">
+						<a
+							href={socialLink.href}
+							aria-label={socialLink.name}
+							target="_blank"
+							class="transistion-colors flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-500 hover:text-black"
+						>
 							<Icon name={socialLink.icon} />
 						</a>
-						
 					{/each}
 				</div>
 			</div>

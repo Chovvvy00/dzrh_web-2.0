@@ -38,11 +38,7 @@
 	<section class="min-w-0">
 		<div class="grid gap-x-4 gap-y-10 md:grid-cols-2">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
-			<NewsCategory
-				title="Entertainment"
-				articles={entertainmentArticles}
-				href="/entertainment"
-			/>
+			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
 
 			<NewsCategory title="World" articles={worldArticles} href="/world" />
 			<NewsCategory title="Metro Manila" articles={metroManilaArticles} href="/metro-manila" />
@@ -96,7 +92,9 @@
 	<!-- Most Read -->
 	<MostRead />
 
-	<section class="relative mx-auto mb-4 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
+	<section
+		class="relative mx-auto mb-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+	>
 		<AdComponent isTestMode={true} showPlaceholder={true} />
 	</section>
 
@@ -105,11 +103,7 @@
 		<div class="grid grid-cols-1 gap-8">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 
-			<NewsCategory
-				title="Entertainment"
-				articles={entertainmentArticles}
-				href="/entertainment"
-			/>
+			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
 
 			<NewsCategory title="World" articles={worldArticles} href="/world" />
 
@@ -117,7 +111,9 @@
 		</div>
 
 		<!-- Advertisement -->
-		<section class="relative mx-auto my-6 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
+		<section
+			class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+		>
 			<AdComponent isTestMode={true} showPlaceholder={true} />
 		</section>
 
@@ -132,10 +128,10 @@
 		</div>
 
 		<!-- Advertisement -->
-		<section class="relative mx-auto my-6 h-12.5 w-[320px] sm:h-22.5 sm:w-182 max-w-full overflow-hidden">
+		<section
+			class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+		>
 			<AdComponent isTestMode={true} showPlaceholder={true} />
 		</section>
 	</section>
 </div>
-
-
