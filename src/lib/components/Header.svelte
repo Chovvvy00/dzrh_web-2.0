@@ -71,8 +71,8 @@
 
 	$effect(() => {
 		// Separate thresholds prevent flicker as collapsing the bar changes the scroll position.
-		if (scrollY > 150) mobileUtilityHidden = true;
-		else if (scrollY <= 180) mobileUtilityHidden = false;
+		if (scrollY > 96) mobileUtilityHidden = true;
+		else if (scrollY <= 120) mobileUtilityHidden = false;
 	});
 
 	function closeMobileMenu() {
@@ -202,13 +202,13 @@
 				>
 					<span class="relative block size-6" aria-hidden="true">
 						<span
-							class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
+							class="absolute top-1 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-600 ease-in-out group-data-[open=true]:translate-y-1.75 group-data-[open=true]:rotate-45 motion-reduce:transition-none"
 						></span>
 						<span
-							class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-700 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
+							class="absolute top-2.75 left-0 h-0.5 w-6 rounded-full bg-current transition-[opacity,transform] duration-600 ease-in-out group-data-[open=true]:scale-x-0 group-data-[open=true]:opacity-0 motion-reduce:transition-none"
 						></span>
 						<span
-							class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-700 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
+							class="absolute top-4.5 left-0 h-0.5 w-6 rounded-full bg-current transition-transform duration-600 ease-in-out group-data-[open=true]:-translate-y-1.75 group-data-[open=true]:-rotate-45 motion-reduce:transition-none"
 						></span>
 					</span>
 				</button>
@@ -225,7 +225,7 @@
 			data-open={mobileMenuOpen}
 			inert={!mobileMenuOpen}
 			aria-hidden={!mobileMenuOpen}
-			class="absolute inset-x-0 top-17.5 z-10 grid max-h-[calc(100dvh-4.375rem)] grid-rows-[0fr] overflow-y-auto overscroll-contain bg-white opacity-0 shadow-sm transition-[grid-template-rows,opacity] duration-500 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
+			class="absolute inset-x-0 top-17.5 z-10 grid max-h-[calc(100dvh-4.375rem)] grid-rows-[0fr] overflow-y-auto overscroll-contain bg-white opacity-0 shadow-sm transition-[grid-template-rows,opacity] duration-400 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
 				<div class="border-y border-gray-200 py-3">
