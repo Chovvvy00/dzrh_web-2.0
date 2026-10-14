@@ -71,8 +71,8 @@
 
 	$effect(() => {
 		// Separate thresholds prevent flicker as collapsing the bar changes the scroll position.
-		if (scrollY > 120) mobileUtilityHidden = true;
-		else if (scrollY <= 150) mobileUtilityHidden = false;
+		if (scrollY > 150) mobileUtilityHidden = true;
+		else if (scrollY <= 180) mobileUtilityHidden = false;
 	});
 
 	function closeMobileMenu() {
