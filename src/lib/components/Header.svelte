@@ -71,8 +71,8 @@
 
 	$effect(() => {
 		// Separate thresholds prevent flicker as collapsing the bar changes the scroll position.
-		if (scrollY > 96) mobileUtilityHidden = true;
-		else if (scrollY <= 16) mobileUtilityHidden = false;
+		if (scrollY > 100) mobileUtilityHidden = true;
+		else if (scrollY <= 100) mobileUtilityHidden = false;
 	});
 
 	function closeMobileMenu() {
@@ -148,7 +148,7 @@
 		<div class="flex h-17.5 items-center justify-between gap-4">
 			<div>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
-					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
+					<img src={logo} alt="DZRH Logo" class="h-10 w-auto -ml-1" />
 				</a>
 			</div>
 
