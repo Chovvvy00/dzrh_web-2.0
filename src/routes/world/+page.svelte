@@ -1,3 +1,6 @@
-<div>
-	<h6>WORLD</h6>
-</div>
+<script lang="ts">
+	import CategoryArchive from '#lib/components/sections/CategoryArchive.svelte';
+	import { categoryArchives } from '#lib/data/sample-archives.ts';
+</script>
+
+<CategoryArchive {...categoryArchives['world']} />

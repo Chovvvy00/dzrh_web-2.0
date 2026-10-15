@@ -189,22 +189,22 @@ import AsiaImage from '#lib/assets/test-images/Asia.webp';
 export const asiaArticles = [
 	{
 		id: '4',
-		title: 'Province Article number one',
-		slug: 'Province article-1',
+		title: 'Asia Article number one',
+		slug: 'asia-article-1',
 		image: AsiaImage,
 		datePosted: '1 hour ago'
 	},
 	{
 		id: '5',
-		title: 'Province Article number two',
-		slug: 'Province article-2',
+		title: 'Asia Article number two',
+		slug: 'asia-article-2',
 		image: AsiaImage,
 		datePosted: '5 hours ago'
 	},
 	{
 		id: '6',
-		title: 'Province Article number three',
-		slug: 'Province article-3',
+		title: 'Asia Article number three',
+		slug: 'asia-article-3',
 		image: AsiaImage,
 		datePosted: '13 hours ago'
 	}
@@ -214,22 +214,22 @@ import businessImage from '#lib/assets/test-images/Business.jpg';
 export const businessArticles = [
 	{
 		id: '4',
-		title: 'Province Article number one',
-		slug: 'Province article-1',
+		title: 'Business Article number one',
+		slug: 'business-article-1',
 		image: businessImage,
 		datePosted: '14 seconds ago'
 	},
 	{
 		id: '5',
-		title: 'Province Article number two',
-		slug: 'Province article-2',
+		title: 'Business Article number two',
+		slug: 'business-article-2',
 		image: businessImage,
 		datePosted: '55 seconds ago'
 	},
 	{
 		id: '6',
-		title: 'Province Article number three',
-		slug: 'Province article-3',
+		title: 'Business Article number three',
+		slug: 'business-article-3',
 		image: businessImage,
 		datePosted: '7 hours ago'
 	}
@@ -239,22 +239,22 @@ import lifestyleImage from '#lib/assets/test-images/Lifestyle.jpg';
 export const lifestyleArticles = [
 	{
 		id: '4',
-		title: 'Province Article number one',
-		slug: 'Province article-1',
+		title: 'Lifestyle Article number one',
+		slug: 'lifestyle-article-1',
 		image: lifestyleImage,
 		datePosted: '16 hours ago'
 	},
 	{
 		id: '5',
-		title: 'Province Article number two',
-		slug: 'Province article-2',
+		title: 'Lifestyle Article number two',
+		slug: 'lifestyle-article-2',
 		image: lifestyleImage,
 		datePosted: '3 days ago'
 	},
 	{
 		id: '6',
-		title: 'Province Article number three',
-		slug: 'Province article-3',
+		title: 'Lifestyle Article number three',
+		slug: 'lifestyle-article-3',
 		image: lifestyleImage,
 		datePosted: '1 week ago'
 	}
