@@ -125,7 +125,7 @@
 					/>
 
 					<div
-						class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent"
+						class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent"
 					></div>
 
 					<div class="relative w-full min-w-0 px-3 xl:p-4">

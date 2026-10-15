@@ -66,7 +66,7 @@
 			href={sitePath(href)}
 			class="text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
 		>
-			read more
+			view more
 		</a>
 	</div>
 </section>

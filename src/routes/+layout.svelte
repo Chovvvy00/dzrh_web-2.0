@@ -19,14 +19,13 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
-<div class="w-full bg-white pb-16">
-	<div class="flex min-h-screen flex-col bg-white">
-		<div class="mx-auto lg:max-w-360">
-			<TopBanner />
-		</div>
+<div class="w-full pb-16 ">
+	<div class="flex min-h-screen flex-col">
+
+		<TopBanner />
 
 		<!-- Main content -->
-		<div class="mx-auto w-full max-w-360 flex-1 px-4">
+		<div class="mx-auto w-full flex-1 px-6">
 			<!-- Header content -->
 			<div class="sticky top-0 z-50 bg-white">
 				<Header />

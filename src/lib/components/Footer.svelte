@@ -39,7 +39,7 @@
 	<!-- Main Footer -->
 	<div class="bg-neutral-100">
 		<div
-			class="mx-auto grid w-full max-w-360 gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-12 lg:px-8 lg:py-12"
+			class="mx-auto grid w-full max-w-[1920px] gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] lg:gap-12 lg:px-8 lg:py-12"
 		>
 			<!-- Brand -->
 			<div>
@@ -108,7 +108,7 @@
 	<!-- Bottom Footer -->
 	<div class="bg-neutral-900">
 		<div
-			class="mx-auto flex w-full max-w-360 flex-col gap-2 px-4 py-5 text-sm text-neutral-400 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
+			class="mx-auto flex w-full max-w-[1920px] flex-col gap-2 px-4 py-5 text-sm text-neutral-400 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
 		>
 			<p>
 				© {year} DZRH. All rights reserved.

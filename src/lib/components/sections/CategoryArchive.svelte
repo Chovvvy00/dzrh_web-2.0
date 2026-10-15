@@ -61,9 +61,6 @@
 	</nav>
 
 	<header class="relative mb-6 border-b border-neutral-200 pb-6">
-		<p class="mb-2 text-[11px] font-bold tracking-[0.18em] text-red-700 uppercase">
-			Category archive
-		</p>
 		<h1
 			id={headingId}
 			class="text-3xl leading-tight font-extrabold tracking-tight text-[#102A43] sm:text-4xl"
@@ -95,7 +92,7 @@
 						/>
 					{/if}
 					<div
-						class="absolute inset-0 bg-linear-to-t from-[#071b2e] via-[#071b2e]/65 to-[#071b2e]/10"
+						class="absolute inset-0 bg-linear-to-t from-[#071b2e]/80 via-[#071b2e]/10 to-[#071b2e]/10"
 					></div>
 					<div class="relative w-full p-5 sm:p-6">
 						<span
@@ -106,7 +103,7 @@
 							{lead.title}
 						</h2>
 						{#if lead.datePosted}
-							<p class="mt-3 text-xs font-medium text-white/75">{lead.datePosted}</p>
+							<p class="mt-1 text-xs font-medium text-white/75">{lead.datePosted}</p>
 						{/if}
 						{#if lead.excerpt}
 							<p class="mt-3 line-clamp-3 text-sm leading-relaxed text-white/85">{lead.excerpt}</p>

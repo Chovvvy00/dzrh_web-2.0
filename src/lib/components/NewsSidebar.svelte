@@ -13,4 +13,7 @@
 	<section class="relative mx-auto mb-4 h-62.5 w-75 max-w-full overflow-hidden">
 		<AdComponent isTestMode={true} showPlaceholder={true} />
 	</section>
+	<section class="relative mx-auto mb-4 h-62.5 w-75 max-w-full overflow-hidden">
+		<AdComponent isTestMode={true} showPlaceholder={true} />
+	</section>
 </aside>
