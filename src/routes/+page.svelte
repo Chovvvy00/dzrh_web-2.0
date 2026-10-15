@@ -21,19 +21,12 @@
 	} from '#lib/data/sample-articles.ts';
 </script>
 
-<!-- First Ad Component -->
-<section class="relative mx-auto my-4 h-12.5 w-[320px] overflow-hidden sm:h-22.5 sm:w-182">
-	<AdComponent isTestMode={true} showPlaceholder={true} />
-</section>
-
 <!-- Desktop Mode -->
-<div class="mt-8 hidden grid-cols-1 gap-x-6 gap-y-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px]">
+<div class="hidden min-w-0 gap-8 lg:grid">
 	<div class="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
 		<BreakingNews article={breakingNews} />
 		<Headlines articles={headlines} />
 	</div>
-
-	<Featured />
 
 	<section class="min-w-0">
 		<div class="grid gap-x-4 gap-y-10 md:grid-cols-2">
@@ -64,19 +57,10 @@
 			<AdComponent isTestMode={true} showPlaceholder={true} />
 		</section>
 	</section>
-
-	<aside class="min-w-0 space-y-4">
-		<Trending />
-		<MostRead />
-
-		<section class="relative mx-auto mb-4 h-62.5 w-75 max-w-full overflow-hidden">
-			<AdComponent isTestMode={true} showPlaceholder={true} />
-		</section>
-	</aside>
 </div>
 
 <!-- Mobile Mode -->
-<div class="mt-8 flex flex-col gap-6 lg:hidden">
+<div class="flex flex-col gap-6 lg:hidden">
 	<!-- Breaking News -->
 	<BreakingNews article={breakingNews} />
 

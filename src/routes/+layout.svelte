@@ -8,6 +8,8 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import RadioPlayerComponent from '#lib/components/RadioPlayerComponent.svelte';
 	import YoutubeEmbed from '#lib/components/YoutubeEmbed.svelte';
+	import AdComponent from '#lib/components/AdComponent.svelte';
+	import NewsSidebar from '#lib/components/NewsSidebar.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -31,7 +33,19 @@
 			</div>
 
 			<main class="w-full">
-				{@render children()}
+				<section
+					class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+				>
+					<AdComponent isTestMode={true} showPlaceholder={true} />
+				</section>
+
+				<div class="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+					<div class="min-w-0">
+						{@render children()}
+					</div>
+
+					<NewsSidebar />
+				</div>
 			</main>
 		</div>
 		<!-- 
