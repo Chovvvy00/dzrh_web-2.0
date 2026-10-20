@@ -8,9 +8,11 @@
 
 	const newsLinks = [
 		{ label: 'Nation', href: '/nation' },
-		{ label: 'Metro Manila', href: '/metro-manila' },
+		{ label: 'Entertainment', href: '/entertainment' },
 		{ label: 'World', href: '/world' },
-		{ label: 'Entertainment', href: '/entertainment' }
+		{ label: 'Sports', href: '/sports' },
+		{ label: 'Metro Manila', href: '/metro-manila' },
+		{ label: 'Lifestyle', href: '/lifestyle' },
 	];
 
 	const dzrhLinks = [
@@ -43,7 +45,7 @@
 		>
 			<!-- Brand -->
 			<div>
-				<a href={sitePath('/')} aria-label="DZRH Home" class="inline-block">
+				<a href={sitePath('/')} aria-label="DZRH Home" class="inline-block -ml-2">
 					<img src={logo} alt="DZRH" class="h-14 w-auto sm:h-16" />
 				</a>
 
@@ -59,7 +61,7 @@
 							href={socialLink.href}
 							aria-label={socialLink.name}
 							target="_blank"
-							class="transistion-colors flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-500 hover:text-black"
+							class="transistion-colors flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
 						>
 							<Icon name={socialLink.icon} />
 						</a>

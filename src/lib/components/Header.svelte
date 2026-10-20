@@ -358,7 +358,7 @@
 			aria-label="Utility navigation"
 			class="flex w-full justify-between border-b border-neutral-200 pt-4"
 		>
-			<ul class="flex flex-nowrap items-center justify-end">
+			<ul class="flex flex-nowrap items-center justify-end -ml-2">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a
