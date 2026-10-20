@@ -146,10 +146,10 @@
 
 	<!-- Mobile view -->
 	<div class="relative lg:hidden">
-		<div class="flex h-17.5 items-center justify-between gap-4">
+		<div class="flex h:12 lg:h-17.5 items-center justify-between gap-4">
 			<div>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
-					<img src={logo} alt="DZRH Logo" class="h-24 w-auto -ml-1" />
+					<img src={logo} alt="DZRH Logo" class="h-12 w-auto lg:h-24 -ml-1" />
 				</a>
 			</div>
 
