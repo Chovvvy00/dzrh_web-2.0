@@ -8,7 +8,7 @@
 >
 	<!-- Header -->
 	<div class="flex shrink-0 items-center justify-between gap-3 bg-[#f7d347] px-4 py-2.5">
-		<h2 class="text-md min-w-0 truncate font-extrabold tracking-[0.8] text-slate-700 uppercase">
+		<h2 class="text-xl min-w-0 truncate font-extrabold tracking-[0.8] text-slate-700 uppercase">
 			Featured
 		</h2>
 
@@ -37,21 +37,21 @@
 				<div class="mb-3 h-0.5 w-10 bg-[#f7d347]"></div>
 
 				<h3
-					class="line-clamp-2 overflow-clip text-xl leading-tight font-extrabold text-slate-700 transition-colors group-hover:text-[#f7d347] sm:text-2xl lg:text-lg xl:text-xl"
+					class="line-clamp-2 overflow-clip text-xl leading-tight font-extrabold text-slate-700 transition-colors group-hover:text-[#f7d347]"
 				>
 					{article.title}
 				</h3>
 
-				<p class="mt-2 line-clamp-2 overflow-clip text-sm leading-relaxed text-slate-700/80">
+				<p class="mt-2 line-clamp-2 overflow-clip leading-relaxed text-slate-700/80">
 					{article.excerpt}
 				</p>
 
-				<p class="mt-2 line-clamp-2 text-xs text-slate-600/70">{article.datePosted}</p>
+				<p class="mt-2 line-clamp-2 text-md text-slate-600/70">{article.datePosted}</p>
 
 				<div class="mt-4">
 					<span
 						class="inline-flex items-center gap-2 bg-[#f7d347] px-4 py-1.5
-							text-xs font-extrabold tracking-wide text-slate-800 uppercase
+							font-extrabold tracking-wide text-slate-800 uppercase text-md
 							transition-colors duration-200 group-hover:bg-[#e9c632]"
 					>
 						Read full story

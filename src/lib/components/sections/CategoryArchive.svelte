@@ -46,7 +46,7 @@
 {/snippet}
 
 <section aria-labelledby={headingId} class="min-w-0 pb-10">
-	<nav aria-label="Breadcrumb" class="mb-5 text-xs font-medium text-slate-500">
+	<nav aria-label="Breadcrumb" class="mb-5 font-medium text-slate-500">
 		<ol class="flex flex-wrap items-center gap-2">
 			<li>
 				<a
@@ -67,9 +67,9 @@
 		>
 			{title} Articles
 		</h1>
-		{#if description}
+		<!-- {#if description}
 			<p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-500">{description}</p>
-		{/if}
+		{/if} -->
 		<span class="absolute -bottom-px left-0 h-1 w-14 rounded-full bg-red-700" aria-hidden="true"
 		></span>
 	</header>
@@ -95,10 +95,10 @@
 						class="absolute inset-0 bg-linear-to-t from-[#071b2e]/80 via-[#071b2e]/10 to-[#071b2e]/10"
 					></div>
 					<div class="relative w-full p-5 sm:p-6">
-						<span
+						<!-- <span
 							class="mb-4 inline-flex rounded-sm bg-[#f7d347] px-2.5 py-1 text-[10px] font-extrabold tracking-widest text-[#102A43] uppercase"
 							>Top story</span
-						>
+						> -->
 						<h2 class="text-2xl leading-tight font-extrabold tracking-tight text-white xl:text-3xl">
 							{lead.title}
 						</h2>
@@ -117,16 +117,16 @@
 
 			{#if highlights.length}
 				<div
-					class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-4"
+					class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-3"
 				>
 					{#each highlights as article (article.id)}
-						<article class="flex flex-1 flex-col justify-center py-4">
+						<article class="flex flex-1 flex-col justify-center py-3">
 							<a
 								href={sitePath(`/post/${article.slug}`)}
 								class="group flex min-w-0 items-start gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
 							>
 								<div
-									class="aspect-square w-24 shrink-0 overflow-hidden rounded-lg bg-neutral-100 xl:w-28"
+									class="aspect-video h-full w-full shrink-0 overflow-hidden rounded-lg bg-neutral-100 xl:w-52"
 								>
 									{#if article.image}
 										<img
@@ -138,18 +138,18 @@
 									{/if}
 								</div>
 								<div class="min-w-0">
-									{#if article.datePosted}
-										<p class="mb-1.5 text-[11px] text-slate-500">{article.datePosted}</p>
-									{/if}
 									<h2
 										class="line-clamp-3 text-sm leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 xl:text-base"
 									>
 										{article.title}
 									</h2>
 									{#if article.excerpt}
-										<p class="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">
-											{article.excerpt}
-										</p>
+									<p class="line-clamp-2 text-xs leading-relaxed text-slate-500 mb-1.5">
+										{article.excerpt}
+									</p>
+									{/if}
+									{#if article.datePosted}
+										<p class="text-[11px] text-slate-500">{article.datePosted}</p>
 									{/if}
 								</div>
 							</a>

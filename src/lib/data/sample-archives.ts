@@ -100,5 +100,10 @@ export const categoryArchives = {
 				excerpt: 'Sample sports coverage from the DZRH newsroom.'
 			}))
 		)
+	},
+	headlines: {
+		title: 'Headlines',
+		description: 'Latest Headlines',
+		articles: sampleArchive('headlines', 'headlines', headlines)
 	}
 };

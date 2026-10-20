@@ -12,13 +12,13 @@
 <section class="w-full min-w-0 overflow-hidden rounded-lg border border-red-200 bg-white">
 	<div class="flex items-center justify-between gap-3 bg-[#b42318] px-4 py-2.5">
 		<div class="flex min-w-0 items-center gap-2">
-			<span class="relative flex size-2.5 shrink-0">
+			<span class="relative flex size-3 shrink-0">
 				<span class="absolute inline-flex size-full animate-ping rounded-full bg-white/70"></span>
 
-				<span class="relative inline-flex size-2.5 rounded-full bg-white"></span>
+				<span class="relative inline-flex size-3 rounded-full bg-white"></span>
 			</span>
 
-			<h2 class="text-md truncate font-extrabold tracking-[0.08em] text-white uppercase">
+			<h2 class="text-xl truncate font-extrabold tracking-[0.08em] text-white uppercase">
 				Breaking News
 			</h2>
 		</div>
@@ -59,22 +59,20 @@
 			<div class="mb-3 h-0.5 w-10 bg-[#b42318]"></div>
 
 			<h3
-				class="line-clamp-2 text-xl leading-tight font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
-					sm:text-2xl
-					lg:text-lg
-					xl:text-xl"
+				class="line-clamp-3 text-xl leading-tight font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
+					lg:text-2xl"
 			>
 				{article.title}
 			</h3>
 
 			{#if article.excerpt}
-				<p class="mt-2 line-clamp-2 text-sm leading-relaxed text-neutral-600">
+				<p class="mt-3 line-clamp-2 leading-tight text-slate-600">
 					{article.excerpt}
 				</p>
 			{/if}
 
 			<div
-				class="mt-4 flex items-center gap-2 text-xs font-bold tracking-wide text-[#b42318] uppercase"
+				class="mt-4 flex items-center gap-2 font-bold tracking-wide text-sm text-[#b42318] uppercase"
 			>
 				<span>Read full story</span>
 

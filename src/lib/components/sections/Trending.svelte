@@ -14,10 +14,14 @@
 
 			<h2
 				id="trending-heading"
-				class="text-lg font-extrabold tracking-tight text-neutral-900 uppercase"
+				class="text-xl font-extrabold tracking-tight text-neutral-900 uppercase"
 			>
 				Trending
 			</h2>
+
+			<!-- <span class="inline-flex items-center -mt-2 rounded-lg bg-red-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white animate-pulse">
+				Popular right now
+			</span> -->
 		</div>
 	</div>
 
@@ -38,29 +42,32 @@
 						class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/30 to-transparent"
 					></div>
 
+			
+
+
 					<!-- Trending badge
                     <span
                         class="absolute top-3 left-3 rounded-md bg-red-700 px-2.5 py-1.5 text-[10px] font-extrabold tracking-wide text-white uppercase shadow-md"
                     >
                         Trending Now
-                    </span> -->
+                    </span>-->
 				</div>
 			{/if}
 
 			<div class="mt-3">
 				<h3
-					class="line-clamp-3 text-base leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700"
+					class="line-clamp-2 text-lg leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700"
 				>
 					{articles[0].title}
 				</h3>
 
-				<div class="mt-3 flex items-center gap-2">
-					<span class="h-1.5 w-1.5 rounded-full bg-red-600"></span>
+				<!-- <div class="mt-3 flex items-center gap-2"> -->
+					<!-- <span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> -->
 
-					<span class="text-[11px] font-semibold tracking-wide text-neutral-500 uppercase">
+					<!-- <span class="text-[14px] text-white font-semibold px-2 py-1 -mt-2 bg-red-500 rounded-lg tracking-wide uppercase animate-pulse">
 						Popular right now
 					</span>
-				</div>
+				</div> -->
 			</div>
 		</a>
 	{/if}
@@ -71,7 +78,7 @@
 			{#each articles.slice(1) as article (article.id)}
 				<a
 					href={sitePath(`/post/${article.slug}`)}
-					class="group flex min-w-0 items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-50"
+					class="group flex min-w-0 items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-100"
 				>
 					<!-- Trending indicator -->
 					<span
@@ -95,9 +102,9 @@
 	<div class="border-t border-neutral-100 bg-neutral-50 px-4 py-3">
 		<a
 			href={sitePath('/most-read')}
-			class="group flex items-center justify-center gap-2 text-xs font-bold tracking-wide text-neutral-600 uppercase transition-colors hover:text-[#102A43]"
+			class="group flex items-center justify-center gap-2 text-xs font-bold tracking-wide text-neutral-600 uppercase transition-colors hover:text-red-700"
 		>
-			<span>View all popular articles</span>
+			<span>View all trending articles</span>
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

@@ -82,19 +82,19 @@
 
 <article
 	class={[
-		'fixed right-2 bottom-17 left-2                                                                                                                                                                                                               z-20 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-2xl lg:bottom-18',
+		'fixed right-2 bottom-17 left-2 z-20 overflow-hidden border border-neutral-200 rounded-lg shadow-2xl lg:bottom-18',
 		'sm:right-4 sm:left-auto sm:w-md',
-		'transition-all duration-300 ease-out'
+		'transition-all duration-500 ease-out opacity-100'
 	]}
 >
 	<!-- Header -->
 	<header
-		class="flex h-12 items-center justify-between gap-3 border-b border-neutral-200 bg-white px-3"
+		class="flex h-12 items-center justify-between gap-3 bg-white px-3 border-none"
 	>
 		<div class="flex min-w-0 items-center gap-3">
 			<!-- YouTube icon -->
 			<div
-				class="flex size-8 shrink-0 items-center justify-center rounded-full bg-red-600 text-white"
+				class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-red-600 text-white"
 			>
 				<Icon icon="mdi:youtube" class="text-xl" />
 			</div>
@@ -145,7 +145,7 @@
 	<!-- Video -->
 	<div
 		class={[
-			'grid transition-[grid-template-rows] duration-300 ease-out',
+			'grid transition-[grid-template-rows] duration-300 ease-out bg-black',
 			isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
 		]}
 	>

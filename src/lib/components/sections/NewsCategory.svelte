@@ -14,7 +14,7 @@
 <section class="w-full min-w-0">
 	<!-- Category heading -->
 	<div class="mb-3 flex items-center justify-between border-b border-neutral-300 pb-2">
-		<h2 class="text-xl font-bold uppercase">
+		<h2 class="text-2xl font-bold uppercase">
 			{title}
 		</h2>
 	</div>
@@ -51,12 +51,12 @@
 				<h3
 					class="mt-2 line-clamp-2 leading-snug transition-colors group-hover:text-red-600
 						{index === 0 ? 'text-lg font-semibold' : 'text-sm font-medium'}
-						xl:text-base xl:font-medium"
+						xl:text-lg xl:font-semibold"
 				>
 					{article.title}
 				</h3>
 
-				<span class="text-xs text-slate-500/70">{article.datePosted}</span>
+				<span class="mt-4 text-slate-500">{article.datePosted}</span>
 			</a>
 		{/each}
 	</div>

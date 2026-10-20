@@ -14,7 +14,7 @@
 
 			<h2
 				id="most-read-heading"
-				class="text-lg font-extrabold tracking-tight text-neutral-900 uppercase"
+				class="text-xl font-extrabold tracking-tight text-neutral-900 uppercase"
 			>
 				Most Read
 			</h2>
@@ -48,7 +48,7 @@
 
 			<div class="mt-3">
 				<h3
-					class="line-clamp-3 text-base leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700"
+					class="line-clamp-2 text-lg leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700"
 				>
 					{articles[0].title}
 				</h3>
@@ -61,11 +61,15 @@
 		{#each articles.slice(1) as article (article.id)}
 			<a
 				href={sitePath(`/post/${article.slug}`)}
-				class="group flex items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-50"
+				class="group flex items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-100"
 			>
 				<div class="flex flex-row items-center justify-between gap-2">
-					<!-- Article rank -->
-					<span class="h-1.5 w-1.5 rounded-full bg-[#102A43]"></span>
+					
+					<!-- Most Read indicator -->
+					<span
+						class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#102A43] transition-transform duration-200 group-hover:scale-125"
+					></span>
+
 					<!-- Article title -->
 					<h3
 						class="group-hover:text-blue line-clamp-3 text-sm leading-snug font-semibold text-neutral-800 transition-colors duration-200"

@@ -13,11 +13,11 @@
 </script>
 
 <section
-	class="flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
+	class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
 >
 	<!-- Header -->
 	<div class="flex shrink-0 items-center justify-between gap-3 bg-[#102a43] px-4 py-2.5">
-		<h2 class="text-md min-w-0 truncate font-extrabold tracking-[0.08em] text-white uppercase">
+		<h2 class="text-xl min-w-0 truncate font-extrabold tracking-[0.08em] text-white uppercase">
 			Headlines
 		</h2>
 
@@ -108,9 +108,9 @@
 	</div>
 
 	<!-- Desktop -->
-	<div class={['hidden min-h-0 flex-1 md:grid']}>
+	<div class='hidden min-h-0 flex-1 md:grid'>
 		<div
-			class="grid min-w-0 grid-cols-2 grid-rows-2 gap-0.5 divide-y divide-white/20 border-l border-neutral-200"
+			class="grid min-w-0 grid-cols-2 grid-rows-2 gap-1"
 		>
 			{#each secondaryArticles as article (article.id)}
 				<a
@@ -131,10 +131,10 @@
 					<div class="relative w-full min-w-0 px-3 xl:p-4">
 						<div class="mb-2 h-0.5 w-6 bg-blue-300"></div>
 
-						<h3 class="-mb-1 line-clamp-3 text-sm leading-snug font-bold text-white xl:text-base">
+						<h3 class="line-clamp-3 leading-snug font-bold text-2xl text-white">
 							{article.title}
 						</h3>
-						<span class="text-xs text-slate-300/70">{article.datePosted}</span>
+						<span class="text-slate-300/80">{article.datePosted}</span>
 					</div>
 				</a>
 			{/each}

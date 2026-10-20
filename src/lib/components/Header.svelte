@@ -149,7 +149,7 @@
 		<div class="flex h-17.5 items-center justify-between gap-4">
 			<div>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
-					<img src={logo} alt="DZRH Logo" class="h-10 w-auto -ml-1" />
+					<img src={logo} alt="DZRH Logo" class="h-24 w-auto -ml-1" />
 				</a>
 			</div>
 
@@ -304,12 +304,12 @@
 	<!-- Desktop view -->
 	<div class="hidden lg:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="grid h-10 grid-cols-[1fr_3fr_1fr] items-center justify-between pt-3.5">
+		<div class="grid h-10 grid-cols-[1fr_3fr_1fr] items-center justify-between mt-2">
 			
 			<!-- Logo -->
 			<div class="-m-1.5">
 				<a href={sitePath('/')}>
-					<img src={logo} alt="DZRH Logo" class="h-10 w-auto" />
+					<img src={logo} alt="DZRH Logo" class="h-18 w-auto" />
 				</a>
 			</div>
 			
@@ -319,7 +319,9 @@
 					{#each navLinks as link (link.href)}
 						<li>
 							<a href={sitePath(link.href)}>
-								{link.name}
+								<span class="text-lg">
+									{link.name}
+								</span> 
 							</a>
 						</li>
 					{/each}
@@ -352,11 +354,11 @@
 		</div>
 
 		<!-- Utility Navigation -->
-		<nav
+		<div
 			aria-label="Utility navigation"
 			class="flex w-full justify-between border-b border-neutral-200 pt-4"
 		>
-			<ul class="-ml-3 flex flex-nowrap items-center justify-end">
+			<ul class="flex flex-nowrap items-center justify-end">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a
@@ -387,13 +389,13 @@
 							aria-label={name}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex size-6 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white"
+							class="flex size-7 items-center justify-center rounded-full border border-black bg-transparent text-black transition-all duration-200 hover:bg-black hover:text-white"
 						>
-							<Icon name={icon} height="0.85em" />
+							<Icon name={icon} height="1em" />
 						</a>
 					{/each}
 				</div>
 			</div>
-		</nav>
+		</div>
 	</div>
 </header>

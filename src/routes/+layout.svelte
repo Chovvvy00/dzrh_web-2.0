@@ -19,7 +19,7 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
-<div class="w-full pb-16">
+<div class="w-full pb-16 text-base">
 	<div class="flex min-h-screen flex-col">
 
 		<div class="flex mx-auto justify-center max-w-[1920px]">
@@ -27,28 +27,28 @@
 		</div>
 		
 		<!-- Main content -->
-		<div class="mx-auto w-full flex-1 px-6">
+		<main class="w-full mx-auto flex-1 px-2 md:px-6">
+
 			<!-- Header content -->
 			<div class="sticky top-0 z-50 bg-white">
 				<Header />
 			</div>
 
-			<main class="w-full">
-				<section
-					class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
-				>
-					<AdComponent isTestMode={true} showPlaceholder={true} />
-				</section>
+			<section
+				class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
+			>
+				<AdComponent isTestMode={true} showPlaceholder={true} />
+			</section>
 
-				<div class="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-					<div class="min-w-0">
-						{@render children()}
-					</div>
-
-					<NewsSidebar />
+			<div class="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+				<div class="min-w-0">
+					{@render children()}
 				</div>
-			</main>
-		</div>
+
+				<NewsSidebar />
+			</div>
+		</main>
+
 		<!-- 
 		<div
 			class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
