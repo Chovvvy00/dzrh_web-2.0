@@ -143,13 +143,12 @@
 <svelte:window bind:scrollY onkeydown={handleKeydown} />
 
 <header>
-
 	<!-- Mobile view -->
-	<div class="relative lg:hidden">
-		<div class="flex h:12 lg:h-17.5 items-center justify-between gap-4">
+	<div class="relative xl:hidden">
+		<div class="h:12 flex items-center justify-between gap-4 xl:h-17.5">
 			<div>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
-					<img src={logo} alt="DZRH Logo" class="h-12 w-auto lg:h-24 -ml-1" />
+					<img src={logo} alt="DZRH Logo" class="-ml-1 h-12 w-auto xl:h-24" />
 				</a>
 			</div>
 
@@ -302,17 +301,16 @@
 	</div>
 
 	<!-- Desktop view -->
-	<div class="hidden lg:block">
+	<div class="hidden xl:block">
 		<!-- Header content logo, main nav and social links -->
-		<div class="grid h-10 grid-cols-[1fr_3fr_1fr] items-center justify-between mt-2">
-			
+		<div class="mt-2 grid h-10 grid-cols-[1fr_3fr_1fr] items-center justify-between">
 			<!-- Logo -->
 			<div class="-m-1.5">
 				<a href={sitePath('/')}>
-					<img src={logo} alt="DZRH Logo" class="h-18 w-auto" />
+					<img src={logo} alt="DZRH Logo" class="-ml-1.5 h-18 w-auto" />
 				</a>
 			</div>
-			
+
 			<!-- Category Nav -->
 			<nav aria-label="Primary navigation">
 				<ul class="flex items-center justify-center gap-4">
@@ -321,7 +319,7 @@
 							<a href={sitePath(link.href)}>
 								<span class="text-lg">
 									{link.name}
-								</span> 
+								</span>
 							</a>
 						</li>
 					{/each}
@@ -358,13 +356,13 @@
 			aria-label="Utility navigation"
 			class="flex w-full justify-between border-b border-neutral-200 pt-4"
 		>
-			<ul class="flex flex-nowrap items-center justify-end -ml-2">
+			<ul class="-ml-2 flex flex-nowrap items-center justify-end">
 				{#each utilityLinks as { name, href: path, icon } (name)}
 					<li class="shrink-0">
 						<a
 							href={sitePath(path)}
 							class="group flex min-h-11 items-center justify-center
-								gap-1 rounded-lg px-3 py-2
+								gap-1 rounded-lg px-2 py-1
 								text-sm font-medium whitespace-nowrap
 								text-neutral-600 transition-colors duration-200
 								hover:bg-neutral-100 hover:text-blue-900"

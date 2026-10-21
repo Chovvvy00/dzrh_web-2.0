@@ -64,7 +64,6 @@
 				class="group flex items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-100"
 			>
 				<div class="flex flex-row items-center justify-between gap-2">
-					
 					<!-- Most Read indicator -->
 					<span
 						class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#102A43] transition-transform duration-200 group-hover:scale-125"

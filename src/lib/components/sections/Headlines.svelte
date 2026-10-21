@@ -12,12 +12,10 @@
 	let secondaryArticles = $derived(articles.slice(0, 4));
 </script>
 
-<section
-	class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
->
+<section class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
 	<!-- Header -->
 	<div class="flex shrink-0 items-center justify-between gap-3 bg-[#102a43] px-4 py-2.5">
-		<h2 class="text-xl min-w-0 truncate font-extrabold tracking-[0.08em] text-white uppercase">
+		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.08em] text-white uppercase">
 			Headlines
 		</h2>
 
@@ -108,10 +106,8 @@
 	</div>
 
 	<!-- Desktop -->
-	<div class='hidden min-h-0 flex-1 md:grid'>
-		<div
-			class="grid min-w-0 grid-cols-2 grid-rows-2 gap-1"
-		>
+	<div class="hidden min-h-0 flex-1 md:grid">
+		<div class="grid min-w-0 grid-cols-2 grid-rows-2 gap-1">
 			{#each secondaryArticles as article (article.id)}
 				<a
 					href={sitePath(`/post/${article.slug}`)}
@@ -131,7 +127,7 @@
 					<div class="relative w-full min-w-0 px-3 xl:p-4">
 						<div class="mb-2 h-0.5 w-6 bg-blue-300"></div>
 
-						<h3 class="line-clamp-3 leading-snug font-bold text-2xl text-white">
+						<h3 class="line-clamp-3 text-2xl leading-snug font-bold text-white">
 							{article.title}
 						</h3>
 						<span class="text-slate-300/80">{article.datePosted}</span>

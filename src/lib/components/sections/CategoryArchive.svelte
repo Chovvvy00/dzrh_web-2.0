@@ -45,7 +45,7 @@
 	</svg>
 {/snippet}
 
-<section aria-labelledby={headingId} class="min-w-0 pb-8 [overflow-wrap:anywhere] sm:pb-10">
+<section aria-labelledby={headingId} class="min-w-0 pb-8 wrap-anywhere sm:pb-10">
 	<nav aria-label="Breadcrumb" class="mb-3 text-sm font-medium text-slate-500 sm:mb-5 sm:text-base">
 		<ol class="flex flex-wrap items-center gap-2">
 			<li>
@@ -147,7 +147,7 @@
 										{article.title}
 									</h2>
 									{#if article.excerpt}
-										<p class="md:mb-1.5 line-clamp-1 text-xs leading-relaxed text-slate-500">
+										<p class="line-clamp-1 text-xs leading-relaxed text-slate-500 md:mb-1.5">
 											{article.excerpt}
 										</p>
 									{/if}

@@ -41,10 +41,6 @@
 					<div
 						class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/30 to-transparent"
 					></div>
-
-			
-
-
 					<!-- Trending badge
                     <span
                         class="absolute top-3 left-3 rounded-md bg-red-700 px-2.5 py-1.5 text-[10px] font-extrabold tracking-wide text-white uppercase shadow-md"
@@ -62,9 +58,9 @@
 				</h3>
 
 				<!-- <div class="mt-3 flex items-center gap-2"> -->
-					<!-- <span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> -->
+				<!-- <span class="h-1.5 w-1.5 rounded-full bg-red-600"></span> -->
 
-					<!-- <span class="text-[14px] text-white font-semibold px-2 py-1 -mt-2 bg-red-500 rounded-lg tracking-wide uppercase animate-pulse">
+				<!-- <span class="text-[14px] text-white font-semibold px-2 py-1 -mt-2 bg-red-500 rounded-lg tracking-wide uppercase animate-pulse">
 						Popular right now
 					</span>
 				</div> -->

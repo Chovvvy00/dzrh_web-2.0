@@ -19,18 +19,16 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
-<div class="w-full pb-16 text-base">
-	<div class="flex min-h-screen flex-col">
-
-		<div class="flex mx-auto justify-center max-w-[1920px]">
+<div class="mx-auto max-w-[1920px] pb-16 text-base">
+	<div class="flex min-h-screen w-full flex-col">
+		<div class="mx-auto">
 			<TopBanner />
 		</div>
-		
-		<!-- Main content -->
-		<main class="w-full mx-auto flex-1 px-2 md:px-6">
 
+		<!-- Main content -->
+		<main class="flex-1 px-2 md:px-6">
 			<!-- Header content -->
-			<div class="sticky top-0 z-50 bg-white">
+			<div class="sticky top-0 z-50 bg-white pt-1">
 				<Header />
 			</div>
 
@@ -47,18 +45,11 @@
 
 				<NewsSidebar />
 			</div>
+
+			<YoutubeEmbed />
 		</main>
 
-		<!-- 
-		<div
-			class="fixed right-0 bottom-[env(safe-area-inset-bottom)] left-0 z-30
-			lg:flex h-16 items-center bg-yellow-400 text-blue-950 hidden"
-		>
-		</div> -->
-
-		<YoutubeEmbed />
 		<Footer />
-
 		<RadioPlayerComponent />
 	</div>
 </div>

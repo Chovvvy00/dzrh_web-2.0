@@ -18,7 +18,7 @@
 				<span class="relative inline-flex size-3 rounded-full bg-white"></span>
 			</span>
 
-			<h2 class="text-xl truncate font-extrabold tracking-[0.08em] text-white uppercase">
+			<h2 class="truncate text-xl font-extrabold tracking-[0.08em] text-white uppercase">
 				Breaking News
 			</h2>
 		</div>
@@ -72,7 +72,7 @@
 			{/if}
 
 			<div
-				class="mt-4 flex items-center gap-2 font-bold tracking-wide text-sm text-[#b42318] uppercase"
+				class="mt-4 flex items-center gap-2 text-sm font-bold tracking-wide text-[#b42318] uppercase"
 			>
 				<span>Read full story</span>
 

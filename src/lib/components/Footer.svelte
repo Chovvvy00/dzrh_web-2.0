@@ -12,7 +12,7 @@
 		{ label: 'World', href: '/world' },
 		{ label: 'Sports', href: '/sports' },
 		{ label: 'Metro Manila', href: '/metro-manila' },
-		{ label: 'Lifestyle', href: '/lifestyle' },
+		{ label: 'Lifestyle', href: '/lifestyle' }
 	];
 
 	const dzrhLinks = [
@@ -37,7 +37,7 @@
 	];
 </script>
 
-<footer class="w-full">
+<footer>
 	<!-- Main Footer -->
 	<div class="bg-neutral-100">
 		<div
@@ -45,7 +45,7 @@
 		>
 			<!-- Brand -->
 			<div>
-				<a href={sitePath('/')} aria-label="DZRH Home" class="inline-block -ml-2">
+				<a href={sitePath('/')} aria-label="DZRH Home" class="-ml-2 inline-block">
 					<img src={logo} alt="DZRH" class="h-14 w-auto sm:h-16" />
 				</a>
 
