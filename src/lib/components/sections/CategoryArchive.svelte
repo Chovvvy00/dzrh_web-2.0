@@ -1,4 +1,5 @@
 <script lang="ts">
+	import NewsSidebar from '#lib/components/layout/NewsSidebar.svelte';
 	import { postPath, sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
@@ -47,8 +48,9 @@
 
 <section
 	aria-labelledby={headingId}
+	class="grid min-w-0 grid-cols-1 items-start gap-x-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:grid-rows-[auto_auto_1fr]"
 >
-	<div class="min-w-0">
+	<div class="min-w-0 lg:col-start-1 lg:row-start-1">
 		<nav
 			aria-label="Breadcrumb"
 			class="mb-3 text-base leading-relaxed font-medium text-slate-600 sm:mb-3 xl:text-lg"
@@ -57,27 +59,31 @@
 				<li>
 					<a
 						href={sitePath('/')}
-						class="inline-flex min-h-11 items-center rounded-sm transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 text-xs md:text-base 2xl:text-xl"
+						class="inline-flex min-h-11 items-center rounded-sm text-xs transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 md:text-base 2xl:text-xl"
 						>Home</a
 					>
 				</li>
 				<li aria-hidden="true" class="text-slate-300 2xl:text-xl">/</li>
-				<li aria-current="page" class="text-slate-700 text-sm md:text-base 2xl:text-xl">{title}</li>
+				<li aria-current="page" class="text-sm text-slate-700 md:text-base 2xl:text-xl">{title}</li>
 			</ol>
 		</nav>
 
 		<header class="relative mb-5 border-b border-neutral-200 pb-4 sm:mb-6 sm:pb-6">
 			<h1
 				id={headingId}
-				class="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl leading-tight font-extrabold tracking-tight text-[#102A43]"
+				class="text-2xl leading-tight font-extrabold tracking-tight text-[#102A43] sm:text-3xl xl:text-4xl 2xl:text-5xl"
 			>
 				{title} Articles
 			</h1>
 
-			<span class="absolute -bottom-px left-0 h-1 xl:h-2 w-14 rounded-full bg-red-700" aria-hidden="true"
+			<span
+				class="absolute -bottom-px left-0 h-1 w-14 rounded-full bg-red-700 xl:h-2"
+				aria-hidden="true"
 			></span>
 		</header>
+	</div>
 
+	<div class="min-w-0 lg:col-start-1 lg:row-start-2">
 		{#if lead}
 			<div
 				class="grid gap-5 {highlights.length ? 'md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]' : ''}"
@@ -101,24 +107,26 @@
 						></div>
 						<div class="relative w-full min-w-0 p-3 sm:p-5 md:p-4 xl:p-5">
 							<h2
-								class="text-xl sm:text-3xl md:text-xl xl:text-2xl 2xl:text-4xl leading-snug font-extrabold tracking-tight text-white"
+								class="text-xl leading-snug font-extrabold tracking-tight text-white sm:text-3xl md:text-xl xl:text-2xl 2xl:text-4xl"
 							>
 								{lead.title}
 							</h2>
 							{#if lead.excerpt}
-								<p class="hidden xl:line-clamp-2 leading-relaxed text-white/95 2xl:text-lg">
+								<p class="hidden leading-relaxed text-white/95 xl:line-clamp-2 2xl:text-lg">
 									{lead.excerpt}
 								</p>
 							{/if}
 
 							<div class="flex justify-between xl:mt-2 xl:pr-5 2xl:pb-5">
 								{#if lead.datePosted}
-									<p class="text-xs sm:text-sm 2xl:text-base leading-relaxed font-medium text-white/90 ">
+									<p
+										class="text-xs leading-relaxed font-medium text-white/90 sm:text-sm 2xl:text-base"
+									>
 										{lead.datePosted}
 									</p>
 								{/if}
 								<span
-									class="hidden xl:inline-flex items-center gap-2 text-base leading-relaxed font-bold text-[#f7d347]"
+									class="hidden items-center gap-2 text-base leading-relaxed font-bold text-[#f7d347] xl:inline-flex"
 									>Read full story {@render arrow()}
 								</span>
 							</div>
@@ -153,8 +161,8 @@
 
 									<!-- Dynamic text container -->
 									<div
-										class="flex min-w-0 flex-1 flex-col justify-center overflow-hidden
-											max-h-13.5 sm:max-h-22.5 md:max-h-15.75
+										class="flex max-h-13.5 min-w-0 flex-1 flex-col justify-center
+											overflow-hidden sm:max-h-22.5 md:max-h-15.75
 											xl:max-h-20.25 2xl:max-h-29.25"
 									>
 										<!-- Title: adapts depending on available space -->
@@ -205,12 +213,16 @@
 		{/if}
 	</div>
 
-	<div class="min-w-0 lg:col-start-1 lg:row-start-2">
+	<div class="mt-7 min-w-0 sm:mt-9 lg:col-start-2 lg:row-span-2 lg:row-start-2 lg:mt-0">
+		<NewsSidebar />
+	</div>
+
+	<div class="min-w-0 lg:col-start-1 lg:row-start-3">
 		{#if archiveArticles.length}
 			<div class="mt-4 mb-4 flex items-center gap-3 sm:mt-9 sm:mb-5">
 				<span class="h-5 w-1 shrink-0 rounded-full bg-red-700" aria-hidden="true"></span>
 				<h2
-					class="min-w-0 text-lg sm:text-2xl md:text-xl xl:text-2xl leading-snug font-extrabold tracking-tight text-[#102A43]"
+					class="min-w-0 text-lg leading-snug font-extrabold tracking-tight text-[#102A43] sm:text-2xl md:text-xl xl:text-2xl"
 				>
 					More {title} stories
 				</h2>
@@ -236,33 +248,31 @@
 							</div>
 
 							<div class="flex flex-1 flex-col p-2.5 sm:p-4 md:p-3">
-								
 								<h3
-									class="text-lg md:text-xl lg:text-base xl:text-lg line-clamp-2 leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700"
+									class="line-clamp-2 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 md:text-xl lg:text-base xl:text-lg"
 								>
 									{article.title}
 								</h3>
 								{#if article.excerpt}
-									<p class="line-clamp-3 leading-relaxed text-slate-600 hidden md:text-base xl:text-lg">
+									<p
+										class="line-clamp-3 hidden leading-relaxed text-slate-600 md:text-base xl:text-lg"
+									>
 										{article.excerpt}
 									</p>
 								{/if}
-								
-								<div class="flex items-center justify-between ">
-									
+
+								<div class="flex items-center justify-between">
 									{#if article.datePosted}
 										<p class="text-sm leading-relaxed text-slate-600 lg:text-xs xl:text-base">
 											{article.datePosted}
 										</p>
 									{/if}
-									
-	
+
 									<span
-										class="flex items-center text-sm gap-2 leading-relaxed font-bold text-red-700"
+										class="flex items-center gap-2 text-sm leading-relaxed font-bold text-red-700"
 										>Read story {@render arrow()}
 									</span>
 								</div>
-
 							</div>
 						</a>
 					</article>

@@ -14,6 +14,7 @@
 
 	let { children }: LayoutProps = $props();
 	let isPost = $derived(page.route.id?.startsWith('/post/') ?? false);
+	let isCategory = $derived(page.route.id === '/[category]');
 </script>
 
 <svelte:head>
@@ -42,6 +43,10 @@
 
 			{#if isPost}
 				{@render children()}
+			{:else if isCategory}
+				<div class="mt-6 min-w-0 sm:mt-8">
+					{@render children()}
+				</div>
 			{:else}
 				<div
 					class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_280px]"

@@ -36,7 +36,7 @@
 				{article.title}
 			</h3>
 			{#if article.excerpt}
-				<p class="mt-2 line-clamp-3 text-base leading-relaxed text-slate-600 xl:text-lg">
+				<p class="mt-2 line-clamp-2 text-base leading-relaxed text-slate-600 xl:text-lg">
 					{article.excerpt}
 				</p>
 			{/if}
