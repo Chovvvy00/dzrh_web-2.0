@@ -95,7 +95,7 @@
 </script>
 
 <article
-	class="fixed right-full bottom-17 left-2 z-20 overflow-hidden rounded-lg border border-neutral-200 shadow-2xl sm:right-4 sm:left-auto sm:w-md lg:bottom-18"
+	class="fixed right-2 bottom-17 left-2 z-20 overflow-hidden rounded-lg border border-neutral-200 shadow-2xl sm:right-4 sm:left-auto sm:w-md lg:bottom-18"
 >
 	<!-- Header -->
 	<header class="flex h-12 items-center justify-between gap-3 border-none bg-white px-3">
