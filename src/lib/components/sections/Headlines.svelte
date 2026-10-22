@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
+	import { postPath, sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -9,7 +9,7 @@
 
 	let { articles, href = '/headlines' }: Props = $props();
 
-	let secondaryArticles = $derived(articles.slice(0, 4));
+	let secondaryArticles = $derived(articles.slice(0, 6));
 </script>
 
 <section class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
@@ -49,7 +49,7 @@
 	<!-- Mobile -->
 	<div class="divide-y divide-neutral-200 md:hidden">
 		{#if articles[0]}
-			<a href={sitePath(`/post/${articles[0].slug}`)} class="group block">
+			<a href={postPath(articles[0].slug)} class="group block">
 				<div class="relative aspect-video overflow-hidden bg-neutral-200">
 					<img
 						src={articles[0].image}
@@ -81,7 +81,7 @@
 
 		{#each secondaryArticles.slice(1) as article (article.id)}
 			<a
-				href={sitePath(`/post/${article.slug}`)}
+				href={postPath(article.slug)}
 				class="group grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-3 p-4 sm:grid-cols-[120px_minmax(0,1fr)]"
 			>
 				<div class="aspect-video overflow-hidden bg-neutral-200">
@@ -109,10 +109,10 @@
 
 	<!-- Desktop -->
 	<div class="hidden min-h-0 flex-1 md:grid">
-		<div class="grid min-w-0 grid-cols-2 grid-rows-2 gap-1">
+		<div class="grid min-w-0 grid-cols-3 grid-rows- gap-1">
 			{#each secondaryArticles as article (article.id)}
 				<a
-					href={sitePath(`/post/${article.slug}`)}
+					href={postPath(article.slug)}
 					class="group relative flex min-h-44 min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
 				>
 					<img
