@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
+	import { postPath, sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -30,7 +30,7 @@
 	<div class="grid grid-cols-2 gap-x-3 gap-y-4 xl:grid-cols-3 xl:gap-4">
 		{#each articles.slice(0, 3) as article, index (article.id)}
 			<a
-				href={sitePath(`/post/${article.slug}`)}
+				href={postPath(article.slug)}
 				class="group block min-w-0 {index === 0 ? 'col-span-2' : ''} xl:col-span-1"
 			>
 				<!-- Image -->

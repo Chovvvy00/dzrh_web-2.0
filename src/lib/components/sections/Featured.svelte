@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
-	import { featuredArticle as article } from '#lib/data/sample-articles.ts';
+	import { postPath } from '#lib/paths.ts';
+	import { featuredArticle as article } from '#lib/data/articles.ts';
 </script>
 
 <section
@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="divide-y divide-neutral-200">
-		<a href={sitePath(`/featured/${article.slug}`)} class="group block">
+		<a href={postPath(article.slug)} class="group block">
 			<div class="relative aspect-video overflow-hidden bg-neutral-200">
 				<img
 					src={article.image}

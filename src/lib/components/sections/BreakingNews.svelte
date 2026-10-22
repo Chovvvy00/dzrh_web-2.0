@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
+	import { postPath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -30,7 +30,7 @@
 		</span>
 	</div>
 
-	<a href={sitePath(`/post/${article.slug}`)} class="group block">
+	<a href={postPath(article.slug)} class="group block">
 		<div
 			// class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-4/3"
 			class="relative aspect-video overflow-hidden bg-neutral-200"

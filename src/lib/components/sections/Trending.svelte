@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
-	import { trendingArticles as articles } from '#lib/data/sample-articles.ts';
+	import { postPath, sitePath } from '#lib/paths.ts';
+	import { trendingArticles as articles } from '#lib/data/articles.ts';
 </script>
 
 <section
@@ -27,7 +27,7 @@
 
 	<!-- Featured trending article -->
 	{#if articles[0]}
-		<a href={sitePath(`/post/${articles[0].slug}`)} class="group block p-4 lg:p-3">
+		<a href={postPath(articles[0].slug)} class="group block p-4 lg:p-3">
 			{#if articles[0].image}
 				<div class="relative aspect-video overflow-hidden rounded-lg bg-neutral-100">
 					<img
@@ -73,7 +73,7 @@
 		<div class="mx-4 divide-y divide-neutral-100 border-t border-neutral-200 lg:mx-3">
 			{#each articles.slice(1) as article (article.id)}
 				<a
-					href={sitePath(`/post/${article.slug}`)}
+					href={postPath(article.slug)}
 					class="group flex min-w-0 items-start gap-3 py-4 transition-colors duration-200 hover:bg-neutral-100 lg:px-1 lg:py-3.5"
 				>
 					<!-- Trending indicator -->

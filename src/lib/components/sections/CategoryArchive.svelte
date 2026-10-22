@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sitePath } from '#lib/paths.ts';
+	import { postPath, sitePath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
 	type Props = {
@@ -83,7 +83,7 @@
 		>
 			<article class="min-w-0">
 				<a
-					href={sitePath(`/post/${lead.slug}`)}
+					href={postPath(lead.slug)}
 					class="group relative flex h-full min-h-80 items-end overflow-hidden rounded-xl bg-[#102A43] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 sm:min-h-96"
 				>
 					{#if lead.image}
@@ -132,7 +132,7 @@
 					{#each highlights as article (article.id)}
 						<article class="flex flex-1 flex-col justify-center py-4 md:py-3">
 							<a
-								href={sitePath(`/post/${article.slug}`)}
+								href={postPath(article.slug)}
 								class="group flex min-w-0 items-start gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
 							>
 								<div
@@ -188,7 +188,7 @@
 				{#each visibleArticles as article (article.id)}
 					<article class="min-w-0">
 						<a
-							href={sitePath(`/post/${article.slug}`)}
+							href={postPath(article.slug)}
 							class="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white transition-[border-color,box-shadow] hover:border-neutral-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
 						>
 							<div class="aspect-video overflow-hidden bg-neutral-100">
