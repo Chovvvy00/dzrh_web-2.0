@@ -10,7 +10,7 @@
 </script>
 
 <section class="w-full min-w-0 overflow-hidden rounded-lg border border-red-200 bg-white">
-	<div class="flex items-center justify-between gap-3 bg-[#b42318] px-4 py-2.5">
+	<div class="flex items-center justify-between gap-3 bg-[#b42318] px-4 py-3 lg:py-2.5">
 		<div class="flex min-w-0 items-center gap-2">
 			<span class="relative flex size-3 shrink-0">
 				<span class="absolute inline-flex size-full animate-ping rounded-full bg-white/70"></span>

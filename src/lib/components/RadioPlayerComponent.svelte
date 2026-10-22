@@ -26,7 +26,7 @@
 	</div>
 
 	<!-- STATION INFO -->
-	<div class="flex min-w-0 flex-1 items-center gap-2 px-2 lg:px-4">
+	<div class="flex min-w-0 flex-1 items-center gap-2 px-4">
 		<div class="size-10 shrink-0 rounded-sm bg-white"></div>
 
 		<div class="flex min-w-0 flex-col items-start lg:flex-row lg:items-center lg:gap-2">

@@ -60,7 +60,7 @@
 </div>
 
 <!-- Mobile Mode -->
-<div class="flex flex-col gap-6 lg:hidden">
+<div class="flex min-w-0 flex-col gap-6 pb-8 sm:pb-10 lg:hidden">
 	<!-- Breaking News -->
 	<BreakingNews article={breakingNews} />
 
@@ -76,15 +76,13 @@
 	<!-- Most Read -->
 	<MostRead />
 
-	<section
-		class="relative mx-auto mb-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
-	>
+	<section class="relative mx-auto h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182">
 		<AdComponent isTestMode={true} showPlaceholder={true} />
 	</section>
 
 	<!-- News Categories -->
 	<section class="min-w-0">
-		<div class="grid grid-cols-1 gap-8">
+		<div class="grid grid-cols-1 gap-6 sm:gap-8">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 
 			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
@@ -101,7 +99,7 @@
 			<AdComponent isTestMode={true} showPlaceholder={true} />
 		</section>
 
-		<div class="grid grid-cols-1 gap-8">
+		<div class="grid grid-cols-1 gap-6 sm:gap-8">
 			<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 
 			<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />

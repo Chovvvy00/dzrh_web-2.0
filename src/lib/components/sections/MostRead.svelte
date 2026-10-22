@@ -8,7 +8,9 @@
 	class="w-full min-w-0 overflow-hidden rounded-xl border border-neutral-200 bg-white"
 >
 	<!-- Heading -->
-	<div class="flex items-center justify-between gap-3 border-b border-neutral-200 px-4 py-3">
+	<div
+		class="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-200 px-4 py-3 lg:flex-nowrap"
+	>
 		<div class="flex items-center gap-2.5">
 			<span class="h-6 w-1 rounded-full bg-[#102A43]"></span>
 
@@ -29,7 +31,7 @@
 
 	<!-- Featured top article -->
 	{#if articles[0]}
-		<a href={sitePath(`/post/${articles[0].slug}`)} class="group block p-3">
+		<a href={sitePath(`/post/${articles[0].slug}`)} class="group block p-4 lg:p-3">
 			{#if articles[0].image}
 				<div class="relative aspect-video overflow-hidden rounded-lg bg-neutral-100">
 					<img
@@ -57,11 +59,11 @@
 	{/if}
 
 	<!-- Other most-read articles -->
-	<div class="mx-3 divide-y divide-neutral-100 border-t border-neutral-200">
+	<div class="mx-4 divide-y divide-neutral-100 border-t border-neutral-200 lg:mx-3">
 		{#each articles.slice(1) as article (article.id)}
 			<a
 				href={sitePath(`/post/${article.slug}`)}
-				class="group flex items-start gap-3 px-1 py-3.5 transition-colors duration-200 hover:bg-neutral-100"
+				class="group flex items-start gap-3 py-4 transition-colors duration-200 hover:bg-neutral-100 lg:px-1 lg:py-3.5"
 			>
 				<div class="flex flex-row items-center justify-between gap-2">
 					<!-- Most Read indicator -->

@@ -7,7 +7,9 @@
 	class="flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
 >
 	<!-- Header -->
-	<div class="flex shrink-0 items-center justify-between gap-3 bg-[#f7d347] px-4 py-2.5">
+	<div
+		class="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 bg-[#f7d347] px-4 py-3 lg:flex-nowrap lg:py-2.5"
+	>
 		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.8] text-slate-700 uppercase">
 			Featured
 		</h2>

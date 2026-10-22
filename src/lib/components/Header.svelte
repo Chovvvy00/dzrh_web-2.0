@@ -5,7 +5,8 @@
 	import type { IconName } from '#lib/icons.ts';
 	import { sitePath } from '#lib/paths.ts';
 	import logo from '#lib/assets/logo/dzrh-logo.svg';
-
+	import { page } from '$app/state';
+	console.log('page', page.url.pathname.replace(/\//g, ''));
 	type NavLink = {
 		name: string;
 		href: string;
@@ -48,8 +49,8 @@
 			icon: 'open-book'
 		},
 		{
-			name: 'Lottery',
-			href: '/lottery',
+			name: 'Lotto',
+			href: '/lotto',
 			icon: 'lottery',
 			mobileName: 'Lotto'
 		},
@@ -145,17 +146,17 @@
 <header>
 	<!-- Mobile view -->
 	<div class="relative xl:hidden">
-		<div class="h:12 flex items-center justify-between gap-4 xl:h-17.5">
-			<div>
+		<div class="flex min-h-14 items-center justify-between gap-2 py-1">
+			<div class={['shrink-0', isOpen && 'hidden sm:block']}>
 				<a href={sitePath('/')} aria-label="DZRH home" onclick={closeMobileMenu}>
 					<img src={logo} alt="DZRH Logo" class="-ml-1 h-12 w-auto xl:h-24" />
 				</a>
 			</div>
 
-			<div class="flex items-center justify-center">
-				<div class="flex items-center">
+			<div class="ml-auto flex min-w-0 items-center justify-end">
+				<div class="flex min-w-0 items-center">
 					<div
-						class="flex h-10 items-center overflow-hidden rounded-full border
+						class="flex h-10 max-w-full min-w-0 items-center overflow-hidden rounded-full border
 						bg-white transition-all duration-300 ease-in-out
 						{isOpen
 							? 'w-56 gap-1 border-gray-300 px-2 shadow-sm'
@@ -198,7 +199,7 @@
 					aria-controls="mobile-navigation"
 					onclick={toggleMobileMenu}
 					data-open={mobileMenuOpen}
-					class="group flex size-11 items-center justify-center text-black transition-[background-color,transform] duration-200 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100"
+					class="group flex size-11 shrink-0 items-center justify-center text-black transition-[background-color,transform] duration-200 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100"
 				>
 					<span class="relative block size-6" aria-hidden="true">
 						<span
@@ -225,7 +226,7 @@
 			data-open={mobileMenuOpen}
 			inert={!mobileMenuOpen}
 			aria-hidden={!mobileMenuOpen}
-			class="absolute inset-x-0 top-17.5 z-10 grid max-h-[calc(100dvh-4.375rem)] grid-rows-[0fr] overflow-y-auto overscroll-contain bg-white opacity-0 shadow-sm transition-[grid-template-rows,opacity] duration-400 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
+			class="absolute inset-x-0 top-14 z-10 grid max-h-[calc(100dvh-8rem)] grid-rows-[0fr] overflow-y-auto overscroll-contain bg-white opacity-0 shadow-sm transition-[grid-template-rows,opacity] duration-400 ease-in-out data-[open=true]:grid-rows-[1fr] data-[open=true]:opacity-100 motion-reduce:transition-none"
 		>
 			<div class="min-h-0 overflow-hidden">
 				<div class="border-y border-gray-200 py-3">
@@ -236,7 +237,7 @@
 									<a
 										href={sitePath(link.href)}
 										onclick={closeMobileMenu}
-										class="flex min-h-11 items-center px-3 text-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-black"
+										class="flex min-h-11 items-center px-4 py-2 text-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-black"
 									>
 										{link.name}
 									</a>
@@ -246,7 +247,7 @@
 								<a
 									href={sitePath('/special-coverage')}
 									onclick={closeMobileMenu}
-									class="flex min-h-11 items-center justify-center bg-red-600 px-3 text-sm text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+									class="flex min-h-11 items-center justify-center bg-red-600 px-4 py-2 text-sm text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 								>
 									SPECIAL COVERAGE
 								</a>
@@ -286,7 +287,7 @@
 							<li class="min-w-0">
 								<a
 									href={sitePath(path)}
-									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-1 text-center text-[11px] leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black sm:text-xs"
+									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-[11px] leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black sm:text-xs"
 								>
 									<Icon name={icon} width="20" height="20" class="shrink-0" aria-hidden="true" />
 									<span class="block w-full min-w-0 truncate text-center">{mobileName ?? name}</span
@@ -316,7 +317,12 @@
 				<ul class="flex items-center justify-center gap-4">
 					{#each navLinks as link (link.href)}
 						<li>
-							<a href={sitePath(link.href)}>
+							<a
+								href={sitePath(link.href)}
+								class="inline-block hover:underline"
+								class:underline={page.url.pathname.split('/').slice(0, -1).join('/') ===
+									sitePath(link.href)}
+							>
 								<span class="text-lg">
 									{link.name}
 								</span>

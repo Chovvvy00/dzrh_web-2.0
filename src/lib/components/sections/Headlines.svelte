@@ -14,7 +14,9 @@
 
 <section class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
 	<!-- Header -->
-	<div class="flex shrink-0 items-center justify-between gap-3 bg-[#102a43] px-4 py-2.5">
+	<div
+		class="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 bg-[#102a43] px-4 py-3 md:flex-nowrap md:py-2.5"
+	>
 		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.08em] text-white uppercase">
 			Headlines
 		</h2>
@@ -80,7 +82,7 @@
 		{#each secondaryArticles.slice(1) as article (article.id)}
 			<a
 				href={sitePath(`/post/${article.slug}`)}
-				class="group grid grid-cols-[120px_minmax(0,1fr)] gap-3 p-3"
+				class="group grid grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-3 p-4 sm:grid-cols-[120px_minmax(0,1fr)]"
 			>
 				<div class="aspect-video overflow-hidden bg-neutral-200">
 					<img

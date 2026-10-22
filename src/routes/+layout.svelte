@@ -19,14 +19,14 @@
 	<meta name="theme-color" content="#ffffff" />
 </svelte:head>
 
-<div class="mx-auto max-w-[1920px] pb-16 text-base">
+<div class="mx-auto max-w-[1920px] pb-36 text-base lg:pb-16">
 	<div class="flex min-h-screen w-full flex-col">
-		<div class="mx-auto">
+		<div class="mx-auto w-full min-w-0">
 			<TopBanner />
 		</div>
 
 		<!-- Main content -->
-		<main class="flex-1 px-2 md:px-6">
+		<main class="min-w-0 flex-1 px-4 sm:px-6">
 			<!-- Header content -->
 			<div class="sticky top-0 z-50 bg-white pt-1">
 				<Header />
@@ -38,7 +38,9 @@
 				<AdComponent isTestMode={true} showPlaceholder={true} />
 			</section>
 
-			<div class="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+			<div
+				class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_280px]"
+			>
 				<div class="min-w-0">
 					{@render children()}
 				</div>

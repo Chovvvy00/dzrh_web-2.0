@@ -56,12 +56,12 @@
 					{article.title}
 				</h3>
 
-				<span class="mt-4 text-slate-500">{article.datePosted}</span>
+				<span class="mt-2 block text-slate-500 xl:mt-4">{article.datePosted}</span>
 			</a>
 		{/each}
 	</div>
 
-	<div class="flex items-center justify-end py-4">
+	<div class="flex items-center justify-end pt-4 xl:pb-4">
 		<a
 			href={sitePath(href)}
 			class="text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
