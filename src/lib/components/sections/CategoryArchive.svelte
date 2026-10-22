@@ -45,153 +45,186 @@
 	</svg>
 {/snippet}
 
-<section aria-labelledby={headingId} class="min-w-0 pb-8 wrap-anywhere sm:pb-10">
-	<nav
-		aria-label="Breadcrumb"
-		class="mb-3 text-base leading-relaxed font-medium text-slate-600 sm:mb-5 xl:text-lg"
-	>
-		<ol class="flex flex-wrap items-center gap-2">
-			<li>
-				<a
-					href={sitePath('/')}
-					class="inline-flex min-h-11 items-center rounded-sm transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
-					>Home</a
-				>
-			</li>
-			<li aria-hidden="true" class="text-slate-300">/</li>
-			<li aria-current="page" class="text-slate-700">{title}</li>
-		</ol>
-	</nav>
-
-	<header class="relative mb-5 border-b border-neutral-200 pb-4 sm:mb-6 sm:pb-6">
-		<h1
-			id={headingId}
-			class="text-3xl leading-tight font-extrabold tracking-tight text-[#102A43] sm:text-4xl xl:text-5xl"
+<section
+	aria-labelledby={headingId}
+>
+	<div class="min-w-0">
+		<nav
+			aria-label="Breadcrumb"
+			class="mb-3 text-base leading-relaxed font-medium text-slate-600 sm:mb-3 xl:text-lg"
 		>
-			{title} Articles
-		</h1>
-		<!-- {#if description}
-			<p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 xl:text-lg">{description}</p>
-		{/if} -->
-		<span class="absolute -bottom-px left-0 h-1 w-14 rounded-full bg-red-700" aria-hidden="true"
-		></span>
-	</header>
+			<ol class="flex flex-wrap items-center gap-2">
+				<li>
+					<a
+						href={sitePath('/')}
+						class="inline-flex min-h-11 items-center rounded-sm transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 text-xs md:text-base 2xl:text-xl"
+						>Home</a
+					>
+				</li>
+				<li aria-hidden="true" class="text-slate-300 2xl:text-xl">/</li>
+				<li aria-current="page" class="text-slate-700 text-sm md:text-base 2xl:text-xl">{title}</li>
+			</ol>
+		</nav>
 
-	{#if lead}
-		<div
-			class="grid gap-5 {highlights.length ? 'md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]' : ''}"
-		>
-			<article class="min-w-0">
-				<a
-					href={postPath(lead.slug)}
-					class="group relative flex h-full min-h-80 items-end overflow-hidden rounded-xl bg-[#102A43] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 sm:min-h-96"
-				>
-					{#if lead.image}
-						<img
-							src={lead.image}
-							alt=""
-							fetchpriority="high"
-							class="absolute inset-0 h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
-						/>
-					{/if}
-					<div
-						class="absolute inset-0 bg-linear-to-t from-[#071b2e]/95 via-[#071b2e]/60 to-[#071b2e]/10"
-					></div>
-					<div class="relative w-full min-w-0 p-4 sm:p-6">
-						<!-- <span
-							class="mb-4 inline-flex rounded-sm bg-[#f7d347] px-2.5 py-1 text-sm font-extrabold tracking-widest text-[#102A43] uppercase xl:text-base"
-							>Top story</span
-						> -->
-						<h2
-							class="text-2xl leading-snug font-extrabold tracking-tight text-white sm:text-3xl xl:text-4xl"
-						>
-							{lead.title}
-						</h2>
-						{#if lead.datePosted}
-							<p class="mt-2 text-sm leading-relaxed font-medium text-white/90 xl:text-base">
-								{lead.datePosted}
-							</p>
-						{/if}
-						{#if lead.excerpt}
-							<p class="mt-3 line-clamp-3 text-base leading-relaxed text-white/95 xl:text-lg">
-								{lead.excerpt}
-							</p>
-						{/if}
-						<span
-							class="mt-4 inline-flex items-center gap-2 text-base leading-relaxed font-bold text-[#f7d347] sm:mt-5"
-							>Read full story {@render arrow()}</span
-						>
-					</div>
-				</a>
-			</article>
+		<header class="relative mb-5 border-b border-neutral-200 pb-4 sm:mb-6 sm:pb-6">
+			<h1
+				id={headingId}
+				class="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl leading-tight font-extrabold tracking-tight text-[#102A43]"
+			>
+				{title} Articles
+			</h1>
 
-			{#if highlights.length}
-				<div
-					class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-4 md:px-3"
-				>
-					{#each highlights as article (article.id)}
-						<article class="flex flex-1 flex-col justify-center py-4 md:py-3">
-							<a
-								href={postPath(article.slug)}
-								class="group flex min-w-0 items-start gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+			<span class="absolute -bottom-px left-0 h-1 xl:h-2 w-14 rounded-full bg-red-700" aria-hidden="true"
+			></span>
+		</header>
+
+		{#if lead}
+			<div
+				class="grid gap-5 {highlights.length ? 'md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]' : ''}"
+			>
+				<!-- Lead Big Image -->
+				<article class="min-w-0">
+					<a
+						href={postPath(lead.slug)}
+						class="group relative flex aspect-video min-h-0 w-full items-end overflow-hidden rounded-xl bg-[#102A43] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+					>
+						{#if lead.image}
+							<img
+								src={lead.image}
+								alt=""
+								fetchpriority="high"
+								class="absolute inset-0 h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+							/>
+						{/if}
+						<div
+							class="absolute inset-0 bg-linear-to-t from-[#071b2e]/80 via-[#071b2e]/35 to-[#071b2e]/5"
+						></div>
+						<div class="relative w-full min-w-0 p-3 sm:p-5 md:p-4 xl:p-5">
+							<h2
+								class="text-xl sm:text-3xl md:text-xl xl:text-2xl 2xl:text-4xl leading-snug font-extrabold tracking-tight text-white"
 							>
-								<div
-									class="aspect-video w-24 shrink-0 overflow-hidden rounded-lg bg-neutral-100 sm:w-40 md:w-28 xl:w-36 2xl:w-52"
-								>
-									{#if article.image}
-										<img
-											src={article.image}
-											alt=""
-											loading="lazy"
-											class="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-105"
-										/>
-									{/if}
-								</div>
-								<div class="min-w-0 flex-1">
-									<h2
-										class="line-clamp-3 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 sm:text-xl xl:text-2xl"
-									>
-										{article.title}
-									</h2>
-									{#if article.excerpt}
-										<p
-											class="mt-2 line-clamp-2 text-base leading-relaxed text-slate-600 md:mb-1.5 xl:text-lg"
-										>
-											{article.excerpt}
-										</p>
-									{/if}
-									{#if article.datePosted}
-										<p class="text-sm leading-relaxed text-slate-600 xl:text-base">
-											{article.datePosted}
-										</p>
-									{/if}
-								</div>
-							</a>
-						</article>
-					{/each}
-				</div>
-			{/if}
-		</div>
+								{lead.title}
+							</h2>
+							{#if lead.excerpt}
+								<p class="hidden xl:line-clamp-2 leading-relaxed text-white/95 2xl:text-lg">
+									{lead.excerpt}
+								</p>
+							{/if}
 
+							<div class="flex justify-between xl:mt-2 xl:pr-5 2xl:pb-5">
+								{#if lead.datePosted}
+									<p class="text-xs sm:text-sm 2xl:text-base leading-relaxed font-medium text-white/90 ">
+										{lead.datePosted}
+									</p>
+								{/if}
+								<span
+									class="hidden xl:inline-flex items-center gap-2 text-base leading-relaxed font-bold text-[#f7d347]"
+									>Read full story {@render arrow()}
+								</span>
+							</div>
+						</div>
+					</a>
+				</article>
+
+				<!-- 3 Highlight Image -->
+				{#if highlights.length}
+					<div
+						class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-2 sm:px-3"
+					>
+						{#each highlights as article (article.id)}
+							<article class="flex flex-1 flex-col justify-center py-2 sm:py-3 md:py-1">
+								<a
+									href={postPath(article.slug)}
+									class="group flex min-w-0 items-center gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+								>
+									<!-- Image -->
+									<div
+										class="aspect-video w-24 shrink-0 overflow-hidden rounded-lg bg-neutral-100 sm:w-40 md:w-28 xl:w-36 2xl:w-52"
+									>
+										{#if article.image}
+											<img
+												src={article.image}
+												alt=""
+												loading="lazy"
+												class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+											/>
+										{/if}
+									</div>
+
+									<!-- Dynamic text container -->
+									<div
+										class="flex min-w-0 flex-1 flex-col justify-center overflow-hidden
+											max-h-13.5 sm:max-h-22.5 md:max-h-15.75
+											xl:max-h-20.25 2xl:max-h-29.25"
+									>
+										<!-- Title: adapts depending on available space -->
+										<h2
+											class="line-clamp-2 shrink-0 text-sm leading-tight font-bold text-[#102A43]
+												transition-colors group-hover:text-red-700
+												sm:text-lg md:text-sm xl:text-lg 2xl:line-clamp-3 2xl:text-xl"
+										>
+											{article.title}
+										</h2>
+
+										<!-- Excerpt: fills remaining space -->
+										{#if article.excerpt}
+											<p
+												class="mt-1 hidden min-h-0 overflow-hidden text-sm leading-snug
+													text-slate-600 xl:line-clamp-1 2xl:line-clamp-3
+													2xl:text-base"
+											>
+												{article.excerpt}
+											</p>
+										{/if}
+
+										<!-- Date -->
+										{#if article.datePosted}
+											<p
+												class="mt-1 shrink-0 truncate text-xs leading-tight
+													text-slate-500 sm:text-sm md:text-xs 2xl:text-sm"
+											>
+												{article.datePosted}
+											</p>
+										{/if}
+									</div>
+								</a>
+							</article>
+						{/each}
+					</div>
+				{/if}
+			</div>
+		{:else}
+			<div
+				class="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 px-4 py-10 text-center sm:px-6 sm:py-16"
+			>
+				<h2 class="text-2xl leading-snug font-bold text-[#102A43] xl:text-3xl">No articles yet</h2>
+				<p class="mt-2 text-base leading-relaxed text-slate-600 xl:text-lg">
+					Check back soon for more {title.toLowerCase()} stories.
+				</p>
+			</div>
+		{/if}
+	</div>
+
+	<div class="min-w-0 lg:col-start-1 lg:row-start-2">
 		{#if archiveArticles.length}
-			<div class="mt-7 mb-4 flex items-center gap-3 sm:mt-9 sm:mb-5">
+			<div class="mt-4 mb-4 flex items-center gap-3 sm:mt-9 sm:mb-5">
 				<span class="h-5 w-1 shrink-0 rounded-full bg-red-700" aria-hidden="true"></span>
 				<h2
-					class="min-w-0 text-xl leading-snug font-extrabold tracking-tight text-[#102A43] sm:text-2xl xl:text-3xl"
+					class="min-w-0 text-lg sm:text-2xl md:text-xl xl:text-2xl leading-snug font-extrabold tracking-tight text-[#102A43]"
 				>
 					More {title} stories
 				</h2>
 				<div class="h-px min-w-4 flex-1 bg-neutral-200" aria-hidden="true"></div>
 			</div>
 
-			<div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+			<div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 				{#each visibleArticles as article (article.id)}
 					<article class="min-w-0">
 						<a
 							href={postPath(article.slug)}
-							class="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white transition-[border-color,box-shadow] hover:border-neutral-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+							class="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white transition-[border-color,box-shadow] hover:border-neutral-300 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
 						>
-							<div class="aspect-video overflow-hidden bg-neutral-100">
+							<div class="aspect-video shrink-0 overflow-hidden bg-neutral-100">
 								{#if article.image}
 									<img
 										src={article.image}
@@ -201,26 +234,35 @@
 									/>
 								{/if}
 							</div>
-							<div class="flex flex-1 flex-col p-4">
-								{#if article.datePosted}
-									<p class="mb-2 text-sm leading-relaxed text-slate-600 xl:text-base">
-										{article.datePosted}
-									</p>
-								{/if}
+
+							<div class="flex flex-1 flex-col p-2.5 sm:p-4 md:p-3">
+								
 								<h3
-									class="line-clamp-3 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 sm:text-xl xl:text-2xl"
+									class="text-lg md:text-xl lg:text-base xl:text-lg line-clamp-2 leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700"
 								>
 									{article.title}
 								</h3>
 								{#if article.excerpt}
-									<p class="mt-2 line-clamp-3 text-base leading-relaxed text-slate-600 xl:text-lg">
+									<p class="line-clamp-3 leading-relaxed text-slate-600 hidden md:text-base xl:text-lg">
 										{article.excerpt}
 									</p>
 								{/if}
-								<span
-									class="mt-auto flex items-center justify-between gap-2 pt-5 text-base leading-relaxed font-bold text-red-700"
-									>Read story {@render arrow()}</span
-								>
+								
+								<div class="flex items-center justify-between ">
+									
+									{#if article.datePosted}
+										<p class="text-sm leading-relaxed text-slate-600 lg:text-xs xl:text-base">
+											{article.datePosted}
+										</p>
+									{/if}
+									
+	
+									<span
+										class="flex items-center text-sm gap-2 leading-relaxed font-bold text-red-700"
+										>Read story {@render arrow()}
+									</span>
+								</div>
+
 							</div>
 						</a>
 					</article>
@@ -246,14 +288,5 @@
 				{/if}
 			</div>
 		{/if}
-	{:else}
-		<div
-			class="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 px-4 py-10 text-center sm:px-6 sm:py-16"
-		>
-			<h2 class="text-2xl leading-snug font-bold text-[#102A43] xl:text-3xl">No articles yet</h2>
-			<p class="mt-2 text-base leading-relaxed text-slate-600 xl:text-lg">
-				Check back soon for more {title.toLowerCase()} stories.
-			</p>
-		</div>
-	{/if}
+	</div>
 </section>

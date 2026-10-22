@@ -5,7 +5,7 @@
 	import MostRead from '#lib/components/sections/MostRead.svelte';
 </script>
 
-<aside aria-label="Featured and popular news" class="hidden min-w-0 space-y-4 lg:block">
+<aside aria-label="Featured and popular news" class="min-w-0 space-y-4 lg:block">
 	<Featured />
 	<Trending />
 	<MostRead />
