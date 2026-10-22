@@ -46,7 +46,10 @@
 {/snippet}
 
 <section aria-labelledby={headingId} class="min-w-0 pb-8 wrap-anywhere sm:pb-10">
-	<nav aria-label="Breadcrumb" class="mb-3 text-sm font-medium text-slate-500 sm:mb-5 sm:text-base">
+	<nav
+		aria-label="Breadcrumb"
+		class="mb-3 text-base leading-relaxed font-medium text-slate-600 sm:mb-5 xl:text-lg"
+	>
 		<ol class="flex flex-wrap items-center gap-2">
 			<li>
 				<a
@@ -63,12 +66,12 @@
 	<header class="relative mb-5 border-b border-neutral-200 pb-4 sm:mb-6 sm:pb-6">
 		<h1
 			id={headingId}
-			class="text-2xl leading-tight font-extrabold tracking-tight text-[#102A43] sm:text-4xl"
+			class="text-3xl leading-tight font-extrabold tracking-tight text-[#102A43] sm:text-4xl xl:text-5xl"
 		>
 			{title} Articles
 		</h1>
 		<!-- {#if description}
-			<p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-500">{description}</p>
+			<p class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 xl:text-lg">{description}</p>
 		{/if} -->
 		<span class="absolute -bottom-px left-0 h-1 w-14 rounded-full bg-red-700" aria-hidden="true"
 		></span>
@@ -92,26 +95,30 @@
 						/>
 					{/if}
 					<div
-						class="absolute inset-0 bg-linear-to-t from-[#071b2e]/80 via-[#071b2e]/10 to-[#071b2e]/10"
+						class="absolute inset-0 bg-linear-to-t from-[#071b2e]/95 via-[#071b2e]/60 to-[#071b2e]/10"
 					></div>
 					<div class="relative w-full min-w-0 p-4 sm:p-6">
 						<!-- <span
-							class="mb-4 inline-flex rounded-sm bg-[#f7d347] px-2.5 py-1 text-[10px] font-extrabold tracking-widest text-[#102A43] uppercase"
+							class="mb-4 inline-flex rounded-sm bg-[#f7d347] px-2.5 py-1 text-sm font-extrabold tracking-widest text-[#102A43] uppercase xl:text-base"
 							>Top story</span
 						> -->
 						<h2
-							class="text-xl leading-tight font-extrabold tracking-tight text-white sm:text-2xl xl:text-3xl"
+							class="text-2xl leading-snug font-extrabold tracking-tight text-white sm:text-3xl xl:text-4xl"
 						>
 							{lead.title}
 						</h2>
 						{#if lead.datePosted}
-							<p class="mt-1 text-xs font-medium text-white/75">{lead.datePosted}</p>
+							<p class="mt-2 text-sm leading-relaxed font-medium text-white/90 xl:text-base">
+								{lead.datePosted}
+							</p>
 						{/if}
 						{#if lead.excerpt}
-							<p class="mt-3 line-clamp-3 text-sm leading-relaxed text-white/85">{lead.excerpt}</p>
+							<p class="mt-3 line-clamp-3 text-base leading-relaxed text-white/95 xl:text-lg">
+								{lead.excerpt}
+							</p>
 						{/if}
 						<span
-							class="mt-4 inline-flex items-center gap-2 text-xs font-bold text-[#f7d347] sm:mt-5"
+							class="mt-4 inline-flex items-center gap-2 text-base leading-relaxed font-bold text-[#f7d347] sm:mt-5"
 							>Read full story {@render arrow()}</span
 						>
 					</div>
@@ -120,10 +127,10 @@
 
 			{#if highlights.length}
 				<div
-					class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-1 md:px-3"
+					class="flex min-w-0 flex-col divide-y divide-neutral-200 rounded-xl border border-neutral-200 px-4 md:px-3"
 				>
 					{#each highlights as article (article.id)}
-						<article class="flex flex-1 flex-col justify-center py-1 md:py-3">
+						<article class="flex flex-1 flex-col justify-center py-4 md:py-3">
 							<a
 								href={sitePath(`/post/${article.slug}`)}
 								class="group flex min-w-0 items-start gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
@@ -142,17 +149,21 @@
 								</div>
 								<div class="min-w-0 flex-1">
 									<h2
-										class="line-clamp-3 text-sm leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 xl:text-base"
+										class="line-clamp-3 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 sm:text-xl xl:text-2xl"
 									>
 										{article.title}
 									</h2>
 									{#if article.excerpt}
-										<p class="line-clamp-1 text-xs leading-relaxed text-slate-500 md:mb-1.5">
+										<p
+											class="mt-2 line-clamp-2 text-base leading-relaxed text-slate-600 md:mb-1.5 xl:text-lg"
+										>
 											{article.excerpt}
 										</p>
 									{/if}
 									{#if article.datePosted}
-										<p class="text-[11px] text-slate-500">{article.datePosted}</p>
+										<p class="text-sm leading-relaxed text-slate-600 xl:text-base">
+											{article.datePosted}
+										</p>
 									{/if}
 								</div>
 							</a>
@@ -165,13 +176,15 @@
 		{#if archiveArticles.length}
 			<div class="mt-7 mb-4 flex items-center gap-3 sm:mt-9 sm:mb-5">
 				<span class="h-5 w-1 shrink-0 rounded-full bg-red-700" aria-hidden="true"></span>
-				<h2 class="min-w-0 text-base font-extrabold tracking-tight text-[#102A43] sm:text-lg">
+				<h2
+					class="min-w-0 text-xl leading-snug font-extrabold tracking-tight text-[#102A43] sm:text-2xl xl:text-3xl"
+				>
 					More {title} stories
 				</h2>
 				<div class="h-px min-w-4 flex-1 bg-neutral-200" aria-hidden="true"></div>
 			</div>
 
-			<div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+			<div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
 				{#each visibleArticles as article (article.id)}
 					<article class="min-w-0">
 						<a
@@ -190,20 +203,22 @@
 							</div>
 							<div class="flex flex-1 flex-col p-4">
 								{#if article.datePosted}
-									<p class="mb-2 text-[11px] text-slate-500">{article.datePosted}</p>
+									<p class="mb-2 text-sm leading-relaxed text-slate-600 xl:text-base">
+										{article.datePosted}
+									</p>
 								{/if}
 								<h3
-									class="line-clamp-3 text-base leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700"
+									class="line-clamp-3 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 sm:text-xl xl:text-2xl"
 								>
 									{article.title}
 								</h3>
 								{#if article.excerpt}
-									<p class="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-500">
+									<p class="mt-2 line-clamp-3 text-base leading-relaxed text-slate-600 xl:text-lg">
 										{article.excerpt}
 									</p>
 								{/if}
 								<span
-									class="mt-auto flex items-center justify-between gap-2 pt-5 text-xs font-bold text-red-700"
+									class="mt-auto flex items-center justify-between gap-2 pt-5 text-base leading-relaxed font-bold text-red-700"
 									>Read story {@render arrow()}</span
 								>
 							</div>
@@ -215,28 +230,28 @@
 			<div
 				class="mt-6 flex flex-col items-stretch gap-4 border-t border-neutral-200 pt-5 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between"
 			>
-				<p role="status" class="text-xs text-slate-500">
+				<p role="status" class="text-sm leading-relaxed text-slate-600 xl:text-base">
 					Showing {4 + visibleArticles.length} of {articles.length} articles
 				</p>
 				{#if visibleCount < archiveArticles.length}
 					<button
 						type="button"
 						onclick={() => (visibleCount += 9)}
-						class="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg bg-[#102A43] px-5 py-3 text-xs font-bold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+						class="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg bg-[#102A43] px-5 py-3 text-base leading-relaxed font-bold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
 					>
 						More articles {@render arrow()}
 					</button>
 				{:else}
-					<p class="text-xs text-slate-500">You're all caught up.</p>
+					<p class="text-sm leading-relaxed text-slate-600 xl:text-base">You're all caught up.</p>
 				{/if}
 			</div>
 		{/if}
 	{:else}
 		<div
-			class="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 px-6 py-16 text-center"
+			class="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 px-4 py-10 text-center sm:px-6 sm:py-16"
 		>
-			<h2 class="text-lg font-bold text-[#102A43]">No articles yet</h2>
-			<p class="mt-2 text-sm text-slate-500">
+			<h2 class="text-2xl leading-snug font-bold text-[#102A43] xl:text-3xl">No articles yet</h2>
+			<p class="mt-2 text-base leading-relaxed text-slate-600 xl:text-lg">
 				Check back soon for more {title.toLowerCase()} stories.
 			</p>
 		</div>
