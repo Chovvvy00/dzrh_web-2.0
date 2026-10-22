@@ -9,11 +9,11 @@ import {
 	businessArticles,
 	lifestyleArticles,
 	headlines
-} from './sample-articles.ts';
+} from './articles.ts';
 
 // Demo-only records let every archive preview the lead, grid, and older-article states.
 // Replace these arrays with category articles from the CMS, newest first.
-function sampleArchive(slug: string, title: string, seed: Article[]): Article[] {
+function sampleCategory(slug: string, title: string, seed: Article[]): Article[] {
 	const olderStories = [
 		'The stories behind the headlines',
 		'A closer look at the latest developments',
@@ -43,53 +43,53 @@ function sampleArchive(slug: string, title: string, seed: Article[]): Article[] 
 	];
 }
 
-export const categoryArchives = {
+export const categories = {
 	nation: {
 		title: 'Nation',
 		description:
 			'The latest national headlines, public affairs, and stories from across the Philippines.',
-		articles: sampleArchive('nation', 'Nation', nationArticles)
+		articles: sampleCategory('nation', 'Nation', nationArticles)
 	},
 	entertainment: {
 		title: 'Entertainment',
 		description: 'Your daily dose of entertainment, culture, and the people making headlines.',
-		articles: sampleArchive('entertainment', 'Entertainment', entertainmentArticles)
+		articles: sampleCategory('entertainment', 'Entertainment', entertainmentArticles)
 	},
 	world: {
 		title: 'World',
 		description: 'Global headlines and perspectives on the stories shaping our world.',
-		articles: sampleArchive('world', 'World', worldArticles)
+		articles: sampleCategory('world', 'World', worldArticles)
 	},
 	'metro-manila': {
 		title: 'Metro Manila',
 		description: 'News, community updates, and everyday stories from around the metro.',
-		articles: sampleArchive('metro-manila', 'Metro Manila', metroManilaArticles)
+		articles: sampleCategory('metro-manila', 'Metro Manila', metroManilaArticles)
 	},
 	province: {
 		title: 'Province',
 		description: 'Local voices and regional headlines from communities across the country.',
-		articles: sampleArchive('province', 'Province', provinceArticles)
+		articles: sampleCategory('province', 'Province', provinceArticles)
 	},
 	asia: {
 		title: 'Asia',
 		description: 'Regional developments and the stories connecting our Asian neighbors.',
-		articles: sampleArchive('asia', 'Asia', asiaArticles)
+		articles: sampleCategory('asia', 'Asia', asiaArticles)
 	},
 	business: {
 		title: 'Business',
 		description: 'Business, markets, and the economy. Follow the stories behind the numbers.',
-		articles: sampleArchive('business', 'Business', businessArticles)
+		articles: sampleCategory('business', 'Business', businessArticles)
 	},
 	lifestyle: {
 		title: 'Lifestyle',
 		description: 'Fresh perspectives on everyday living, travel, food, and well-being.',
-		articles: sampleArchive('lifestyle', 'Lifestyle', lifestyleArticles)
+		articles: sampleCategory('lifestyle', 'Lifestyle', lifestyleArticles)
 	},
 	sports: {
 		title: 'Sports',
 		description:
 			'The latest sporting headlines, competition highlights, and stories beyond the game.',
-		articles: sampleArchive(
+		articles: sampleCategory(
 			'sports',
 			'Sports',
 			headlines.slice(0, 3).map((article, index) => ({
@@ -104,6 +104,19 @@ export const categoryArchives = {
 	headlines: {
 		title: 'Headlines',
 		description: 'Latest Headlines',
-		articles: sampleArchive('headlines', 'headlines', headlines)
+		articles: sampleCategory('headlines', 'headlines', headlines)
 	}
 };
+
+/** Category archive data for one category page. */
+export type Category = (typeof categories)[keyof typeof categories];
+
+/** Look up a category by URL slug ("/nation" -> "nation"); undefined when it does not exist. */
+export function getCategory(slug: string): Category | undefined {
+	return categories[slug as keyof typeof categories];
+}
+
+/** Every category slug; the [category] route prerenders exactly this list. */
+export function categorySlugs(): string[] {
+	return Object.keys(categories);
+}

@@ -1,4 +1,4 @@
-import breakingImage from '#lib/assets/test-images/BreakingNews.jpeg';
+import breakingImage from '#lib/assets/test-images/breaking-news.jpeg';
 export const breakingNews = {
 	id: '1',
 	title:
@@ -9,7 +9,7 @@ export const breakingNews = {
 		'Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article.'
 };
 
-import headlineImage from '#lib/assets/test-images/Headlines.jpeg';
+import headlineImage from '#lib/assets/test-images/headlines.jpeg';
 export const headlines = [
 	{
 		id: '1',
@@ -38,29 +38,29 @@ export const headlines = [
 	{
 		id: '4',
 		title: 'Fourth headline article',
-		slug: 'headline-1',
+		slug: 'headline-4',
 		image: headlineImage,
-		excerpt: 'Short description for the first headline.',
+		excerpt: 'Short description for the fourth headline.',
 		datePosted: '4 minutes ago'
 	},
 	{
 		id: '5',
 		title: 'Fifth headline article',
-		slug: 'headline-2',
+		slug: 'headline-5',
 		image: headlineImage,
-		excerpt: 'Short description for the second headline.',
+		excerpt: 'Short description for the fifth headline.',
 		datePosted: '1 hour ago'
 	},
 	{
 		id: '6',
 		title: 'Sixth headline article',
-		slug: 'headline-3',
+		slug: 'headline-6',
 		image: headlineImage,
-		excerpt: 'Short description for the third headline.'
+		excerpt: 'Short description for the sixth headline.'
 	}
 ];
 
-import nationImage from '#lib/assets/test-images/Nation.jpeg';
+import nationImage from '#lib/assets/test-images/nation.jpeg';
 export const nationArticles = [
 	{
 		id: '1',
@@ -85,7 +85,7 @@ export const nationArticles = [
 	}
 ];
 
-import entertainmentImage from '#lib/assets/test-images/Entertainment.jpeg';
+import entertainmentImage from '#lib/assets/test-images/entertainment.jpeg';
 export const entertainmentArticles = [
 	{
 		id: '4',
@@ -110,7 +110,7 @@ export const entertainmentArticles = [
 	}
 ];
 
-import worldImage from '#lib/assets/test-images/World.jpeg';
+import worldImage from '#lib/assets/test-images/world.jpeg';
 export const worldArticles = [
 	{
 		id: '4',
@@ -135,7 +135,7 @@ export const worldArticles = [
 	}
 ];
 
-import metroManilaImage from '#lib/assets/test-images/Metro-Manila.jpeg';
+import metroManilaImage from '#lib/assets/test-images/metro-manila.jpeg';
 export const metroManilaArticles = [
 	{
 		id: '4',
@@ -160,57 +160,57 @@ export const metroManilaArticles = [
 	}
 ];
 
-import provinceImage from '#lib/assets/test-images/Province.jpg';
+import provinceImage from '#lib/assets/test-images/province.jpg';
 export const provinceArticles = [
 	{
 		id: '4',
 		title: 'Province Article number one',
-		slug: 'Province article-1',
+		slug: 'province-article-1',
 		image: provinceImage,
 		datePosted: '13 seconds ago'
 	},
 	{
 		id: '5',
 		title: 'Province Article number two',
-		slug: 'Province article-2',
+		slug: 'province-article-2',
 		image: provinceImage,
 		datePosted: '16 seconds ago'
 	},
 	{
 		id: '6',
 		title: 'Province Article number three',
-		slug: 'Province article-3',
+		slug: 'province-article-3',
 		image: provinceImage,
 		datePosted: '2 days ago'
 	}
 ];
 
-import AsiaImage from '#lib/assets/test-images/Asia.webp';
+import asiaImage from '#lib/assets/test-images/asia.webp';
 export const asiaArticles = [
 	{
 		id: '4',
 		title: 'Asia Article number one',
 		slug: 'asia-article-1',
-		image: AsiaImage,
+		image: asiaImage,
 		datePosted: '1 hour ago'
 	},
 	{
 		id: '5',
 		title: 'Asia Article number two',
 		slug: 'asia-article-2',
-		image: AsiaImage,
+		image: asiaImage,
 		datePosted: '5 hours ago'
 	},
 	{
 		id: '6',
 		title: 'Asia Article number three',
 		slug: 'asia-article-3',
-		image: AsiaImage,
+		image: asiaImage,
 		datePosted: '13 hours ago'
 	}
 ];
 
-import businessImage from '#lib/assets/test-images/Business.jpg';
+import businessImage from '#lib/assets/test-images/business.jpg';
 export const businessArticles = [
 	{
 		id: '4',
@@ -235,7 +235,7 @@ export const businessArticles = [
 	}
 ];
 
-import lifestyleImage from '#lib/assets/test-images/Lifestyle.jpg';
+import lifestyleImage from '#lib/assets/test-images/lifestyle.jpg';
 export const lifestyleArticles = [
 	{
 		id: '4',
@@ -260,9 +260,10 @@ export const lifestyleArticles = [
 	}
 ];
 
-import featuredImage from '#lib/assets/test-images/Featured.jpeg';
+import featuredImage from '#lib/assets/test-images/featured.jpeg';
 
 export const featuredArticle = {
+	id: 'featured-1',
 	title:
 		'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
 	excerpt:
@@ -272,7 +273,7 @@ export const featuredArticle = {
 	datePosted: '2 hours ago'
 };
 
-import trendingImage from '#lib/assets/test-images/Trending.jpeg';
+import trendingImage from '#lib/assets/test-images/trending.jpeg';
 
 export const trendingArticles = [
 	{
@@ -285,21 +286,24 @@ export const trendingArticles = [
 		id: '2',
 		title:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate lorem eu cursus.',
-		slug: 'trending-2'
+		slug: 'trending-2',
+		image: trendingImage
 	},
 	{
 		id: '3',
 		title: 'Third trending story',
-		slug: 'trending-3'
+		slug: 'trending-3',
+		image: trendingImage
 	},
 	{
 		id: '4',
 		title: 'Fourth trending story',
-		slug: 'trending-4'
+		slug: 'trending-4',
+		image: trendingImage
 	}
 ];
 
-import mostReadImage from '#lib/assets/test-images/MostRead.jpeg';
+import mostReadImage from '#lib/assets/test-images/most-read.jpeg';
 
 export const mostReadArticles = [
 	{
@@ -311,17 +315,20 @@ export const mostReadArticles = [
 	{
 		id: '2',
 		title: 'Another Most Read story',
-		slug: 'mostread-2'
+		slug: 'mostread-2',
+		image: mostReadImage
 	},
 	{
 		id: '3',
 		title: 'Third Most Read story',
-		slug: 'mostread-3'
+		slug: 'mostread-3',
+		image: mostReadImage
 	},
 	{
 		id: '4',
 		title: 'Fourth Most Read story',
-		slug: 'mostread-4'
+		slug: 'mostread-4',
+		image: mostReadImage
 	}
 ];
 

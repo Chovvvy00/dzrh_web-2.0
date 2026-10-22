@@ -34,6 +34,12 @@ export default defineConfig(
 		}
 	},
 	{
+		// JSON-LD is the one place {@html} is required: the string is JSON.stringify'd
+		// and every "</" is escaped, so article data cannot inject markup.
+		files: ['src/routes/post/**/*.svelte'],
+		rules: { 'svelte/no-at-html-tags': 'off' }
+	},
+	{
 		// Override or add rule settings here, such as:
 		// 'svelte/button-has-type': 'error'
 		rules: {}

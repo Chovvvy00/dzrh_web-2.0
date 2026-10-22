@@ -37,9 +37,36 @@ pnpm preview
 Open the preview at `http://localhost:4173/dzrh_web-2.0/`.
 Development uses `/`; production uses the repository path `/dzrh_web-2.0`.
 
-The static adapter prerenders existing routes. Article, category, and utility
-links currently point to placeholder routes that still need pages. Link crawling
-is disabled during prerendering so these placeholders do not prevent deployment.
+The static adapter prerenders existing routes. Dynamic routes list their pages
+explicitly — articles via `entries()` in `src/routes/post/[slug]/+page.ts` and
+categories via `entries()` in `src/routes/[category]/+page.ts` — because link
+crawling is disabled during prerendering; that way placeholder utility links
+(e.g. `/weather`) do not prevent deployment while every article and category
+still gets a page.
+
+## Project structure and naming
+
+- **Routes** (`src/routes/`) are kebab-case and data-driven. Category pages are
+  the single dynamic route `[category]` (`/nation`, `/sports`, …) fed by
+  `categories.ts`; articles are the single dynamic route `post/[slug]`. Because
+  a static route outranks a dynamic one, a section that later needs a custom
+  layout can add its own folder back (e.g. `src/routes/sports/`) and override
+  the dynamic route with no other changes. Article URLs are defined once in
+  `postPath()` in `src/lib/paths.ts`; pages build links with `postPath(slug)`
+  and absolute metadata/share URLs with `absoluteUrl(postPath(slug))`.
+- **Components** (`src/lib/components/`) are PascalCase `.svelte` files grouped
+  by domain: `layout/` (site chrome: header, footer, banners, sidebar), `ads/`,
+  `media/` (players and embeds), `article/` (cards, share actions), and
+  `sections/` (page sections). `Icon.svelte` sits at the root as the shared
+  primitive.
+- **Data modules** (`src/lib/data/`) are kebab-case and named for their
+  domain: `articles.ts` (article lists), `categories.ts` (category archives),
+  `posts.ts` (the slug → post lookup behind `/post/[slug]`, including related
+  stories). All of these are sample data until a CMS is wired in.
+- **Static assets** (`src/lib/assets/`) hold images, fonts, and logos only —
+  never components — and file names are kebab-case (`breaking-news.jpeg`).
+- Article slugs must be **globally unique** across all categories; duplicate
+  slugs are reported as warnings in dev.
 
 ## Icons
 

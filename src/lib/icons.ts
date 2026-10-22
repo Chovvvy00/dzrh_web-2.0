@@ -20,7 +20,14 @@ export const icons = {
 	messenger: 'simple-icons:messenger',
 	cloud: 'emojione:sun-behind-cloud',
 	search: 'akar-icons:search',
-	instagram: 'bi:instagram'
+	instagram: 'bi:instagram',
+	link: 'mdi:link-variant',
+	check: 'mdi:check',
+	email: 'mdi:email-outline',
+	whatsapp: 'simple-icons:whatsapp',
+	telegram: 'simple-icons:telegram',
+	share: 'mdi:share-variant-outline',
+	'chevron-down': 'mdi:chevron-down'
 } as const;
 
 export type IconName = keyof typeof icons;

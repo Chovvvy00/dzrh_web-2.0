@@ -15,10 +15,15 @@ export default defineConfig(({ command, isPreview }) => ({
 
 			adapter: adapter(),
 			paths: {
-				base: command === 'serve' && !isPreview ? '' : '/dzrh_web-2.0'
+				base: command === 'serve' && !isPreview ? '' : '/dzrh_web-2.0',
+				// The base is fixed at build time, so emit root-relative paths instead of
+				// page-relative ones ("/dzrh_web-2.0/post/x" rather than "../../post/x").
+				// Canonical, Open Graph, and share URLs need the stable form.
+				relative: false
 			},
 			prerender: {
-				// Article and category links are placeholders; prerender existing routes only.
+				// Only prerender routes that exist; utility links (e.g. /weather) are
+				// still placeholders, and article pages are listed by entries().
 				crawl: false
 			}
 		})
