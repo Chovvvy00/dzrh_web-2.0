@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AdComponent from '#lib/components/AdComponent.svelte';
+	import AdBanner from '#lib/components/ads/AdBanner.svelte';
 	import BreakingNews from '#lib/components/sections/BreakingNews.svelte';
 	import Featured from '#lib/components/sections/Featured.svelte';
 	import Headlines from '#lib/components/sections/Headlines.svelte';
@@ -18,7 +18,7 @@
 		asiaArticles,
 		businessArticles,
 		lifestyleArticles
-	} from '#lib/data/sample-articles.ts';
+	} from '#lib/data/articles.ts';
 </script>
 
 <!-- Desktop Mode -->
@@ -40,7 +40,7 @@
 		<section
 			class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
 		>
-			<AdComponent isTestMode={true} showPlaceholder={true} />
+			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
 		<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2">
@@ -54,7 +54,7 @@
 		<section
 			class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
 		>
-			<AdComponent isTestMode={true} showPlaceholder={true} />
+			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 	</section>
 </div>
@@ -77,7 +77,7 @@
 	<MostRead />
 
 	<section class="relative mx-auto h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182">
-		<AdComponent isTestMode={true} showPlaceholder={true} />
+		<AdBanner isTestMode={true} showPlaceholder={true} />
 	</section>
 
 	<!-- News Categories -->
@@ -96,7 +96,7 @@
 		<section
 			class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
 		>
-			<AdComponent isTestMode={true} showPlaceholder={true} />
+			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
 		<div class="grid grid-cols-1 gap-6 sm:gap-8">
@@ -113,7 +113,7 @@
 		<section
 			class="relative mx-auto my-6 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
 		>
-			<AdComponent isTestMode={true} showPlaceholder={true} />
+			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 	</section>
 </div>

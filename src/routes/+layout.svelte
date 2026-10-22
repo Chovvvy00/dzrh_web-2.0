@@ -2,16 +2,18 @@
 	import './layout.css';
 	import favicon from '#lib/assets/favicon/favicon.ico';
 	import type { LayoutProps } from './$types';
+	import { page } from '$app/state';
 
-	import TopBanner from '#lib/components/TopBanner.svelte';
-	import Header from '#lib/components/Header.svelte';
-	import Footer from '#lib/components/Footer.svelte';
-	import RadioPlayerComponent from '#lib/components/RadioPlayerComponent.svelte';
-	import YoutubeEmbed from '#lib/components/YoutubeEmbed.svelte';
-	import AdComponent from '#lib/components/AdComponent.svelte';
-	import NewsSidebar from '#lib/components/NewsSidebar.svelte';
+	import TopBanner from '#lib/components/layout/TopBanner.svelte';
+	import Header from '#lib/components/layout/Header.svelte';
+	import Footer from '#lib/components/layout/Footer.svelte';
+	import RadioPlayer from '#lib/components/media/RadioPlayer.svelte';
+	import YoutubeEmbed from '#lib/components/media/YoutubeEmbed.svelte';
+	import AdBanner from '#lib/components/ads/AdBanner.svelte';
+	import NewsSidebar from '#lib/components/layout/NewsSidebar.svelte';
 
 	let { children }: LayoutProps = $props();
+	let isPost = $derived(page.route.id?.startsWith('/post/') ?? false);
 </script>
 
 <svelte:head>
@@ -35,23 +37,27 @@
 			<section
 				class="relative mx-auto my-4 h-12.5 w-[320px] max-w-full overflow-hidden sm:h-22.5 sm:w-182"
 			>
-				<AdComponent isTestMode={true} showPlaceholder={true} />
+				<AdBanner isTestMode={true} showPlaceholder={true} />
 			</section>
 
-			<div
-				class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_280px]"
-			>
-				<div class="min-w-0">
-					{@render children()}
-				</div>
+			{#if isPost}
+				{@render children()}
+			{:else}
+				<div
+					class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_280px]"
+				>
+					<div class="min-w-0">
+						{@render children()}
+					</div>
 
-				<NewsSidebar />
-			</div>
+					<NewsSidebar />
+				</div>
+			{/if}
 
 			<YoutubeEmbed />
 		</main>
 
 		<Footer />
-		<RadioPlayerComponent />
+		<RadioPlayer />
 	</div>
 </div>
