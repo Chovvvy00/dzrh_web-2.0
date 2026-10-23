@@ -30,13 +30,13 @@
 		<div class="size-10 shrink-0 rounded-sm bg-white"></div>
 
 		<div class="flex min-w-0 flex-col items-start lg:flex-row lg:items-center lg:gap-2">
-			<p class="line-clamp-2 text-sm leading-4 font-extrabold uppercase lg:text-base">
+			<p class="line-clamp-2 text-sm leading-tight font-extrabold uppercase lg:text-base">
 				{station.program}
 			</p>
 
 			<div class="hidden h-3.5 w-px bg-blue-950 lg:block"></div>
 
-			<p class="text-xs leading-4 whitespace-nowrap lg:text-sm">
+			<p class="text-xs leading-tight whitespace-nowrap lg:text-sm">
 				{station.startTime} - {station.endTime}
 			</p>
 		</div>

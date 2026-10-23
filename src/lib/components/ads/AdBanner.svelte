@@ -239,14 +239,14 @@
 	}
 
 	.placeholder-label {
-		font-size: 10px;
+		font-size: 12px;
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
 	.placeholder-size {
-		font-size: 12px;
+		font-size: 13px;
 		font-weight: 500;
 	}
 </style>

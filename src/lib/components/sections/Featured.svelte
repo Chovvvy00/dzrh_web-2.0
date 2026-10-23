@@ -10,12 +10,12 @@
 	<div
 		class="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 bg-[#f7d347] px-4 py-3 lg:flex-nowrap lg:py-2.5"
 	>
-		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.8] text-slate-700 uppercase">
+		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.08em] text-slate-700 uppercase">
 			Featured
 		</h2>
 
 		<div
-			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-[10px] font-bold tracking-widest text-slate-700/80 uppercase"
+			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-xs font-bold tracking-widest text-slate-700/80 uppercase"
 		>
 			<span>Editor's Choice</span>
 		</div>
@@ -48,12 +48,12 @@
 					{article.excerpt}
 				</p>
 
-				<p class="text-md mt-2 line-clamp-2 text-slate-600/70">{article.datePosted}</p>
+				<p class="mt-2 line-clamp-2 text-sm text-slate-600/70">{article.datePosted}</p>
 
 				<div class="mt-4">
 					<span
-						class="text-md inline-flex items-center gap-2 bg-[#f7d347] px-4
-							py-1.5 font-extrabold tracking-wide text-slate-800 uppercase
+						class="inline-flex items-center gap-2 bg-[#f7d347] px-4 py-1.5
+							text-sm font-extrabold tracking-wide text-slate-800 uppercase
 							transition-colors duration-200 group-hover:bg-[#e9c632]"
 					>
 						Read full story

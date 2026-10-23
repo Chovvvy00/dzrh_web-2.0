@@ -34,11 +34,7 @@
 				class="group block min-w-0 {index === 0 ? 'col-span-2' : ''} xl:col-span-1"
 			>
 				<!-- Image -->
-				<div
-					class="overflow-hidden bg-neutral-200 {index === 0
-						? 'aspect-video'
-						: 'aspect-4/3'} xl:aspect-video"
-				>
+				<div class="aspect-video overflow-hidden bg-neutral-200">
 					<img
 						src={article.image}
 						alt={article.title}

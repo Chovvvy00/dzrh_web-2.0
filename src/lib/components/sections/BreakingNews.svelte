@@ -9,7 +9,9 @@
 	let { article }: Props = $props();
 </script>
 
-<section class="w-full min-w-0 overflow-hidden rounded-lg border border-red-200 bg-white">
+<section
+	class="flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-red-200 bg-white"
+>
 	<div class="flex items-center justify-between gap-3 bg-[#b42318] px-4 py-3 lg:py-2.5">
 		<div class="flex min-w-0 items-center gap-2">
 			<span class="relative flex size-3 shrink-0">
@@ -24,16 +26,15 @@
 		</div>
 
 		<span
-			class="hidden shrink-0 text-[10px] font-semibold tracking-wide text-white/70 uppercase sm:block lg:hidden"
+			class="hidden shrink-0 text-xs font-semibold tracking-wide text-white/70 uppercase sm:block lg:hidden"
 		>
 			Latest Update
 		</span>
 	</div>
 
-	<a href={postPath(article.slug)} class="group block">
+	<a href={postPath(article.slug)} class="group flex min-h-0 flex-1 flex-col">
 		<div
-			// class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-4/3"
-			class="relative aspect-video overflow-hidden bg-neutral-200"
+			class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-auto lg:min-h-0 lg:flex-1"
 		>
 			<img
 				src={article.image}
@@ -55,24 +56,24 @@
 			</div> -->
 		</div>
 
-		<div class="relative p-4 sm:p-5 lg:p-4">
-			<div class="mb-3 h-0.5 w-10 bg-[#b42318]"></div>
+		<div class="relative p-4 sm:p-5 lg:p-3">
+			<div class="mb-2 h-0.5 w-10 bg-[#b42318]"></div>
 
 			<h3
-				class="line-clamp-3 text-xl leading-tight font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
+				class="line-clamp-2 text-xl leading-tight font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
 					lg:text-2xl"
 			>
 				{article.title}
 			</h3>
 
 			{#if article.excerpt}
-				<p class="mt-3 line-clamp-2 leading-tight text-slate-600">
+				<p class="mt-3 line-clamp-2 leading-tight text-slate-600 lg:hidden">
 					{article.excerpt}
 				</p>
 			{/if}
 
-			<div
-				class="mt-4 flex items-center gap-2 text-sm font-bold tracking-wide text-[#b42318] uppercase"
+			<!-- <div
+				class="mt-4 flex items-center gap-2 text-sm font-bold tracking-wide text-[#b42318] uppercase lg:mt-3"
 			>
 				<span>Read full story</span>
 
@@ -81,7 +82,7 @@
 					class="transition-transform duration-200 group-hover:translate-x-1"
 				>
 				</span>
-			</div>
+			</div> -->
 		</div>
 	</a>
 </section>

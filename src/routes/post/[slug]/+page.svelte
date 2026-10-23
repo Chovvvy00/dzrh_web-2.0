@@ -90,7 +90,7 @@
 	<article class="post-article min-w-0 wrap-anywhere" aria-labelledby="post-title">
 		<h1
 			id="post-title"
-			class="mb-4 text-3xl leading-tight font-extrabold tracking-tight text-neutral-950 sm:text-4xl"
+			class="mb-4 text-3xl leading-tight font-extrabold tracking-tight text-neutral-950 sm:text-4xl xl:text-5xl"
 		>
 			{post.title}
 		</h1>
@@ -104,7 +104,7 @@
 					src={post.image}
 					alt={post.title}
 					fetchpriority="high"
-					class="aspect-[2/1] w-full object-cover"
+					class="aspect-video w-full object-cover"
 				/>
 			</figure>
 		</div>
@@ -179,13 +179,25 @@
 	}
 
 	.article-body {
-		font-size: 1.125rem;
-		line-height: 1.95;
+		font-size: clamp(17px, 16.1px + 0.38vw, 19px);
+		line-height: 1.75;
 		color: #171717;
+		text-wrap: pretty;
+		max-width: 68ch;
 	}
 
 	.article-body p + p {
-		margin-top: 1.5rem;
+		margin-top: 1.25rem;
+	}
+
+	@media (min-width: 1024px) {
+		.article-body {
+			line-height: 1.9;
+		}
+
+		.article-body p + p {
+			margin-top: 1.5rem;
+		}
 	}
 
 	.article-ad {

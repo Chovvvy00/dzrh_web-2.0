@@ -252,7 +252,7 @@
 	.dropdown-heading {
 		padding: 8px 10px 12px;
 		color: #64748b;
-		font-size: 11px;
+		font-size: 12px;
 		font-weight: 700;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
@@ -273,7 +273,7 @@
 		gap: 12px;
 		padding: 6px 10px;
 		border-radius: 10px;
-		font-size: 14px;
+		font-size: clamp(14px, 13.69px + 0.085vw, 15px);
 		font-weight: 500;
 		text-align: left;
 		cursor: pointer;
@@ -316,7 +316,7 @@
 	.share-feedback {
 		padding: 8px 10px;
 		color: #475569;
-		font-size: 12px;
+		font-size: clamp(12px, 11.69px + 0.085vw, 13px);
 		line-height: 1.5;
 	}
 

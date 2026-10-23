@@ -287,7 +287,7 @@
 							<li class="min-w-0">
 								<a
 									href={sitePath(path)}
-									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-[11px] leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black sm:text-xs"
+									class="flex h-full min-h-11 flex-col items-center justify-center gap-1 rounded-lg px-1 py-2 text-center text-xs leading-tight text-neutral-700 hover:bg-neutral-100 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-black"
 								>
 									<Icon name={icon} width="20" height="20" class="shrink-0" aria-hidden="true" />
 									<span class="block w-full min-w-0 truncate text-center">{mobileName ?? name}</span

@@ -23,7 +23,7 @@
 		</div>
 
 		<span
-			class="rounded-full bg-neutral-100 px-2 py-1 text-[10px] font-bold tracking-wide text-neutral-500 uppercase"
+			class="rounded-full bg-neutral-100 px-2 py-1 text-xs font-bold tracking-wide text-neutral-500 uppercase"
 		>
 			Top Stories
 		</span>

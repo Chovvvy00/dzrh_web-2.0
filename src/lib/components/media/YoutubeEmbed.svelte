@@ -114,7 +114,7 @@
 					</h2>
 
 					<span
-						class="flex shrink-0 items-center gap-1 rounded-sm bg-red-600 px-1.5 py-0.5 text-[10px] font-bold text-white uppercase"
+						class="flex shrink-0 items-center gap-1 rounded-sm bg-red-600 px-1.5 py-0.5 text-xs font-bold text-white uppercase"
 					>
 						<span class="size-1.5 rounded-full bg-white"></span>
 						Live

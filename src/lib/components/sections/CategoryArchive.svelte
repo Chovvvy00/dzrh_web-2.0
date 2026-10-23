@@ -53,18 +53,18 @@
 	<div class="min-w-0 lg:col-start-1 lg:row-start-1">
 		<nav
 			aria-label="Breadcrumb"
-			class="mb-3 text-base leading-relaxed font-medium text-slate-600 sm:mb-3 xl:text-lg"
+			class="mb-3 text-sm leading-relaxed font-medium text-slate-600 sm:mb-3 md:text-base xl:text-lg"
 		>
 			<ol class="flex flex-wrap items-center gap-2">
 				<li>
 					<a
 						href={sitePath('/')}
-						class="inline-flex min-h-11 items-center rounded-sm text-xs transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 md:text-base 2xl:text-xl"
+						class="inline-flex min-h-11 items-center rounded-sm text-xs transition-colors hover:text-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700 md:text-sm xl:text-base"
 						>Home</a
 					>
 				</li>
-				<li aria-hidden="true" class="text-slate-300 2xl:text-xl">/</li>
-				<li aria-current="page" class="text-sm text-slate-700 md:text-base 2xl:text-xl">{title}</li>
+				<li aria-hidden="true" class="text-slate-300 md:text-sm xl:text-base">/</li>
+				<li aria-current="page" class="text-sm text-slate-700 md:text-base xl:text-lg">{title}</li>
 			</ol>
 		</nav>
 
@@ -107,7 +107,7 @@
 						></div>
 						<div class="relative w-full min-w-0 p-3 sm:p-5 md:p-4 xl:p-5">
 							<h2
-								class="text-xl leading-snug font-extrabold tracking-tight text-white sm:text-3xl md:text-xl xl:text-2xl 2xl:text-4xl"
+								class="text-xl leading-snug font-extrabold tracking-tight text-white sm:text-2xl xl:text-3xl 2xl:text-4xl"
 							>
 								{lead.title}
 							</h2>
@@ -161,15 +161,15 @@
 
 									<!-- Dynamic text container -->
 									<div
-										class="flex max-h-13.5 min-w-0 flex-1 flex-col justify-center
-											overflow-hidden sm:max-h-22.5 md:max-h-15.75
-											xl:max-h-20.25 2xl:max-h-29.25"
+										class="flex max-h-15 min-h-0 min-w-0 flex-1 flex-col justify-center
+										overflow-hidden sm:max-h-22.5 md:max-h-18.75
+										xl:max-h-22.5 2xl:max-h-29.25"
 									>
 										<!-- Title: adapts depending on available space -->
 										<h2
 											class="line-clamp-2 shrink-0 text-sm leading-tight font-bold text-[#102A43]
-												transition-colors group-hover:text-red-700
-												sm:text-lg md:text-sm xl:text-lg 2xl:line-clamp-3 2xl:text-xl"
+											transition-colors group-hover:text-red-700
+											sm:text-base xl:text-lg 2xl:line-clamp-3 2xl:text-xl"
 										>
 											{article.title}
 										</h2>
@@ -178,8 +178,8 @@
 										{#if article.excerpt}
 											<p
 												class="mt-1 hidden min-h-0 overflow-hidden text-sm leading-snug
-													text-slate-600 xl:line-clamp-1 2xl:line-clamp-3
-													2xl:text-base"
+												text-slate-600 xl:line-clamp-1 2xl:line-clamp-3
+												2xl:text-base"
 											>
 												{article.excerpt}
 											</p>
@@ -189,7 +189,7 @@
 										{#if article.datePosted}
 											<p
 												class="mt-1 shrink-0 truncate text-xs leading-tight
-													text-slate-500 sm:text-sm md:text-xs 2xl:text-sm"
+												text-slate-500 sm:text-sm"
 											>
 												{article.datePosted}
 											</p>
@@ -222,7 +222,7 @@
 			<div class="mt-4 mb-4 flex items-center gap-3 sm:mt-9 sm:mb-5">
 				<span class="h-5 w-1 shrink-0 rounded-full bg-red-700" aria-hidden="true"></span>
 				<h2
-					class="min-w-0 text-lg leading-snug font-extrabold tracking-tight text-[#102A43] sm:text-2xl md:text-xl xl:text-2xl"
+					class="min-w-0 text-lg leading-snug font-extrabold tracking-tight text-[#102A43] sm:text-2xl xl:text-3xl"
 				>
 					More {title} stories
 				</h2>
@@ -247,9 +247,9 @@
 								{/if}
 							</div>
 
-							<div class="flex flex-1 flex-col p-2.5 sm:p-4 md:p-3">
+							<div class="flex flex-1 flex-col p-3 sm:p-4 md:p-3">
 								<h3
-									class="line-clamp-2 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 md:text-xl lg:text-base xl:text-lg"
+									class="line-clamp-2 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 xl:text-xl"
 								>
 									{article.title}
 								</h3>
@@ -263,7 +263,7 @@
 
 								<div class="flex items-center justify-between">
 									{#if article.datePosted}
-										<p class="text-sm leading-relaxed text-slate-600 lg:text-xs xl:text-base">
+										<p class="text-sm leading-relaxed text-slate-600 xl:text-base">
 											{article.datePosted}
 										</p>
 									{/if}

@@ -23,7 +23,7 @@
 
 		<a
 			href={sitePath(href)}
-			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-[10px] font-bold tracking-widest text-white/70 uppercase transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-xs"
+			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-xs font-bold tracking-widest text-white/70 uppercase transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
 		>
 			<span>More Headlines</span>
 
@@ -109,11 +109,11 @@
 
 	<!-- Desktop -->
 	<div class="hidden min-h-0 flex-1 md:grid">
-		<div class="grid min-w-0 grid-cols-3 grid-rows- gap-1">
+		<div class="grid min-w-0 grid-cols-3 content-evenly items-start gap-2">
 			{#each secondaryArticles as article (article.id)}
 				<a
 					href={postPath(article.slug)}
-					class="group relative flex min-h-44 min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
+					class="group relative flex aspect-video min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
 				>
 					<img
 						src={article.image}
@@ -129,10 +129,12 @@
 					<div class="relative w-full min-w-0 px-3 xl:p-4">
 						<div class="mb-2 h-0.5 w-6 bg-blue-300"></div>
 
-						<h3 class="line-clamp-3 text-2xl leading-snug font-bold text-white">
+						<h3
+							class="line-clamp-2 text-sm leading-snug font-bold text-white lg:text-base 2xl:text-lg"
+						>
 							{article.title}
 						</h3>
-						<span class="text-slate-300/80">{article.datePosted}</span>
+						<span class="text-xs text-slate-300/80">{article.datePosted}</span>
 					</div>
 				</a>
 			{/each}
