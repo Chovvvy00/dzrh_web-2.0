@@ -37,7 +37,7 @@
 	];
 </script>
 
-<footer>
+<footer class="w-full mt-5">
 	<!-- Main Footer -->
 	<div class="bg-neutral-100">
 		<div
