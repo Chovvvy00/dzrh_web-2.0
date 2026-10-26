@@ -15,6 +15,8 @@
 	let { children }: LayoutProps = $props();
 	let isPost = $derived(page.route.id?.startsWith('/post/') ?? false);
 	let isCategory = $derived(page.route.id === '/[category]');
+	const infoRoutes = new Set(['/about', '/contact', '/privacy-policy', '/terms']);
+	let isInfoPage = $derived(page.route.id !== null && infoRoutes.has(page.route.id));
 </script>
 
 <svelte:head>
@@ -43,7 +45,7 @@
 
 			{#if isPost}
 				{@render children()}
-			{:else if isCategory}
+			{:else if isCategory || isInfoPage}
 				<div class="mt-6 min-w-0 sm:mt-8">
 					{@render children()}
 				</div>

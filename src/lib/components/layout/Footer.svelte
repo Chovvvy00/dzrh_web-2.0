@@ -61,7 +61,7 @@
 							href={socialLink.href}
 							aria-label={socialLink.name}
 							target="_blank"
-							class="transistion-colors flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
+							class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-sm text-white transition-colors hover:bg-red-600"
 						>
 							<Icon name={socialLink.icon} />
 						</a>

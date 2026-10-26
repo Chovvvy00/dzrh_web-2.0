@@ -29,7 +29,7 @@
 	</div>
 
 	<section class="min-w-0">
-		<div class="grid gap-x-4 gap-y-10 md:grid-cols-2">
+		<div class="grid gap-x-4 gap-y-30 md:grid-cols-2">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
 
@@ -43,7 +43,7 @@
 			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
-		<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2">
+		<div class="mt-8 grid gap-x-4 gap-y-30 md:grid-cols-2">
 			<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 			<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
 
