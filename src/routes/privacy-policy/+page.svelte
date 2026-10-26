@@ -39,7 +39,7 @@
 	/>
 </svelte:head>
 
-<article class="mx-auto w-full max-w-3xl min-w-0">
+<article class="mx-auto w-full max-w-7xl min-w-0">
 	<h1
 		class="mb-6 text-3xl leading-tight font-extrabold tracking-tight text-neutral-950 sm:text-4xl xl:text-5xl"
 	>
