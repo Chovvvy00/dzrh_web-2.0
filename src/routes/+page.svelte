@@ -23,13 +23,16 @@
 
 <!-- Desktop Mode -->
 <div class="hidden min-w-0 gap-8 lg:grid">
-	<div class="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+	<div
+		data-homepage-lead
+		class="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"
+	>
 		<BreakingNews article={breakingNews} />
 		<Headlines articles={headlines} />
 	</div>
 
 	<section class="min-w-0">
-		<div class="grid gap-x-4 gap-y-30 md:grid-cols-2">
+		<div class="grid gap-x-4 gap-y-8 md:grid-cols-2 2xl:gap-y-12">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
 
@@ -43,7 +46,7 @@
 			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
-		<div class="mt-8 grid gap-x-4 gap-y-30 md:grid-cols-2">
+		<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2 2xl:gap-y-12">
 			<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 			<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
 

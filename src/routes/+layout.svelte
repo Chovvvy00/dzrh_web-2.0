@@ -51,7 +51,7 @@
 				</div>
 			{:else}
 				<div
-					class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_280px]"
+					class="mt-6 grid grid-cols-1 items-start gap-6 sm:mt-8 lg:grid-cols-[minmax(0,1fr)_clamp(14rem,20vw,17.5rem)]"
 				>
 					<div class="min-w-0">
 						{@render children()}

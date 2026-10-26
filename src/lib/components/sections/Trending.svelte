@@ -5,16 +5,18 @@
 
 <section
 	aria-labelledby="trending-heading"
-	class="w-full min-w-0 overflow-hidden rounded-xl border border-neutral-200 bg-white"
+	class="@container w-full min-w-0 overflow-hidden rounded-xl border border-neutral-200 bg-white"
 >
 	<!-- Section heading -->
-	<div class="flex items-center justify-between gap-3 border-b border-neutral-200 px-4 py-3">
+	<div
+		class="flex items-center justify-between gap-3 border-b border-neutral-200 px-3 py-2.5 @min-[24rem]:px-4 @min-[24rem]:py-3"
+	>
 		<div class="flex items-center gap-2.5">
 			<span class="h-6 w-1 rounded-full bg-red-700"></span>
 
 			<h2
 				id="trending-heading"
-				class="text-xl font-extrabold tracking-tight text-neutral-900 uppercase"
+				class="text-base font-extrabold tracking-tight text-neutral-900 uppercase @min-[24rem]:text-lg"
 			>
 				Trending
 			</h2>
@@ -27,7 +29,7 @@
 
 	<!-- Featured trending article -->
 	{#if articles[0]}
-		<a href={postPath(articles[0].slug)} class="group block p-4 lg:p-3">
+		<a href={postPath(articles[0].slug)} class="group block p-3 @min-[24rem]:p-4">
 			{#if articles[0].image}
 				<div class="relative aspect-video overflow-hidden rounded-lg bg-neutral-100">
 					<img
@@ -50,9 +52,9 @@
 				</div>
 			{/if}
 
-			<div class="mt-3">
+			<div class="mt-2 @min-[24rem]:mt-3">
 				<h3
-					class="line-clamp-2 text-lg leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700"
+					class="line-clamp-2 text-sm leading-snug font-bold text-neutral-900 transition-colors duration-200 group-hover:text-red-700 @min-[16rem]:text-base"
 				>
 					{articles[0].title}
 				</h3>
@@ -70,11 +72,11 @@
 
 	<!-- Other trending articles -->
 	{#if articles.length > 1}
-		<div class="mx-4 divide-y divide-neutral-100 border-t border-neutral-200 lg:mx-3">
+		<div class="mx-3 divide-y divide-neutral-100 border-t border-neutral-200 @min-[24rem]:mx-4">
 			{#each articles.slice(1) as article (article.id)}
 				<a
 					href={postPath(article.slug)}
-					class="group flex min-w-0 items-start gap-3 py-4 transition-colors duration-200 hover:bg-neutral-100 lg:px-1 lg:py-3.5"
+					class="group flex min-w-0 items-start gap-3 py-2.5 transition-colors duration-200 hover:bg-neutral-100 @min-[24rem]:py-4"
 				>
 					<!-- Trending indicator -->
 					<span
@@ -84,7 +86,7 @@
 					<!-- Article headline -->
 					<div class="min-w-0 flex-1">
 						<h3
-							class="line-clamp-3 text-sm leading-snug font-semibold text-neutral-800 transition-colors duration-200 group-hover:text-red-700"
+							class="line-clamp-2 text-sm leading-snug font-semibold text-neutral-800 transition-colors duration-200 group-hover:text-red-700 @min-[24rem]:line-clamp-3"
 						>
 							{article.title}
 						</h3>
@@ -95,7 +97,9 @@
 	{/if}
 
 	<!-- Footer -->
-	<div class="border-t border-neutral-100 bg-neutral-50 px-4 py-3">
+	<div
+		class="border-t border-neutral-100 bg-neutral-50 px-3 py-2.5 @min-[24rem]:px-4 @min-[24rem]:py-3"
+	>
 		<a
 			href={sitePath('/most-read')}
 			class="group flex items-center justify-center gap-2 text-xs font-bold tracking-wide text-neutral-600 uppercase transition-colors hover:text-red-700"

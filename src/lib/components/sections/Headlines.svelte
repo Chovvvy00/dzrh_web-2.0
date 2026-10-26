@@ -12,12 +12,16 @@
 	let secondaryArticles = $derived(articles.slice(0, 6));
 </script>
 
-<section class="flex w-full flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
+<section
+	class="@container flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
+>
 	<!-- Header -->
 	<div
-		class="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 bg-[#102a43] px-4 py-3 md:flex-nowrap md:py-2.5"
+		class="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-2 bg-[#102a43] px-4 py-3 md:flex-nowrap md:py-2.5 lg:h-12 lg:py-0"
 	>
-		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.08em] text-white uppercase">
+		<h2
+			class="min-w-0 text-sm leading-snug font-extrabold tracking-[0.08em] text-white uppercase xl:text-base"
+		>
 			Headlines
 		</h2>
 
@@ -64,7 +68,7 @@
 					<div class="absolute inset-x-0 bottom-0 p-4">
 						<div class="mb-2 h-0.5 w-8 bg-blue-300"></div>
 
-						<h3 class="line-clamp-3 text-xl leading-tight font-bold text-white">
+						<h3 class="line-clamp-3 text-base leading-tight font-bold text-white sm:text-lg">
 							{articles[0].title}
 						</h3>
 						<span class="text-xs text-slate-300">{articles[0].datePosted}</span>
@@ -107,13 +111,15 @@
 		{/each}
 	</div>
 
-	<!-- Desktop -->
+	<!-- Show four cards in narrow containers and six when three columns fit. -->
 	<div class="hidden min-h-0 flex-1 md:grid">
-		<div class="grid min-w-0 grid-cols-3 content-evenly items-start gap-2">
-			{#each secondaryArticles as article (article.id)}
+		<div class="grid min-w-0 grid-cols-2 items-start gap-2 @min-[36rem]:grid-cols-3">
+			{#each secondaryArticles as article, index (article.id)}
 				<a
 					href={postPath(article.slug)}
-					class="group relative flex aspect-video min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
+					class="group relative {index < 4
+						? 'flex'
+						: 'hidden @min-[36rem]:flex'} aspect-video min-w-0 items-end overflow-hidden bg-neutral-900 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white"
 				>
 					<img
 						src={article.image}
@@ -126,11 +132,11 @@
 						class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent"
 					></div>
 
-					<div class="relative w-full min-w-0 px-3 xl:p-4">
-						<div class="mb-2 h-0.5 w-6 bg-blue-300"></div>
+					<div class="relative w-full min-w-0 p-2 @min-[42rem]:p-3">
+						<div class="mb-1 h-0.5 w-6 bg-blue-300"></div>
 
 						<h3
-							class="line-clamp-2 text-sm leading-snug font-bold text-white lg:text-base 2xl:text-lg"
+							class="line-clamp-2 text-sm leading-snug font-bold text-white @min-[48rem]:text-base"
 						>
 							{article.title}
 						</h3>

@@ -5,15 +5,22 @@
 	import MostRead from '#lib/components/sections/MostRead.svelte';
 </script>
 
-<aside aria-label="Featured and popular news" class="min-w-0 space-y-4 lg:block">
-	<Featured />
+<aside
+	aria-label="Featured and popular news"
+	class="@container/sidebar hidden min-w-0 space-y-3 lg:block 2xl:space-y-4"
+>
+	<Featured matchHeightTo="[data-homepage-lead]" />
 	<Trending />
 	<MostRead />
 
-	<section class="relative mx-auto mb-4 h-62.5 w-75 max-w-full overflow-hidden">
+	<section
+		class="relative mx-auto mb-4 hidden h-62.5 w-75 max-w-full overflow-hidden @min-[15.625rem]/sidebar:block"
+	>
 		<AdBanner isTestMode={true} showPlaceholder={true} />
 	</section>
-	<section class="relative mx-auto mb-4 h-62.5 w-75 max-w-full overflow-hidden">
+	<section
+		class="relative mx-auto mb-4 hidden h-62.5 w-75 max-w-full overflow-hidden @min-[15.625rem]/sidebar:block"
+	>
 		<AdBanner isTestMode={true} showPlaceholder={true} />
 	</section>
 </aside>

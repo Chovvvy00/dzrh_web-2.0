@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fitNewsSummary } from '#lib/actions/fitNewsSummary.ts';
 	import { postPath } from '#lib/paths.ts';
 	import type { Article } from '#lib/types/article.ts';
 
@@ -10,9 +11,11 @@
 </script>
 
 <section
-	class="flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-red-200 bg-white"
+	class="@container/breaking-card flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-red-200 bg-white lg:[container-type:size] lg:min-h-0"
 >
-	<div class="flex items-center justify-between gap-3 bg-[#b42318] px-4 py-3 lg:py-2.5">
+	<div
+		class="flex shrink-0 items-center justify-between gap-3 bg-[#b42318] px-4 py-3 lg:h-12 lg:py-0"
+	>
 		<div class="flex min-w-0 items-center gap-2">
 			<span class="relative flex size-3 shrink-0">
 				<span class="absolute inline-flex size-full animate-ping rounded-full bg-white/70"></span>
@@ -20,7 +23,9 @@
 				<span class="relative inline-flex size-3 rounded-full bg-white"></span>
 			</span>
 
-			<h2 class="truncate text-xl font-extrabold tracking-[0.08em] text-white uppercase">
+			<h2
+				class="min-w-0 text-sm leading-snug font-extrabold tracking-[0.08em] text-white uppercase xl:text-base"
+			>
 				Breaking News
 			</h2>
 		</div>
@@ -32,10 +37,8 @@
 		</span>
 	</div>
 
-	<a href={postPath(article.slug)} class="group flex min-h-0 flex-1 flex-col">
-		<div
-			class="relative aspect-video overflow-hidden bg-neutral-200 lg:aspect-auto lg:min-h-0 lg:flex-1"
-		>
+	<a href={postPath(article.slug)} class="group flex min-w-0 flex-col lg:min-h-0 lg:flex-1">
+		<div class="relative aspect-video w-full shrink-0 overflow-hidden bg-neutral-200">
 			<img
 				src={article.image}
 				alt={article.title}
@@ -56,23 +59,24 @@
 			</div> -->
 		</div>
 
-		<div class="relative p-4 sm:p-5 lg:p-3">
-			<div class="mb-2 h-0.5 w-10 bg-[#b42318]"></div>
+		<div use:fitNewsSummary class="summary relative lg:min-h-0 lg:flex-1">
+			<div class="summary-content p-4 sm:p-5 lg:px-3 lg:py-2">
+				<div class="summary-accent mb-2 h-0.5 w-10 bg-[#b42318]"></div>
 
-			<h3
-				class="line-clamp-2 text-xl leading-tight font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
-					lg:text-2xl"
-			>
-				{article.title}
-			</h3>
+				<h3
+					class="summary-title line-clamp-3 text-base leading-snug font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
+					@min-[24rem]/breaking-card:text-lg"
+				>
+					{article.title}
+				</h3>
 
-			{#if article.excerpt}
-				<p class="mt-3 line-clamp-2 leading-tight text-slate-600 lg:hidden">
-					{article.excerpt}
-				</p>
-			{/if}
+				{#if article.excerpt}
+					<p class="summary-excerpt mt-3 line-clamp-2 text-sm leading-relaxed text-slate-600">
+						{article.excerpt}
+					</p>
+				{/if}
 
-			<!-- <div
+				<!-- <div
 				class="mt-4 flex items-center gap-2 text-sm font-bold tracking-wide text-[#b42318] uppercase lg:mt-3"
 			>
 				<span>Read full story</span>
@@ -83,6 +87,50 @@
 				>
 				</span>
 			</div> -->
+			</div>
 		</div>
 	</a>
 </section>
+
+<style>
+	@media (min-width: 64rem) {
+		/* Headlines sets the row height; the summary uses the space below the 16:9 image. */
+		.summary {
+			container: breaking-summary / size;
+		}
+
+		.summary-title,
+		.summary-excerpt {
+			font-size: var(--text-xs);
+		}
+
+		.summary-accent,
+		.summary-excerpt {
+			display: none;
+		}
+
+		@container breaking-card (min-width: 20rem) {
+			.summary-title {
+				font-size: var(--text-sm);
+			}
+		}
+
+		@container breaking-summary (min-height: 5rem) {
+			.summary-accent {
+				display: block;
+			}
+		}
+
+		@container breaking-card (min-width: 24rem) {
+			.summary-excerpt {
+				font-size: var(--text-sm);
+			}
+
+			@container breaking-summary (min-height: 5rem) {
+				.summary-title {
+					font-size: var(--text-base);
+				}
+			}
+		}
+	}
+</style>

@@ -11,10 +11,10 @@
 	let { title, articles, href }: Props = $props();
 </script>
 
-<section class="w-full min-w-0">
+<section class="@container w-full min-w-0">
 	<!-- Category heading -->
 	<div class="mb-3 flex items-center justify-between border-b border-neutral-300 pb-2">
-		<h2 class="text-2xl font-bold uppercase">
+		<h2 class="text-lg font-bold uppercase @min-[32rem]:text-xl">
 			{title}
 		</h2>
 	</div>
@@ -24,14 +24,14 @@
 		Article 1 = full width
 		Articles 2 & 3 = two columns
 
-		XL / Desktop:
+		Wide category container:
 		All 3 = equal columns
 	-->
-	<div class="grid grid-cols-2 gap-x-3 gap-y-4 xl:grid-cols-3 xl:gap-4">
+	<div class="grid grid-cols-2 gap-x-3 gap-y-4 @min-[36rem]:grid-cols-3 @min-[36rem]:gap-4">
 		{#each articles.slice(0, 3) as article, index (article.id)}
 			<a
 				href={postPath(article.slug)}
-				class="group block min-w-0 {index === 0 ? 'col-span-2' : ''} xl:col-span-1"
+				class="group block min-w-0 {index === 0 ? 'col-span-2' : ''} @min-[36rem]:col-span-1"
 			>
 				<!-- Image -->
 				<div class="aspect-video overflow-hidden bg-neutral-200">
@@ -46,18 +46,18 @@
 				<!-- Headline -->
 				<h3
 					class="mt-2 line-clamp-2 leading-snug transition-colors group-hover:text-red-600
-						{index === 0 ? 'text-lg font-semibold' : 'text-sm font-medium'}
-						xl:text-lg xl:font-semibold"
+						{index === 0 ? 'text-base font-semibold @min-[32rem]:text-lg' : 'text-sm font-medium'}
+						@min-[36rem]:text-base @min-[36rem]:font-semibold"
 				>
 					{article.title}
 				</h3>
 
-				<span class="mt-2 block text-slate-500 xl:mt-4">{article.datePosted}</span>
+				<span class="mt-2 block text-xs text-slate-500">{article.datePosted}</span>
 			</a>
 		{/each}
 	</div>
 
-	<div class="flex items-center justify-end pt-4 xl:pb-4">
+	<div class="flex items-center justify-end pt-4">
 		<a
 			href={sitePath(href)}
 			class="text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
