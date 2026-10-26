@@ -4,9 +4,10 @@
 
 	type Props = {
 		article: Article;
+		variant?: 'default' | 'sidebar';
 	};
 
-	let { article }: Props = $props();
+	let { article, variant = 'default' }: Props = $props();
 </script>
 
 <article class="h-full min-w-0">
@@ -26,21 +27,36 @@
 		</div>
 		<div class="flex flex-1 flex-col p-4">
 			{#if article.datePosted}
-				<p class="mb-2 text-sm leading-relaxed font-medium text-slate-600 xl:text-base">
+				<p
+					class="mb-2 font-medium {variant === 'sidebar'
+						? 'text-xs text-slate-500'
+						: 'text-sm leading-relaxed text-slate-600 xl:text-base'}"
+				>
 					{article.datePosted}
 				</p>
 			{/if}
 			<h3
-				class="line-clamp-3 text-lg leading-snug font-bold text-[#102A43] transition-colors group-hover:text-red-700 sm:text-xl xl:text-2xl"
+				class="line-clamp-3 leading-snug text-[#102A43] transition-colors group-hover:text-red-700 {variant ===
+				'sidebar'
+					? 'text-xl font-extrabold'
+					: 'text-lg font-bold sm:text-xl xl:text-2xl'}"
 			>
 				{article.title}
 			</h3>
 			{#if article.excerpt}
-				<p class="mt-2 line-clamp-2 text-base leading-relaxed text-slate-600 xl:text-lg">
+				<p
+					class="mt-2 line-clamp-2 leading-relaxed text-slate-600 {variant === 'sidebar'
+						? 'text-sm'
+						: 'text-base xl:text-lg'}"
+				>
 					{article.excerpt}
 				</p>
 			{/if}
-			<span class="mt-auto pt-5 text-base leading-relaxed font-bold text-red-700">Read story</span>
+			<span
+				class="mt-auto pt-5 font-bold text-red-700 {variant === 'sidebar'
+					? 'text-sm'
+					: 'text-base leading-relaxed'}">Read story</span
+			>
 		</div>
 	</a>
 </article>

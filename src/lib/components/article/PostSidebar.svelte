@@ -115,7 +115,7 @@
 					>{category.title}</a
 				>
 			</h2>
-			<ArticleCard article={category.article} />
+			<ArticleCard article={category.article} variant="sidebar" />
 		</section>
 
 		{#if index === 0}

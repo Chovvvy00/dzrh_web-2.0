@@ -57,12 +57,13 @@
 		{/each}
 	</div>
 
-	<div class="flex items-center justify-end pt-4">
+	<div class="flex items-center gap-3 pt-4">
+		<span class="h-px min-w-0 flex-1 bg-neutral-300" aria-hidden="true"></span>
 		<a
 			href={sitePath(href)}
-			class="text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
+			class="shrink-0 text-xs font-semibold text-slate-700/70 uppercase transition-colors hover:text-red-600 hover:underline"
 		>
-			view more
+			View more
 		</a>
 	</div>
 </section>

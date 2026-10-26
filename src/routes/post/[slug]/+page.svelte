@@ -183,7 +183,6 @@
 		line-height: 1.75;
 		color: #171717;
 		text-wrap: pretty;
-		max-width: 68ch;
 	}
 
 	.article-body p + p {

@@ -32,7 +32,7 @@
 	</div>
 
 	<section class="min-w-0">
-		<div class="grid gap-x-4 gap-y-8 md:grid-cols-2 2xl:gap-y-12">
+		<div class="grid gap-x-4 gap-y-12 md:grid-cols-2 2xl:gap-y-16">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
 
@@ -46,7 +46,7 @@
 			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
-		<div class="mt-8 grid gap-x-4 gap-y-8 md:grid-cols-2 2xl:gap-y-12">
+		<div class="mt-8 grid gap-x-4 gap-y-12 md:grid-cols-2 2xl:gap-y-16">
 			<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 			<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
 
@@ -85,7 +85,7 @@
 
 	<!-- News Categories -->
 	<section class="min-w-0">
-		<div class="grid grid-cols-1 gap-6 sm:gap-8">
+		<div class="grid grid-cols-1 gap-10 sm:gap-12">
 			<NewsCategory title="Nation" articles={nationArticles} href="/nation" />
 
 			<NewsCategory title="Entertainment" articles={entertainmentArticles} href="/entertainment" />
@@ -102,7 +102,7 @@
 			<AdBanner isTestMode={true} showPlaceholder={true} />
 		</section>
 
-		<div class="grid grid-cols-1 gap-6 sm:gap-8">
+		<div class="grid grid-cols-1 gap-10 sm:gap-12">
 			<NewsCategory title="Province" articles={provinceArticles} href="/province" />
 
 			<NewsCategory title="Asia" articles={asiaArticles} href="/asia" />
