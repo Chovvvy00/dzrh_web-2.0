@@ -13,12 +13,12 @@
 		<h2 class="min-w-0 truncate text-xl font-extrabold tracking-[0.08em] text-slate-700 uppercase">
 			Featured
 		</h2>
-
+<!-- 
 		<div
 			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-xs font-bold tracking-widest text-slate-700/80 uppercase"
 		>
 			<span>Editor's Choice</span>
-		</div>
+		</div> -->
 	</div>
 
 	<div class="divide-y divide-neutral-200">

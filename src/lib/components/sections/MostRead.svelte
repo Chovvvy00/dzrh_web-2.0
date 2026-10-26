@@ -22,11 +22,11 @@
 			</h2>
 		</div>
 
-		<span
+		<!-- <span
 			class="rounded-full bg-neutral-100 px-2 py-1 text-xs font-bold tracking-wide text-neutral-500 uppercase"
 		>
 			Top Stories
-		</span>
+		</span> -->
 	</div>
 
 	<!-- Featured top article -->
