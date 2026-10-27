@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { postPath, sitePath } from '#lib/paths.ts';
-	import type { Article } from '#lib/types/article.ts';
+	import type { Article } from '#lib/types/post.ts';
 
 	type Props = {
 		articles: Article[];

@@ -2,7 +2,7 @@
 	import { fitNewsSummary } from '#lib/actions/fitNewsSummary.ts';
 	import { onMount } from 'svelte';
 	import { postPath } from '#lib/paths.ts';
-	import { featuredArticle as article } from '#lib/data/articles.ts';
+	import { featuredPost as article } from '#lib/data/posts.ts';
 
 	let { matchHeightTo }: { matchHeightTo?: string } = $props();
 	let leadHeight = $state<number | null>(null);
@@ -37,12 +37,6 @@
 		>
 			Featured
 		</h2>
-		<!--
-		<div
-			class="group/more -my-2.5 flex shrink-0 items-center gap-1.5 self-stretch py-2.5 text-xs font-bold tracking-widest text-slate-700/80 uppercase"
-		>
-			<span>Editor's Choice</span>
-		</div> -->
 	</div>
 
 	<div class="featured-body divide-y divide-neutral-200">
@@ -70,12 +64,12 @@
 					</h3>
 
 					<p
-						class="summary-excerpt mt-2 line-clamp-2 hidden overflow-clip text-sm leading-relaxed text-slate-700/80 @min-[16rem]:line-clamp-2"
+						class="summary-excerpt mt-2 line-clamp-2 hidden overflow-clip text-sm leading-relaxed text-slate-700/60 @min-[16rem]:line-clamp-2"
 					>
 						{article.excerpt}
 					</p>
 
-					<p class="summary-date mt-2 line-clamp-2 text-xs text-slate-600/70">
+					<p class="summary-date mt-2 line-clamp-2 text-xs text-slate-600">
 						{article.datePosted}
 					</p>
 

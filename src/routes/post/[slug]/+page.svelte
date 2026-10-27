@@ -8,6 +8,7 @@
 	import PostSidebar from '#lib/components/article/PostSidebar.svelte';
 	import ShareActions from '#lib/components/article/ShareActions.svelte';
 	import dzrhLogo from '#lib/assets/logo/dzrh-logo.svg';
+	import { formatDate } from '#lib/utils.ts';
 
 	let { data }: PageProps = $props();
 
@@ -17,15 +18,7 @@
 	let canonicalUrl = $derived(absoluteUrl(postPath(post.slug)));
 	let ogImage = $derived(absoluteUrl(post.image));
 
-	let timeLabel = $derived(
-		post.publishedAt
-			? new Date(post.publishedAt).toLocaleDateString('en-PH', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric'
-				})
-			: post.datePosted
-	);
+	let timeLabel = $derived(post.publishedAt ? formatDate(post.publishedAt) : post.datePosted);
 
 	let tags = $derived(post.tags?.length ? post.tags : [post.category.title]);
 
@@ -120,9 +113,13 @@
 		</div>
 
 		<div class="article-body mt-8 sm:mt-10">
-			{#each post.body as paragraph, index (index)}
-				<p>{paragraph}</p>
-			{/each}
+			{#if typeof post.body === 'string'}
+				{@html post.body}
+			{:else}
+				{#each post.body as paragraph, index (index)}
+					<p>{paragraph}</p>
+				{/each}
+			{/if}
 		</div>
 
 		<section aria-label="Advertisement" class="article-ad relative mx-auto my-10 overflow-hidden">
@@ -185,7 +182,7 @@
 		text-wrap: pretty;
 	}
 
-	.article-body p + p {
+	.article-body :global(p + p) {
 		margin-top: 1.25rem;
 	}
 
@@ -194,7 +191,7 @@
 			line-height: 1.9;
 		}
 
-		.article-body p + p {
+		.article-body :global(p + p) {
 			margin-top: 1.5rem;
 		}
 	}

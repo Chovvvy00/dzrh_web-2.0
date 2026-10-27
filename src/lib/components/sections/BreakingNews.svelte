@@ -1,17 +1,20 @@
 <script lang="ts">
 	import { fitNewsSummary } from '#lib/actions/fitNewsSummary.ts';
 	import { postPath } from '#lib/paths.ts';
-	import type { Article } from '#lib/types/article.ts';
+	import type { Post } from '#lib/types/post.ts';
+	import { formatDate } from '#lib/utils.ts';
 
 	type Props = {
-		article: Article;
+		article: Pick<Post, 'title' | 'slug' | 'excerpt' | 'publishDate'> & {
+			photo: Pick<Post['photo'], 'link'>;
+		};
 	};
 
 	let { article }: Props = $props();
 </script>
 
 <section
-	class="@container/breaking-card flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-red-200 bg-white lg:[container-type:size] lg:min-h-0"
+	class="@container/breaking-card flex w-full min-w-0 flex-col overflow-hidden rounded-lg border border-red-200 bg-white lg:@container-size lg:min-h-0"
 >
 	<div
 		class="flex shrink-0 items-center justify-between gap-3 bg-[#b42318] px-4 py-3 lg:h-12 lg:py-0"
@@ -40,7 +43,7 @@
 	<a href={postPath(article.slug)} class="group flex min-w-0 flex-col lg:min-h-0 lg:flex-1">
 		<div class="relative aspect-video w-full shrink-0 overflow-hidden bg-neutral-200">
 			<img
-				src={article.image}
+				src={article.photo.link}
 				alt={article.title}
 				class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 			/>
@@ -48,20 +51,11 @@
 			<div
 				class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"
 			></div>
-
-			<!-- 
-			<div class="absolute bottom-0 left-0">
-				<span
-					class="inline-block bg-[#b42318] px-3 py-1.5 text-[10px] font-bold tracking-wide text-white uppercase"
-				>
-					Developing
-				</span>
-			</div> -->
 		</div>
 
 		<div use:fitNewsSummary class="summary relative lg:min-h-0 lg:flex-1">
 			<div class="summary-content p-4 sm:p-5 lg:px-3 lg:py-2">
-				<div class="summary-accent mb-2 h-0.5 w-10 bg-[#b42318]"></div>
+				<div class="summary-accent xl:h-0.8 mb-2 h-0.5 w-10 bg-[#b42318]"></div>
 
 				<h3
 					class="summary-title line-clamp-3 text-base leading-snug font-extrabold text-[#102a43] transition-colors group-hover:text-[#b42318]
@@ -76,17 +70,9 @@
 					</p>
 				{/if}
 
-				<!-- <div
-				class="mt-4 flex items-center gap-2 text-sm font-bold tracking-wide text-[#b42318] uppercase lg:mt-3"
-			>
-				<span>Read full story</span>
-
-				<span
-					aria-hidden="true"
-					class="transition-transform duration-200 group-hover:translate-x-1"
-				>
-				</span>
-			</div> -->
+				<p class="summary-date mt-2 line-clamp-2 text-xs text-slate-600/70 lg:mt-1">
+					{formatDate(article.publishDate)}
+				</p>
 			</div>
 		</div>
 	</a>
@@ -115,7 +101,7 @@
 			}
 		}
 
-		@container breaking-summary (min-height: 5rem) {
+		@container breaking-summary (min-height: 6rem) {
 			.summary-accent {
 				display: block;
 			}

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import NewsSidebar from '#lib/components/layout/NewsSidebar.svelte';
 	import { postPath, sitePath } from '#lib/paths.ts';
-	import type { Article } from '#lib/types/article.ts';
+	import type { Article } from '#lib/types/post.ts';
 
 	type Props = {
 		title: string;

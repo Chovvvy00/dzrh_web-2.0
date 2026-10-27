@@ -6,7 +6,9 @@
 // articles move out of sample data — the post route only uses the exports
 // below.
 
-import type { Article } from '#lib/types/article.ts';
+import type { Article, Post as CmsPost } from '#lib/types/post.ts';
+import { stripHtml } from 'string-strip-html';
+import { formatDate } from '#lib/utils.ts';
 import { categories } from './categories.ts';
 import { breakingNews, featuredArticle, mostReadArticles, trendingArticles } from './articles.ts';
 
@@ -18,8 +20,8 @@ export type PostCategory = {
 
 export type Post = Article & {
 	category: PostCategory;
-	/** Always populated: the post page renders paragraphs, never an empty body. */
-	body: string[];
+	/** CMS HTML or fallback paragraphs; every post has readable content. */
+	body: string | string[];
 };
 
 type ArticleGroup = {
@@ -27,11 +29,38 @@ type ArticleGroup = {
 	articles: Article[];
 };
 
+type CmsArticle = Pick<CmsPost, 'title' | 'slug' | 'body' | 'excerpt' | 'publishDate'> & {
+	_id: string;
+	photo: Pick<CmsPost['photo'], 'link'>;
+};
+
+/** Map CMS fields to the data consumed by cards, metadata, and post pages. */
+function toArticle(post: CmsArticle): Article {
+	const text = post.excerpt?.trim() ? '' : stripHtml(post.body ?? '').result;
+	return {
+		id: post._id,
+		title: post.title,
+		slug: post.slug,
+		image: post.photo.link,
+		excerpt:
+			post.excerpt?.trim() || (text.length > 160 ? `${text.slice(0, 157).trimEnd()}...` : text),
+		publishedAt: post.publishDate,
+		datePosted: formatDate(post.publishDate),
+		body: post.body
+		// postedBy and tags contain unresolved CMS IDs, not display names.
+	};
+}
+
+export const featuredPost = toArticle(featuredArticle);
+
 // Sections without an archive page keep `path: null`, so the category chip
 // renders as plain text instead of linking to a route that does not exist.
 const standaloneGroups: ArticleGroup[] = [
-	{ category: { title: 'Breaking News', path: null }, articles: [breakingNews] },
-	{ category: { title: 'Featured', path: null }, articles: [featuredArticle] },
+	{
+		category: { title: 'Breaking News', path: null },
+		articles: [toArticle(breakingNews)]
+	},
+	{ category: { title: 'Featured', path: null }, articles: [featuredPost] },
 	{ category: { title: 'Trending', path: null }, articles: trendingArticles },
 	{ category: { title: 'Most Read', path: null }, articles: mostReadArticles }
 ];

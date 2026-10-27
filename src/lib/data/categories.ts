@@ -1,4 +1,4 @@
-import type { Article } from '#lib/types/article.ts';
+import type { Article } from '#lib/types/post.ts';
 import {
 	nationArticles,
 	entertainmentArticles,

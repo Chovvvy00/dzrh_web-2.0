@@ -29,7 +29,10 @@ export function fitNewsSummary(summary: HTMLElement) {
 		}
 
 		const style = getComputedStyle(content);
-		let available = summary.clientHeight - pixels(style.paddingTop) - pixels(style.paddingBottom);
+		let available =
+			summary.getBoundingClientRect().height -
+			pixels(style.paddingTop) -
+			pixels(style.paddingBottom);
 		for (const child of content.children) {
 			if (
 				child instanceof HTMLElement &&
@@ -37,25 +40,25 @@ export function fitNewsSummary(summary: HTMLElement) {
 				child !== excerpt &&
 				child.offsetHeight
 			) {
-				available -= child.offsetHeight + margins(child);
+				available -= child.getBoundingClientRect().height + margins(child);
 			}
 		}
 		available -= margins(title);
 		const titleLine = pixels(getComputedStyle(title).lineHeight);
 		if (!titleLine) return;
 
-		clamp(title, 100);
-		const naturalLines = Math.ceil((title.scrollHeight - 1) / titleLine);
-		const excerptLine = excerpt ? pixels(getComputedStyle(excerpt).lineHeight) : 0;
-		const excerptMargin = excerpt ? margins(excerpt) : 0;
-		const reserveExcerpt =
-			excerptLine > 0 && available >= 2 * titleLine + excerptMargin + excerptLine;
-		const titleBudget = available - (reserveExcerpt ? excerptMargin + excerptLine : 0);
-		const titleLines = Math.max(1, Math.min(naturalLines, 6, Math.floor(titleBudget / titleLine)));
+		// Give the title all available lines before using leftover space for the excerpt.
+		title.style.setProperty('-webkit-line-clamp', 'unset');
+		title.style.setProperty('line-clamp', 'unset');
+		const naturalLines = Math.round(title.getBoundingClientRect().height / titleLine);
+		const titleLines = Math.max(1, Math.min(naturalLines, Math.floor(available / titleLine)));
 		clamp(title, titleLines);
 
+		const excerptLine = excerpt ? pixels(getComputedStyle(excerpt).lineHeight) : 0;
+		const excerptMargin = excerpt ? margins(excerpt) : 0;
+
 		if (excerpt) {
-			const remaining = available - titleLines * titleLine - excerptMargin;
+			const remaining = available - title.getBoundingClientRect().height - excerptMargin;
 			const excerptLines = excerptLine ? Math.max(0, Math.floor(remaining / excerptLine)) : 0;
 			excerpt.style.display = excerptLines > 0 ? '-webkit-box' : 'none';
 			clamp(excerpt, Math.max(1, excerptLines));

@@ -1,13 +1,41 @@
-import breakingImage from '#lib/assets/test-images/breaking-news.jpeg';
+// import breakingImage from '#lib/assets/test-images/breaking-news.jpeg';
 export const breakingNews = {
-	id: '1',
-	title:
-		'Sample breaking news headline breaking news headline breaking news headline breaking news headline',
-	slug: 'sample-breaking-news',
-	image: breakingImage,
-	excerpt:
-		'Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article. Short description of the breaking news article.'
-};
+  _id: '60195cd6cd2dc20004626132',
+  photo: {
+    link: 'https://dzrh-bucket.s3.ap-southeast-1.amazonaws.com/featuredimage/blobid1612274805028'
+  },
+  sponsor: {
+    companyName: '',
+    hyperlink: '',
+    logoUrl: ''
+  },
+  categories: [
+    '5fdb386551f19462bb9fb592'
+  ],
+  tags: [
+    '601cc8daf99eea0004d02287'
+  ],
+  album: [],
+  headline: false,
+  publishDate: '2021-02-03T05:39:00.000Z',
+  status: 'published',
+  title: 'Nadine Lustre prefers adoption rather than have kids of her own in the future',
+  body: '<p>With the world&rsquo;s current situation, actress Nadine Lustre revealed she does not see herself having kids in the future.</p>\n<p>Nadine made the revelation in an interview with celebrity dermatologist Dr. Aivee Teo&rsquo;s vlog after she was asked to give her preferred number of children in the future.</p>\n<p>&ldquo;Before, every time people would ask me that, I would say 2. But now, I&rsquo;d say wala. I don&rsquo;t want to have kids right now. That&rsquo;s where my head&rsquo;s at,&rdquo; she said.</p>\n<p>However, she revealed that she might just adopt in the future.</p>\n<p>&ldquo;I do believe that there are a lot of kids who don&rsquo;t have parents and who need to be taken care of. So I feel like if I do want to have a kid, I might just adopt, If I get pregnant, I&rsquo;ll go with it. But right now, that&rsquo;s where my head&rsquo;s at. I would rather adopt,&rdquo; the 27-year-old actress stated.</p>',
+  excerpt: 'With the world’s current situation, actress Nadine Lustre revealed she does not see herself having kids in the future.\nNadine made the revelation in an interview with celebrity dermatologist Dr. Aivee Teo’s vlog after she was asked to give her preferred number of children in the f...',
+  slug: 'nadine-lustre-prefers-adoption-rather-than-have-kids-of-her-own-in-the-future',
+  mtitle: 'Nadine Lustre prefers adoption rather than have kids of her own in the future | undefined',
+  mdesc: 'With the world’s current situation, actress Nadine Lustre revealed she does not see herself having kids in the future.\nNadine made the revelation in a',
+  postedBy: '60068e098a6600000458f1b3',
+  postType: 'basic article',
+  videoLink: '',
+  albumName: '',
+  createdAt: '2021-02-02T14:08:24.061Z',
+  updatedAt: '2026-10-26T14:13:56.484Z',
+  __v: 2,
+  pageviews: 1300
+}
+
+
 
 import headlineImage from '#lib/assets/test-images/headlines.jpeg';
 export const headlines = [
@@ -315,18 +343,39 @@ export const lifestyleArticles = [
 	}
 ];
 
-import featuredImage from '#lib/assets/test-images/featured.jpeg';
+// import featuredImage from '#lib/assets/test-images/featured.jpeg';
 
 export const featuredArticle = {
-	id: 'featured-1',
-	title:
-		'facilisis arcu eu, vestibulum urna. Pellentesque lorem dolor, vehicula ut sollicitudin vitae, eleifend id massa..',
-	excerpt:
-		'desc sadgkasdgklj aslkdfgjaslgjasljg saldkgj askldjg  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula  Pellentesque lorem dolor, vehicula ',
-	slug: 'sample-featured-article-facilisis-arcu-eu',
-	image: featuredImage,
-	datePosted: '2 hours ago'
-};
+  _id: '6ae02a7cc96e960a14ce99e9',
+  photo: {
+    bucket: 'dzrh-bucket',
+    key: 'featuredimage/2026/10/ZDZo6rPreOKTbpWlZF8ll.jpeg',
+    link: 'https://dzrh-bucket.s3.ap-southeast-1.amazonaws.com/featuredimage/2026/10/ZDZo6rPreOKTbpWlZF8ll.jpeg',
+    caption: 'Photo courtesy: Lea Salonga'
+  },
+  categories: [
+    '5fdb386951f19462bb9fb593'
+  ],
+  tags: [
+    '63a1bdb70ad2a80004074170',
+    '6ae02a69c96e960a14ce99e8'
+  ],
+  album: [],
+  albumPhotos: [],
+  headline: false,
+  pageviews: 53,
+  publishDate: '2026-10-27T04:30:29.903Z',
+  title: 'Lea Salonga to headline musical theatre cruise to Netherlands, Belgium in 2027',
+  slug: 'lea-salonga-to-headline-musical-theatre-cruise-to-netherlands-belgium-in-2027',
+  status: 'published',
+  body: '<div>\r\n<p>Award-winning Filipino singer and actress Lea Salonga is set to headline a show aboard Encore: The Musical Theatre Cruise, which will sail to the Netherlands and Belgium from October 4 to 8, 2027.<br><br><iframe style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMsLeaSalonga%2Fposts%2Fpfbid02AeoB2MnL7NaDceRsPY3tKfpvDTaLvQ3CQQPV85VwfAETtkQjVnxGq1wsjx5x8Fv3l&amp;show_text=false&amp;width=500" width="500" height="497" frameborder="0" scrolling="no" sandbox="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe></p>\r\n<div>\r\n<p>Salonga announced her participation in the upcoming musical theatre cruise through a social media post, expressing her excitement about joining the lineup of performers, including English tenor Alfie Boe, British entertainer Brian Conley, and vocal group Gravity.</p>\r\n<p>&ldquo;I&rsquo;m very excited to be joining Encore: The Musical Theatre Cruise, sailing to the Netherlands and Belgium from 4-8 October 2027, alongside Alfie Boe, Brian Conley, Gravity, and more!&rdquo; Salonga wrote.</p>\r\n<p>The Tony Award-winning performer also confirmed that she will have her own headline show aboard the cruise, adding, &ldquo;I&rsquo;ll be performing my own headline show on board!&rdquo;</p>\r\n<p>&ldquo;Come and join us! Cabins are on sale now at EncoreTheCruise.com!&rdquo; she added, inviting fans to join the five-day musical theatre experience.</p>\r\n<p>The upcoming engagement adds to Salonga&rsquo;s international performance schedule, bringing her acclaimed vocals and musical theatre repertoire to audiences aboard the cruise as it visits two European destinations.</p>\r\n</div>\r\n<p>The cruise is scheduled aboard The Ambience, an Ambassador Cruise Line ship, with Salonga listed among the supporting artists alongside Boe, Conley, and Gravity, featuring Kerry Ellis, Louise Dearman, and Rachel Tucker.</p>\r\n</div>',
+  postedBy: '6937cc097fa99ab88ea0949d',
+  postType: 'basic article',
+  albumName: '',
+  createdAt: '2026-10-27T04:37:16.595Z',
+  updatedAt: '2026-10-27T05:10:25.997Z',
+  __v: 0
+}
 
 import trendingImage from '#lib/assets/test-images/trending.jpeg';
 
